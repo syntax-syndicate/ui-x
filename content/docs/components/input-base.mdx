@@ -1,0 +1,68 @@
+---
+title: Input Base
+description: Base component to create custom inputs.
+component: true
+---
+
+<ComponentPreview
+  name="input-base-demo"
+  className="[&_.preview>[data-orientation=vertical]]:sm:max-w-[70%]"
+  description="An input-base with three items"
+/>
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ui-x.junwen.dev/r/input-base.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @radix-ui/react-accordion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="input-base" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+  InputBase,
+  InputBaseControl,
+  InputBaseInput,
+} from "@/components/ui/input-base"
+```
+
+```tsx
+<InputBase>
+  <InputBaseControl>
+    <InputBaseInput>Is it accessible?</InputBaseInput>
+  </InputBaseControl>
+</InputBase>
+```
