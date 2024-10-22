@@ -390,6 +390,24 @@ export const examples: Registry = [
     files: ["example/input-base-demo.tsx"],
   },
   {
+    name: "input-base-with-action",
+    type: "registry:example",
+    registryDependencies: ["input-base", "tooltip"],
+    files: ["example/input-base-with-action.tsx"],
+  },
+  {
+    name: "input-base-disabled",
+    type: "registry:example",
+    registryDependencies: ["input-base"],
+    files: ["example/input-base-disabled.tsx"],
+  },
+  {
+    name: "input-base-form",
+    type: "registry:example",
+    registryDependencies: ["input-base", "button", "form"],
+    files: ["example/input-base-form.tsx"],
+  },
+  {
     name: "input-demo",
     type: "registry:example",
     registryDependencies: ["input"],

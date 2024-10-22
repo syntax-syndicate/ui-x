@@ -1226,6 +1226,39 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "input-base-with-action": {
+      name: "input-base-with-action",
+      type: "registry:example",
+      registryDependencies: ["input-base","tooltip"],
+      files: ["src/registry/new-york/example/input-base-with-action.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/input-base-with-action.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "input-base-disabled": {
+      name: "input-base-disabled",
+      type: "registry:example",
+      registryDependencies: ["input-base"],
+      files: ["src/registry/new-york/example/input-base-disabled.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/input-base-disabled.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "input-base-form": {
+      name: "input-base-form",
+      type: "registry:example",
+      registryDependencies: ["input-base","button","form"],
+      files: ["src/registry/new-york/example/input-base-form.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/input-base-form.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "input-demo": {
       name: "input-demo",
       type: "registry:example",
@@ -4599,6 +4632,39 @@ export const Index: Record<string, any> = {
       registryDependencies: ["input-base"],
       files: ["src/registry/default/example/input-base-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/example/input-base-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "input-base-with-action": {
+      name: "input-base-with-action",
+      type: "registry:example",
+      registryDependencies: ["input-base","tooltip"],
+      files: ["src/registry/default/example/input-base-with-action.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/input-base-with-action.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "input-base-disabled": {
+      name: "input-base-disabled",
+      type: "registry:example",
+      registryDependencies: ["input-base"],
+      files: ["src/registry/default/example/input-base-disabled.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/input-base-disabled.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "input-base-form": {
+      name: "input-base-form",
+      type: "registry:example",
+      registryDependencies: ["input-base","button","form"],
+      files: ["src/registry/default/example/input-base-form.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/input-base-form.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

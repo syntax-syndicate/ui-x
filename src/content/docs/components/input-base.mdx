@@ -22,7 +22,7 @@ component: true
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add https://ui-x.junwen.dev/r/input-base.json
+npx shadcn@latest add https://ui-x.junwen-k.dev/r/input-base.json
 ```
 
 </TabsContent>
@@ -34,7 +34,7 @@ npx shadcn@latest add https://ui-x.junwen.dev/r/input-base.json
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install @radix-ui/react-accordion
+npm install @radix-ui/primitive @radix-ui/react-compose-refs @radix-ui/react-primitive @radix-ui/react-slot
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
@@ -54,6 +54,7 @@ npm install @radix-ui/react-accordion
 ```tsx
 import {
   InputBase,
+  InputBaseAdornment,
   InputBaseControl,
   InputBaseInput,
 } from "@/components/ui/input-base"
@@ -61,8 +62,27 @@ import {
 
 ```tsx
 <InputBase>
+  <InputBaseAdornment>@</InputBaseAdornment>
   <InputBaseControl>
-    <InputBaseInput>Is it accessible?</InputBaseInput>
+    <InputBaseInput />
   </InputBaseControl>
 </InputBase>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="input-base-demo" />
+
+### With Action
+
+<ComponentPreview name="input-base-with-action" />
+
+### Disabled
+
+<ComponentPreview name="input-base-disabled" />
+
+### Form
+
+<ComponentPreview name="input-base-form" />

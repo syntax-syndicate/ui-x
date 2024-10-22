@@ -56,9 +56,9 @@ export const InputBase = React.forwardRef<
           }
         })}
         className={cn(
-          "flex min-h-9 cursor-text gap-1.5 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors",
+          "flex min-h-10 cursor-text gap-2 rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background",
           disabled && "cursor-not-allowed opacity-50",
-          focused && "ring-1 ring-ring",
+          focused && "outline-none ring-2 ring-ring ring-offset-2",
           className
         )}
         {...props}
@@ -155,7 +155,7 @@ export const InputBaseAdornmentButton = React.forwardRef<
         variant={variant}
         size={size}
         disabled={disabled || disabledProp}
-        className={cn("h-6 w-6", className)}
+        className={cn("size-6", className)}
         {...props}
       />
     )
@@ -170,7 +170,7 @@ export const InputBaseInput = React.forwardRef<
   <Primitive.input
     ref={ref}
     className={cn(
-      "w-full flex-1 bg-transparent file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus:outline-none disabled:pointer-events-none",
+      "w-full flex-1 bg-transparent file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus:outline-none disabled:pointer-events-none",
       className
     )}
     {...props}
