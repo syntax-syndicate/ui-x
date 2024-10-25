@@ -70,13 +70,13 @@ export const ui: Registry = [
   //   dependencies: ["@radix-ui/react-slot"],
   //   files: ["ui/button.tsx"],
   // },
-  // {
-  //   name: "calendar",
-  //   type: "registry:ui",
-  //   dependencies: ["react-day-picker@8.10.1", "date-fns"],
-  //   registryDependencies: ["button"],
-  //   files: ["ui/calendar.tsx"],
-  // },
+  {
+    name: "calendar",
+    type: "registry:ui",
+    dependencies: ["react-day-picker", "date-fns"],
+    registryDependencies: ["button"],
+    files: ["ui/calendar.tsx"],
+  },
   // {
   //   name: "card",
   //   type: "registry:ui",

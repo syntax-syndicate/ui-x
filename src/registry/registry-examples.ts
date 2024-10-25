@@ -157,18 +157,30 @@ export const examples: Registry = [
   //   registryDependencies: ["button"],
   //   files: ["example/button-as-child.tsx"],
   // },
-  // {
-  //   name: "calendar-demo",
-  //   type: "registry:example",
-  //   registryDependencies: ["calendar"],
-  //   files: ["example/calendar-demo.tsx"],
-  // },
-  // {
-  //   name: "calendar-form",
-  //   type: "registry:example",
-  //   registryDependencies: ["calendar", "form", "popover"],
-  //   files: ["example/calendar-form.tsx"],
-  // },
+  {
+    name: "calendar-demo",
+    type: "registry:example",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar-demo.tsx"],
+  },
+  {
+    name: "calendar-multiple",
+    type: "registry:example",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar-multiple.tsx"],
+  },
+  {
+    name: "calendar-dropdown-layout",
+    type: "registry:example",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar-dropdown-layout.tsx"],
+  },
+  {
+    name: "calendar-form",
+    type: "registry:example",
+    registryDependencies: ["calendar", "button", "form"],
+    files: ["example/calendar-form.tsx"],
+  },
   // {
   //   name: "card-demo",
   //   type: "registry:example",

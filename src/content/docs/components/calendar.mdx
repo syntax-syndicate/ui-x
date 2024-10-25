@@ -3,7 +3,8 @@ title: Calendar
 description: A date field component that allows users to enter and edit date.
 component: true
 links:
-  doc: https://react-day-picker.js.org
+  doc: https://daypicker.dev
+  api: https://daypicker.dev/api
 ---
 
 <ComponentPreview
@@ -14,7 +15,7 @@ links:
 
 ## About
 
-The `Calendar` component is built on top of [React DayPicker](https://react-day-picker.js.org).
+The `Calendar` component is built on top of [React DayPicker](https://daypicker.dev).
 
 ## Installation
 
@@ -27,7 +28,7 @@ The `Calendar` component is built on top of [React DayPicker](https://react-day-
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add calendar
+npx shadcn@latest add https://ui-x.junwen-k.dev/r/calendar.json
 ```
 
 </TabsContent>
@@ -42,9 +43,9 @@ npx shadcn@latest add calendar
 npm install react-day-picker date-fns
 ```
 
-<Step>Add the `Button` component to your project.</Step>
+<Step>Add the `Button` and `Select` component to your project.</Step>
 
-The `Calendar` component uses the `Button` component. Make sure you have it installed in your project.
+The `Calendar` component uses the `Button` and `Select` component. Make sure you have it installed in your project.
 
 <Step>Copy and paste the following code into your project.</Step>
 
@@ -81,9 +82,17 @@ See the [React DayPicker](https://react-day-picker.js.org) documentation for mor
 
 ## Date Picker
 
-You can use the `<Calendar>` component to build a date picker. See the [Date Picker](/docs/components/date-picker) page for more information.
+For a complete Date Picker component with date input functionality, you can use the `<DatePicker>` component directly. See the [Date Picker](/docs/components/date-picker) page for more information.
 
 ## Examples
+
+### Multiple
+
+<ComponentPreview name="calendar-multiple" />
+
+### Dropdown Layout
+
+<ComponentPreview name="calendar-dropdown-layout" />
 
 ### Form
 

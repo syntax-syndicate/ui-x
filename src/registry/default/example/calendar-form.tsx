@@ -1,12 +1,9 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { format } from "date-fns"
-import { CalendarIcon } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
-import { cn } from "@/lib/utils"
 import { toast } from "@/registry/default/hooks/use-toast"
 import { Button } from "@/registry/default/ui/button"
 import { Calendar } from "@/registry/default/ui/calendar"
@@ -19,11 +16,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/registry/default/ui/form"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
 
 const FormSchema = z.object({
   dob: z.date({
@@ -54,28 +46,10 @@ export default function CalendarForm() {
           control={form.control}
           name="dob"
           render={({ field }) => (
-            <FormItem className="flex flex-col">
+            <FormItem>
               <FormLabel>Date of birth</FormLabel>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <FormControl>
-                    <Button
-                      variant={"outline"}
-                      className={cn(
-                        "w-[240px] pl-3 text-left font-normal",
-                        !field.value && "text-muted-foreground"
-                      )}
-                    >
-                      {field.value ? (
-                        format(field.value, "PPP")
-                      ) : (
-                        <span>Pick a date</span>
-                      )}
-                      <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                    </Button>
-                  </FormControl>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
+              <div className="flex">
+                <FormControl>
                   <Calendar
                     mode="single"
                     selected={field.value}
@@ -83,10 +57,11 @@ export default function CalendarForm() {
                     disabled={(date) =>
                       date > new Date() || date < new Date("1900-01-01")
                     }
-                    initialFocus
+                    autoFocus
+                    className="rounded-md border shadow"
                   />
-                </PopoverContent>
-              </Popover>
+                </FormControl>
+              </div>
               <FormDescription>
                 Your date of birth is used to calculate your age.
               </FormDescription>

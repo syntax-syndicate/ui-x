@@ -1,15 +1,23 @@
 "use client"
 
 import * as React from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { DayPicker } from "react-day-picker"
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from "lucide-react"
+import { DayPicker, UI, useDayPicker } from "react-day-picker"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/registry/default/ui/button"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/registry/default/ui/select"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
 function Calendar({
+  captionLayout = "label",
   className,
   classNames,
   showOutsideDays = true,
@@ -18,44 +26,104 @@ function Calendar({
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
+      captionLayout={captionLayout}
       className={cn("p-3", className)}
       classNames={{
-        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-4",
-        caption: "flex justify-center pt-1 relative items-center",
-        caption_label: "text-sm font-medium",
-        nav: "space-x-1 flex items-center",
-        nav_button: cn(
+        button_next: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+          "size-7 bg-transparent p-0 opacity-50 hover:opacity-100"
         ),
-        nav_button_previous: "absolute left-1",
-        nav_button_next: "absolute right-1",
-        table: "w-full border-collapse space-y-1",
-        head_row: "flex",
-        head_cell:
-          "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
-        row: "flex w-full mt-2",
-        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
-        day: cn(
+        button_previous: cn(
+          buttonVariants({ variant: "outline" }),
+          "size-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+        ),
+        caption_label: "text-sm font-medium aria-hidden:hidden",
+        day_button: cn(
           buttonVariants({ variant: "ghost" }),
-          "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
+          "size-9 font-normal"
         ),
-        day_range_end: "day-range-end",
-        day_selected:
-          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-        day_today: "bg-accent text-accent-foreground",
-        day_outside:
-          "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
-        day_disabled: "text-muted-foreground opacity-50",
-        day_range_middle:
-          "aria-selected:bg-accent aria-selected:text-accent-foreground",
-        day_hidden: "invisible",
+        day: "rounded-md p-0 text-center text-sm aria-selected:bg-accent",
+        disabled: "*:text-muted-foreground *:opacity-50",
+        dropdown: "first:basis-3/5 last:basis-2/5",
+        dropdowns: "flex basis-full items-center gap-2 text-sm font-medium",
+        hidden: "invisible",
+        month_caption: "flex items-center justify-center pt-1",
+        month_grid: "w-full border-collapse space-y-1",
+        month: cn(
+          "space-y-4",
+          captionLayout !== "label" && !props.hideNavigation && "mt-9"
+        ),
+        months:
+          "relative flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sm:gap-y-0",
+        nav: "absolute flex w-full items-center justify-between space-x-1 px-1",
+        outside:
+          "*:text-muted-foreground *:opacity-50 *:aria-selected:bg-accent/50 *:aria-selected:text-muted-foreground *:aria-selected:opacity-30",
+        range_end: "rounded-l-none",
+        range_middle:
+          "rounded-none first:rounded-l-md last:rounded-r-md *:aria-selected:bg-accent *:aria-selected:text-accent-foreground",
+        range_start: "rounded-r-none",
+        selected:
+          "*:bg-primary *:text-primary-foreground *:hover:bg-primary *:hover:text-primary-foreground *:focus:bg-primary *:focus:text-primary-foreground",
+        today: "*:bg-accent *:text-accent-foreground",
+        week: "mt-2 flex w-full",
+        weekday: "w-9 text-[0.8rem] font-normal text-muted-foreground",
+        weekdays: "flex",
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
+        Chevron: ({ orientation }) => {
+          switch (orientation) {
+            case "up":
+              return <ChevronUp className="size-4" />
+            case "down":
+              return <ChevronDown className="size-4" />
+            case "left":
+              return <ChevronLeft className="size-4" />
+            case "right":
+            default:
+              return <ChevronRight className="size-4" />
+          }
+        },
+        Dropdown: ({
+          "aria-label": ariaLabel,
+          disabled,
+          value,
+          onChange,
+          options,
+          className,
+        }) => {
+          const { classNames } = useDayPicker()
+
+          return (
+            <Select
+              disabled={disabled}
+              value={`${value}`}
+              onValueChange={(value) =>
+                onChange?.({
+                  target: { value },
+                } as React.ChangeEvent<HTMLSelectElement>)
+              }
+            >
+              <SelectTrigger
+                aria-label={ariaLabel}
+                className={cn(classNames[UI.Dropdown], className)}
+              >
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {options?.map((option) => (
+                  <SelectItem
+                    key={option.value}
+                    value={`${option.value}`}
+                    disabled={option.disabled}
+                  >
+                    {option.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )
+        },
       }}
       {...props}
     />
