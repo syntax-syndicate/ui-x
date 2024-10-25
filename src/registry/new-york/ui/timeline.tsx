@@ -46,7 +46,7 @@ export const TimelineDot = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "mt-1 flex size-5 items-center justify-center empty:after:block empty:after:rounded-full empty:after:outline-current [&>svg]:size-5",
+      "mt-1 flex size-4 items-center justify-center empty:after:block empty:after:rounded-full empty:after:outline-current [&_svg]:size-4",
       variant === "default" && "empty:after:size-2.5 empty:after:bg-current",
       variant === "outline" && "empty:after:size-2 empty:after:outline",
       className
