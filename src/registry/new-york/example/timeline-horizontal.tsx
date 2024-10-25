@@ -50,7 +50,7 @@ export default function TimelineHorizontal() {
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <TimelineTitle>Out for delivery</TimelineTitle>
+          <TimelineTitle>Out for Delivery</TimelineTitle>
           <TimelineDescription className="whitespace-nowrap">
             07:00 AM, January 8, 2024
           </TimelineDescription>
