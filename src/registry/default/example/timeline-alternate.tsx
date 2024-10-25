@@ -14,7 +14,7 @@ export default function TimelineAlternate() {
     <Timeline>
       <TimelineItem className="before:flex-1">
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot variant="outline" />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
@@ -28,13 +28,13 @@ export default function TimelineAlternate() {
           <TimelineDescription>Because it&apos;s awesome!</TimelineDescription>
         </TimelineContent>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot variant="outline" />
           <TimelineConnector />
         </TimelineSeparator>
       </TimelineItem>
       <TimelineItem className="before:flex-1">
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot variant="outline" />
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
@@ -50,7 +50,7 @@ export default function TimelineAlternate() {
           </TimelineDescription>
         </TimelineContent>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot variant="outline" />
         </TimelineSeparator>
       </TimelineItem>
     </Timeline>

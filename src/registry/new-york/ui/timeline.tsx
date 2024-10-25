@@ -74,7 +74,7 @@ export const TimelineContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex-1 pb-8 first:text-right last:text-left", className)}
+    className={cn("flex-1 pb-7 first:text-right last:text-left", className)}
     {...props}
   />
 ))
@@ -92,7 +92,7 @@ export const TimelineDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("text-[0.8em] text-muted-foreground", className)}
     {...props}
   />
 ))
