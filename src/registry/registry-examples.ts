@@ -425,6 +425,12 @@ export const examples: Registry = [
     registryDependencies: ["timeline"],
     files: ["example/timeline-with-icon.tsx"],
   },
+  {
+    name: "timeline-horizontal",
+    type: "registry:example",
+    registryDependencies: ["timeline"],
+    files: ["example/timeline-horizontal.tsx"],
+  },
   // {
   //   name: "input-demo",
   //   type: "registry:example",
