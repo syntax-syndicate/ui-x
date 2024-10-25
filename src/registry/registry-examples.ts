@@ -319,20 +319,12 @@ export const examples: Registry = [
   //   registryDependencies: ["data-table"],
   //   files: ["example/data-table-demo.tsx"],
   // },
-  // {
-  //   name: "date-picker-demo",
-  //   type: "registry:example",
-  //   registryDependencies: ["button", "calendar", "popover"],
-  //   files: ["example/date-picker-demo.tsx"],
-  //   dependencies: ["date-fns"],
-  // },
-  // {
-  //   name: "date-picker-form",
-  //   type: "registry:example",
-  //   registryDependencies: ["button", "calendar", "form", "popover"],
-  //   files: ["example/date-picker-form.tsx"],
-  //   dependencies: ["date-fns"],
-  // },
+  {
+    name: "date-field-primitive-demo",
+    type: "registry:example",
+    registryDependencies: ["date-field-primitive"],
+    files: ["example/date-field-primitive-demo.tsx"],
+  },
   // {
   //   name: "date-picker-with-presets",
   //   type: "registry:example",

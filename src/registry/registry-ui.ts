@@ -121,6 +121,17 @@ export const ui: Registry = [
   //   dependencies: ["@radix-ui/react-context-menu"],
   //   files: ["ui/context-menu.tsx"],
   // },
+  {
+    name: "date-field-primitive",
+    type: "registry:ui",
+    dependencies: [
+      "@radix-ui/primitive",
+      "@radix-ui/react-primitive",
+      "@radix-ui/react-use-controllable-state",
+      "date-fns",
+    ],
+    files: ["ui/date-field-primitive.tsx"],
+  },
   // {
   //   name: "dialog",
   //   type: "registry:ui",
