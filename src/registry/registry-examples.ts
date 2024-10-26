@@ -325,6 +325,12 @@ export const examples: Registry = [
     registryDependencies: ["date-field-primitive"],
     files: ["example/date-field-primitive-demo.tsx"],
   },
+  {
+    name: "description-list-demo",
+    type: "registry:example",
+    registryDependencies: ["description-list"],
+    files: ["example/description-list-demo.tsx"],
+  },
   // {
   //   name: "date-picker-with-presets",
   //   type: "registry:example",

@@ -132,6 +132,11 @@ export const ui: Registry = [
     ],
     files: ["ui/date-field-primitive.tsx"],
   },
+  {
+    name: "description-list",
+    type: "registry:ui",
+    files: ["ui/description-list.tsx"],
+  },
   // {
   //   name: "dialog",
   //   type: "registry:ui",
