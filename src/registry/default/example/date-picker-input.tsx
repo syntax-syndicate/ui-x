@@ -2,16 +2,13 @@ import {
   DatePicker,
   DatePickerCalendar,
   DatePickerContent,
-  DatePickerTrigger,
-  DatePickerValue,
+  DatePickerInput,
 } from "@/registry/default/ui/date-picker"
 
-export default function DatePickerDemo() {
+export default function DatePickerInputDemo() {
   return (
     <DatePicker mode="single">
-      <DatePickerTrigger className="w-[280px]">
-        <DatePickerValue placeholder="Pick a date" />
-      </DatePickerTrigger>
+      <DatePickerInput className="w-[280px]" />
       <DatePickerContent>
         <DatePickerCalendar />
       </DatePickerContent>

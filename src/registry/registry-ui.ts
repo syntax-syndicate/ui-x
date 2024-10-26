@@ -148,6 +148,17 @@ export const ui: Registry = [
     files: ["ui/date-picker-primitive.tsx"],
   },
   {
+    name: "date-picker",
+    type: "registry:ui",
+    registryDependencies: [
+      "button",
+      "calendar",
+      "date-picker-primitive",
+      "input-base",
+    ],
+    files: ["ui/date-picker.tsx"],
+  },
+  {
     name: "description-list",
     type: "registry:ui",
     files: ["ui/description-list.tsx"],

@@ -352,6 +352,25 @@ export const examples: Registry = [
     files: ["example/date-picker-primitive-range.tsx"],
   },
   {
+    name: "date-picker-demo",
+    type: "registry:example",
+    registryDependencies: ["date-picker"],
+    files: ["example/date-picker-demo.tsx"],
+  },
+  {
+    name: "date-picker-input",
+    type: "registry:example",
+    registryDependencies: ["date-picker"],
+    files: ["example/date-picker-input.tsx"],
+  },
+  {
+    name: "date-picker-form",
+    type: "registry:example",
+    registryDependencies: ["button", "date-picker", "form"],
+    files: ["example/date-picker-form.tsx"],
+    dependencies: ["date-fns"],
+  },
+  {
     name: "description-list-demo",
     type: "registry:example",
     registryDependencies: ["description-list"],
