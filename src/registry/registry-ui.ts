@@ -133,6 +133,21 @@ export const ui: Registry = [
     files: ["ui/date-field-primitive.tsx"],
   },
   {
+    name: "date-picker-primitive",
+    type: "registry:ui",
+    dependencies: [
+      "@radix-ui/primitive",
+      "@radix-ui/react-popover",
+      "@radix-ui/react-primitive",
+      "@radix-ui/react-slot",
+      "@radix-ui/react-use-controllable-state",
+      "date-fns",
+      "react-day-picker",
+    ],
+    registryDependencies: ["date-field-primitive"],
+    files: ["ui/date-picker-primitive.tsx"],
+  },
+  {
     name: "description-list",
     type: "registry:ui",
     files: ["ui/description-list.tsx"],

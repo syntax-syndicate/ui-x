@@ -326,6 +326,32 @@ export const examples: Registry = [
     files: ["example/date-field-primitive-demo.tsx"],
   },
   {
+    name: "date-picker-primitive-demo",
+    type: "registry:example",
+    registryDependencies: ["date-picker-primitive"],
+    files: ["example/date-picker-primitive-demo.tsx"],
+  },
+  {
+    name: "date-picker-primitive-input",
+    type: "registry:example",
+    registryDependencies: ["date-picker-primitive"],
+    files: ["example/date-picker-primitive-input.tsx"],
+  },
+  {
+    name: "date-picker-primitive-multiple",
+    type: "registry:example",
+    dependencies: ["date-fns"],
+    registryDependencies: ["date-picker-primitive"],
+    files: ["example/date-picker-primitive-multiple.tsx"],
+  },
+  {
+    name: "date-picker-primitive-range",
+    type: "registry:example",
+    dependencies: ["date-fns", "react-day-picker"],
+    registryDependencies: ["date-picker-primitive"],
+    files: ["example/date-picker-primitive-range.tsx"],
+  },
+  {
     name: "description-list-demo",
     type: "registry:example",
     registryDependencies: ["description-list"],
