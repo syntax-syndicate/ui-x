@@ -56,7 +56,7 @@ export const InputBase = React.forwardRef<
           }
         })}
         className={cn(
-          "flex min-h-10 cursor-text gap-2 rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background",
+          "flex min-h-10 cursor-text items-center gap-2 rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background",
           disabled && "cursor-not-allowed opacity-50",
           focused && "outline-none ring-2 ring-ring ring-offset-2",
           className
