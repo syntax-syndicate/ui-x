@@ -181,6 +181,42 @@ export const examples: Registry = [
     registryDependencies: ["calendar", "button", "form"],
     files: ["example/calendar-form.tsx"],
   },
+  {
+    name: "combobox-primitive-demo",
+    type: "registry:example",
+    registryDependencies: ["combobox-primitive"],
+    files: ["example/combobox-primitive-demo.tsx"],
+  },
+  {
+    name: "combobox-primitive-multi-select",
+    type: "registry:example",
+    registryDependencies: ["combobox-primitive"],
+    files: ["example/combobox-primitive-multi-select.tsx"],
+  },
+  {
+    name: "combobox-primitive-multiple",
+    type: "registry:example",
+    registryDependencies: ["combobox-primitive"],
+    files: ["example/combobox-primitive-multiple.tsx"],
+  },
+  {
+    name: "combobox-demo",
+    type: "registry:example",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox-demo.tsx"],
+  },
+  {
+    name: "combobox-loading",
+    type: "registry:example",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox-loading.tsx"],
+  },
+  {
+    name: "combobox-form",
+    type: "registry:example",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox-form.tsx"],
+  },
   // {
   //   name: "card-demo",
   //   type: "registry:example",

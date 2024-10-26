@@ -77,6 +77,27 @@ export const ui: Registry = [
     registryDependencies: ["button", "select"],
     files: ["ui/calendar.tsx"],
   },
+  {
+    name: "combobox-primitive",
+    type: "registry:ui",
+    dependencies: [
+      "@radix-ui/primitive",
+      "@radix-ui/react-compose-refs",
+      "@radix-ui/react-popover",
+      "@radix-ui/react-primitive",
+      "@radix-ui/react-roving-focus",
+      "@radix-ui/react-use-controllable-state",
+      "cmdk",
+    ],
+    files: ["ui/combobox-primitive.tsx"],
+  },
+  {
+    name: "combobox",
+    type: "registry:ui",
+    dependencies: ["@radix-ui/react-slot"],
+    registryDependencies: ["badge", "combobox-primitive", "input-base"],
+    files: ["ui/combobox-primitive.tsx"],
+  },
   // {
   //   name: "card",
   //   type: "registry:ui",

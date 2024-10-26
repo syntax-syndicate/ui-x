@@ -1,117 +1,85 @@
 ---
 title: Combobox
-description: Autocomplete input and command palette with a list of suggestions.
+description: Input field with autocomplete & autosuggest functionalities.
 component: true
+links:
+  doc: /docs/components/combobox-primitive
 ---
 
 <ComponentPreview
   name="combobox-demo"
-  description="A combobox with a list of frameworks."
+  className="[&_div[cmdk-root]]:max-w-xs"
 />
 
 ## Installation
 
-The Combobox is built using a composition of the `<Popover />` and the `<Command />` components.
+<Tabs defaultValue="cli">
 
-See installation instructions for the [Popover](/docs/components/popover#installation) and the [Command](/docs/components/command#installation) components.
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ui-x.junwen-k.dev/r/combobox.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>
+
+Add the `<Badge />`, `<ComboboxPrimitive />` and `<InputBase />` component to your project.
+
+</Step>
+
+The `<Combobox />` component uses `<Badge />`, `<ComboboxPrimitive />` and `<InputBase />` components. Make sure you have it installed in your project.
+
+See installation instructions for the [Badge](/docs/components/badge#installation), [ComboboxPrimitive](/docs/components/combobox-primitive#installation) and the [InputBase](/docs/components/input-base#installation) components.
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="combobox" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 
 ```tsx
-"use client"
-
-import * as React from "react"
-import { Check, ChevronsUpDown } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxGroup,
+  ComboboxInput,
+  ComboboxItem,
+} from "@/components/ui/combobox"
+```
 
-const frameworks = [
-  {
-    value: "next.js",
-    label: "Next.js",
-  },
-  {
-    value: "sveltekit",
-    label: "SvelteKit",
-  },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
-]
-
-export function ComboboxDemo() {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
-
-  return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          role="combobox"
-          aria-expanded={open}
-          className="w-[200px] justify-between"
-        >
-          {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
-          <CommandInput placeholder="Search framework..." />
-          <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
-            <CommandGroup>
-              {frameworks.map((framework) => (
-                <CommandItem
-                  key={framework.value}
-                  value={framework.value}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
-                    setOpen(false)
-                  }}
-                >
-                  <Check
-                    className={cn(
-                      "mr-2 h-4 w-4",
-                      value === framework.value ? "opacity-100" : "opacity-0"
-                    )}
-                  />
-                  {framework.label}
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
-        </Command>
-      </PopoverContent>
-    </Popover>
-  )
-}
+```tsx
+<Combobox type="single">
+  <ComboboxInput placeholder="Search fruit..." />
+  <ComboboxContent>
+    <ComboboxEmpty>No fruit found.</ComboboxEmpty>
+    <ComboboxGroup heading="Fruits">
+      <ComboboxItem value="apple">Apple</ComboboxItem>
+      <ComboboxItem value="banana">Banana</ComboboxItem>
+      <ComboboxItem value="blueberry">Blueberry</ComboboxItem>
+      <ComboboxItem value="grapes">Grapes</ComboboxItem>
+      <ComboboxItem value="pineapple">Pineapple</ComboboxItem>
+    </ComboboxGroup>
+  </ComboboxContent>
+</Combobox>
 ```
 
 ## Examples
@@ -120,26 +88,19 @@ export function ComboboxDemo() {
 
 <ComponentPreview
   name="combobox-demo"
-  description="A combobox with a list of frameworks."
+  className="[&_div[cmdk-root]]:max-w-xs"
 />
 
-### Popover
-
-<ComponentPreview name="combobox-popover" />
-
-### Dropdown menu
+### Loading
 
 <ComponentPreview
-  name="combobox-dropdown-menu"
-  description="A combobox in a dropdown menu"
+  name="combobox-loading"
+  className="[&_div[cmdk-root]]:max-w-xs"
 />
-
-### Responsive
-
-You can create a responsive combobox by using the `<Popover />` on desktop and the `<Drawer />` components on mobile.
-
-<ComponentPreview name="combobox-responsive" />
 
 ### Form
 
-<ComponentPreview name="combobox-form" />
+<ComponentPreview
+  name="combobox-form"
+  className="[&_div[cmdk-root]]:max-w-xs"
+/>
