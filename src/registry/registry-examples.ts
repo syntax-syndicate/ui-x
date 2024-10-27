@@ -499,6 +499,18 @@ export const examples: Registry = [
     files: ["example/input-base-form.tsx"],
   },
   {
+    name: "time-demo",
+    type: "registry:example",
+    registryDependencies: ["time"],
+    files: ["example/time-demo.tsx"],
+  },
+  {
+    name: "time-format",
+    type: "registry:example",
+    registryDependencies: ["time"],
+    files: ["example/time-format.tsx"],
+  },
+  {
     name: "timeline-demo",
     type: "registry:example",
     registryDependencies: ["timeline"],

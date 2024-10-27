@@ -232,6 +232,12 @@ export const ui: Registry = [
     files: ["ui/input-base.tsx"],
   },
   {
+    name: "time",
+    type: "registry:ui",
+    dependencies: ["date-fns"],
+    files: ["ui/time.tsx"],
+  },
+  {
     name: "timeline",
     type: "registry:ui",
     files: ["ui/timeline.tsx"],
