@@ -475,6 +475,12 @@ export const examples: Registry = [
   //   files: ["example/hover-card-demo.tsx"],
   // },
   {
+    name: "file-list-demo",
+    type: "registry:example",
+    registryDependencies: ["file-list"],
+    files: ["example/file-list-demo.tsx"],
+  },
+  {
     name: "input-base-demo",
     type: "registry:example",
     registryDependencies: ["input-base"],

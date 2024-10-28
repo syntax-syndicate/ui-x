@@ -76,6 +76,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "File List",
+          href: "/docs/components/file-list",
+          items: [],
+        },
+        {
           title: "Input Base",
           href: "/docs/components/input-base",
           items: [],

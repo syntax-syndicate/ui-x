@@ -227,6 +227,13 @@ export const ui: Registry = [
   //   files: ["ui/input.tsx"],
   // },
   {
+    name: "file-list",
+    type: "registry:ui",
+    dependencies: ["pretty-bytes"],
+    registryDependencies: ["button", "progress"],
+    files: ["ui/file-list.tsx"],
+  },
+  {
     name: "input-base",
     type: "registry:ui",
     files: ["ui/input-base.tsx"],
