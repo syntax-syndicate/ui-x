@@ -117,10 +117,10 @@ ComboboxContent.displayName = "ComboboxContent"
 export const ComboboxEmpty = React.forwardRef<
   React.ElementRef<typeof ComboboxPrimitive.Empty>,
   React.ComponentPropsWithoutRef<typeof ComboboxPrimitive.Empty>
->((props, ref) => (
+>(({ className, ...props }, ref) => (
   <ComboboxPrimitive.Empty
     ref={ref}
-    className="py-6 text-center text-sm"
+    className={cn("py-6 text-center text-sm", className)}
     {...props}
   />
 ))
@@ -129,10 +129,10 @@ ComboboxEmpty.displayName = "ComboboxEmpty"
 export const ComboboxLoading = React.forwardRef<
   React.ElementRef<typeof ComboboxPrimitive.Loading>,
   React.ComponentPropsWithoutRef<typeof ComboboxPrimitive.Loading>
->((props, ref) => (
+>(({ className, ...props }, ref) => (
   <ComboboxPrimitive.Loading
     ref={ref}
-    className="flex items-center justify-center px-1.5 py-2"
+    className={cn("flex items-center justify-center px-1.5 py-2", className)}
     {...props}
   >
     <Loader className="size-4 animate-spin [mask:conic-gradient(transparent_45deg,_white)]" />

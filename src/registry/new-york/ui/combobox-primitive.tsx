@@ -534,7 +534,7 @@ export const ComboboxItemIndicator = React.forwardRef<
     return null
   }
 
-  return <Primitive.span aria-hidden {...props} ref={ref} />
+  return <Primitive.span ref={ref} aria-hidden {...props} />
 })
 ComboboxItemIndicator.displayName = "ComboboxItemIndicator"
 
