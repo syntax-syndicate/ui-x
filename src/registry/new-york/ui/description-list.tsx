@@ -28,10 +28,7 @@ export const DescriptionDetail = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <dd
     ref={ref}
-    className={cn(
-      "text-sm text-muted-foreground empty:text-muted-foreground/50 empty:after:content-['N/A']",
-      className
-    )}
+    className={cn("text-sm text-muted-foreground", className)}
     {...props}
   />
 ))
