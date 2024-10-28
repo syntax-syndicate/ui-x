@@ -13,7 +13,7 @@ export const Icons = {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="16"
+        strokeWidth="32"
       />
       <line
         x1="192"
@@ -24,7 +24,18 @@ export const Icons = {
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="16"
+        strokeWidth="32"
+      />
+      <line
+        x1="128"
+        y1="128"
+        x2="208"
+        y2="208"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="32"
       />
     </svg>
   ),

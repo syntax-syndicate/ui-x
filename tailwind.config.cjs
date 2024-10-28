@@ -75,11 +75,48 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
+        "landing-horizontal-line-intro": {
+          from: {
+            opacity: 1,
+          },
+          to: {
+            width: "calc(100% + var(--line-offset))",
+            opacity: 0.15,
+          },
+        },
+        "landing-vertical-line-intro": {
+          from: {
+            opacity: 1,
+          },
+          to: {
+            height: "calc(100% + var(--line-offset))",
+            opacity: 0.15,
+          },
+        },
+        "landing-circle-intro": {
+          from: {
+            opacity: 0,
+            strokeDashoffset: 0,
+          },
+          "50%": {
+            opacity: 0.3,
+          },
+          to: {
+            opacity: 0.15,
+            strokeDashoffset: 400,
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
+        "landing-circle-intro":
+          "landing-circle-intro 1.5s ease-in-out forwards",
+        "landing-horizontal-line-intro":
+          "landing-horizontal-line-intro var(--animation-duration,1.25s) ease-in-out forwards",
+        "landing-vertical-line-intro":
+          "landing-vertical-line-intro var(--animation-duration,1s) ease-in-out forwards",
       },
     },
   },
