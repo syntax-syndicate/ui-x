@@ -202,6 +202,23 @@ export const ui: Registry = [
   //   dependencies: ["@radix-ui/react-dropdown-menu"],
   //   files: ["ui/dropdown-menu.tsx"],
   // },
+  {
+    name: "dropzone-primitive",
+    type: "registry:ui",
+    dependencies: [
+      "@radix-ui/primitive",
+      "@radix-ui/react-primitive",
+      "react-dropzone",
+    ],
+    files: ["ui/dropzone-primitive.tsx"],
+  },
+  {
+    name: "dropzone",
+    type: "registry:ui",
+    dependencies: ["@radix-ui/react-primitive"],
+    registryDependencies: ["dropzone-primitive"],
+    files: ["ui/dropzone.tsx"],
+  },
   // {
   //   name: "form",
   //   type: "registry:ui",

@@ -76,6 +76,17 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Dropzone",
+          href: "/docs/components/dropzone-primitive",
+          label: "Primitive",
+          items: [],
+        },
+        {
+          title: "Dropzone",
+          href: "/docs/components/dropzone",
+          items: [],
+        },
+        {
           title: "File List",
           href: "/docs/components/file-list",
           items: [],

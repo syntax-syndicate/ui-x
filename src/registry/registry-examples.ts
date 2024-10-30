@@ -302,36 +302,6 @@ export const examples: Registry = [
   //   files: ["example/collapsible-demo.tsx"],
   // },
   // {
-  //   name: "combobox-demo",
-  //   type: "registry:example",
-  //   registryDependencies: ["command"],
-  //   files: ["example/combobox-demo.tsx"],
-  // },
-  // {
-  //   name: "combobox-dropdown-menu",
-  //   type: "registry:example",
-  //   registryDependencies: ["command", "dropdown-menu", "button"],
-  //   files: ["example/combobox-dropdown-menu.tsx"],
-  // },
-  // {
-  //   name: "combobox-form",
-  //   type: "registry:example",
-  //   registryDependencies: ["command", "form"],
-  //   files: ["example/combobox-form.tsx"],
-  // },
-  // {
-  //   name: "combobox-popover",
-  //   type: "registry:example",
-  //   registryDependencies: ["combobox", "popover"],
-  //   files: ["example/combobox-popover.tsx"],
-  // },
-  // {
-  //   name: "combobox-responsive",
-  //   type: "registry:example",
-  //   registryDependencies: ["combobox", "popover", "drawer"],
-  //   files: ["example/combobox-responsive.tsx"],
-  // },
-  // {
   //   name: "command-demo",
   //   type: "registry:example",
   //   registryDependencies: ["command"],
@@ -468,6 +438,31 @@ export const examples: Registry = [
   //   registryDependencies: ["dropdown-menu", "radio-group"],
   //   files: ["example/dropdown-menu-radio-group.tsx"],
   // },
+  {
+    name: "dropzone-demo",
+    type: "registry:example",
+    registryDependencies: ["dropzone", "file-list"],
+    files: ["example/dropzone-demo.tsx"],
+  },
+  {
+    name: "dropzone-trigger",
+    type: "registry:example",
+    registryDependencies: ["button", "dropzone"],
+    files: ["example/dropzone-trigger.tsx"],
+  },
+  {
+    name: "dropzone-form",
+    type: "registry:example",
+    registryDependencies: [
+      "button",
+      "dropzone",
+      "file-list",
+      "form",
+      "input-base",
+    ],
+    dependencies: ["pretty-bytes"],
+    files: ["example/dropzone-form.tsx"],
+  },
   // {
   //   name: "hover-card-demo",
   //   type: "registry:example",
