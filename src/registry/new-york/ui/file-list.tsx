@@ -12,7 +12,7 @@ export const FileList = React.forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div">
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("space-y-4", className)} {...props} />
+  <div ref={ref} className={cn("grid gap-4", className)} {...props} />
 ))
 FileList.displayName = "FileList"
 
