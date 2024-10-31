@@ -4,6 +4,20 @@ import { Primitive } from "@radix-ui/react-primitive"
 import { useControllableState } from "@radix-ui/react-use-controllable-state"
 import { Options, useTimescape } from "timescape/react"
 
+export type DateTimeFieldContextProps = {
+  disabled?: boolean
+} & Omit<ReturnType<typeof useTimescape>, "update" | "_manager">
+
+const DateTimeFieldContext = React.createContext<DateTimeFieldContextProps>({
+  getInputProps: () => ({ ref: () => null }),
+  getRootProps: () => ({ ref: () => null }),
+  options: {},
+  disabled: false,
+})
+
+export const useDateTimeFieldContext = () =>
+  React.useContext(DateTimeFieldContext)
+
 export interface DateTimeFieldProps
   extends Omit<Options, "date" | "onChangeDate">,
     Omit<
@@ -13,14 +27,8 @@ export interface DateTimeFieldProps
   value?: Date | null
   defaultValue?: Date
   onValueChange?: (value: Date | null) => void
+  disabled?: boolean
 }
-
-const DateTimeFieldContext = React.createContext(
-  {} as Omit<ReturnType<typeof useTimescape>, "update" | "_manager">
-)
-
-export const useDateTimeFieldContext = () =>
-  React.useContext(DateTimeFieldContext)
 
 export const DateTimeField = React.forwardRef<
   React.ElementRef<typeof Primitive.div>,
@@ -31,6 +39,7 @@ export const DateTimeField = React.forwardRef<
       value: valueProp,
       defaultValue,
       onValueChange,
+      disabled,
       digits,
       hour12,
       maxDate,
@@ -100,8 +109,12 @@ export const DateTimeField = React.forwardRef<
     const composedRefs = useComposedRefs(ref, (node) => rootRef(node)!)
 
     return (
-      <DateTimeFieldContext.Provider value={timescape}>
-        <Primitive.div ref={composedRefs} {...rootProps}>
+      <DateTimeFieldContext.Provider value={{ ...timescape, disabled }}>
+        <Primitive.div
+          ref={composedRefs}
+          data-disabled={disabled}
+          {...rootProps}
+        >
           {children}
         </Primitive.div>
       </DateTimeFieldContext.Provider>
@@ -113,98 +126,151 @@ DateTimeField.displayName = "DateTimeField"
 export const DateTimeFieldSegmentSeparator = React.forwardRef<
   React.ElementRef<typeof Primitive.span>,
   React.ComponentPropsWithoutRef<typeof Primitive.span>
->((props, ref) => <Primitive.span ref={ref} aria-hidden="true" {...props} />)
+>((props, ref) => {
+  const { disabled } = useDateTimeFieldContext()
+
+  return (
+    <Primitive.span
+      ref={ref}
+      aria-hidden="true"
+      data-disabled={disabled}
+      {...props}
+    />
+  )
+})
 DateTimeFieldSegmentSeparator.displayName = "DateTimeFieldSegmentSeparator"
 
 export const DateTimeFieldSegmentYears = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
->((props, ref) => {
-  const { getInputProps } = useDateTimeFieldContext()
+>(({ disabled: disabledProp, ...props }, ref) => {
+  const { getInputProps, disabled } = useDateTimeFieldContext()
 
   const { ref: inputRef, ...inputProps } = getInputProps("years")
 
   const composedRefs = useComposedRefs(ref, inputRef)
 
-  return <Primitive.input ref={composedRefs} {...inputProps} {...props} />
+  return (
+    <Primitive.input
+      ref={composedRefs}
+      {...inputProps}
+      disabled={disabled || disabledProp}
+      {...props}
+    />
+  )
 })
 DateTimeFieldSegmentYears.displayName = "DateTimeFieldSegmentYears"
 
 export const DateTimeFieldSegmentMonths = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
->((props, ref) => {
-  const { getInputProps } = useDateTimeFieldContext()
+>(({ disabled: disabledProp, ...props }, ref) => {
+  const { getInputProps, disabled } = useDateTimeFieldContext()
 
   const { ref: inputRef, ...inputProps } = getInputProps("months")
 
   const composedRefs = useComposedRefs(ref, inputRef)
 
-  return <Primitive.input ref={composedRefs} {...inputProps} {...props} />
+  return (
+    <Primitive.input
+      ref={composedRefs}
+      {...inputProps}
+      disabled={disabled || disabledProp}
+      {...props}
+    />
+  )
 })
 DateTimeFieldSegmentMonths.displayName = "DateTimeFieldSegmentMonths"
 
 export const DateTimeFieldSegmentDays = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
->((props, ref) => {
-  const { getInputProps } = useDateTimeFieldContext()
+>(({ disabled: disabledProp, ...props }, ref) => {
+  const { getInputProps, disabled } = useDateTimeFieldContext()
 
   const { ref: inputRef, ...inputProps } = getInputProps("days")
 
   const composedRefs = useComposedRefs(ref, inputRef)
 
-  return <Primitive.input ref={composedRefs} {...inputProps} {...props} />
+  return (
+    <Primitive.input
+      ref={composedRefs}
+      {...inputProps}
+      disabled={disabled || disabledProp}
+      {...props}
+    />
+  )
 })
 DateTimeFieldSegmentDays.displayName = "DateTimeFieldSegmentDays"
 
 export const DateTimeFieldSegmentHours = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
->((props, ref) => {
-  const { getInputProps } = useDateTimeFieldContext()
+>(({ disabled: disabledProp, ...props }, ref) => {
+  const { getInputProps, disabled } = useDateTimeFieldContext()
 
   const { ref: inputRef, ...inputProps } = getInputProps("hours")
 
   const composedRefs = useComposedRefs(ref, inputRef)
 
-  return <Primitive.input ref={composedRefs} {...inputProps} {...props} />
+  return (
+    <Primitive.input
+      ref={composedRefs}
+      {...inputProps}
+      disabled={disabled || disabledProp}
+      {...props}
+    />
+  )
 })
 DateTimeFieldSegmentHours.displayName = "DateTimeFieldSegmentHours"
 
 export const DateTimeFieldSegmentMinutes = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
->((props, ref) => {
-  const { getInputProps } = useDateTimeFieldContext()
+>(({ disabled: disabledProp, ...props }, ref) => {
+  const { getInputProps, disabled } = useDateTimeFieldContext()
 
   const { ref: inputRef, ...inputProps } = getInputProps("minutes")
 
   const composedRefs = useComposedRefs(ref, inputRef)
 
-  return <Primitive.input ref={composedRefs} {...inputProps} {...props} />
+  return (
+    <Primitive.input
+      ref={composedRefs}
+      {...inputProps}
+      disabled={disabled || disabledProp}
+      {...props}
+    />
+  )
 })
 DateTimeFieldSegmentMinutes.displayName = "DateTimeFieldSegmentMinutes"
 
 export const DateTimeFieldSegmentSeconds = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
->((props, ref) => {
-  const { getInputProps } = useDateTimeFieldContext()
+>(({ disabled: disabledProp, ...props }, ref) => {
+  const { getInputProps, disabled } = useDateTimeFieldContext()
 
   const { ref: inputRef, ...inputProps } = getInputProps("seconds")
 
   const composedRefs = useComposedRefs(ref, inputRef)
 
-  return <Primitive.input ref={composedRefs} {...inputProps} {...props} />
+  return (
+    <Primitive.input
+      ref={composedRefs}
+      {...inputProps}
+      disabled={disabled || disabledProp}
+      {...props}
+    />
+  )
 })
 DateTimeFieldSegmentSeconds.displayName = "DateTimeFieldSegmentSeconds"
 
 export const DateTimeFieldSegmentAmPm = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
->((props, ref) => {
-  const { getInputProps, options } = useDateTimeFieldContext()
+>(({ disabled: disabledProp, ...props }, ref) => {
+  const { getInputProps, disabled, options } = useDateTimeFieldContext()
 
   const { ref: inputRef, ...inputProps } = getInputProps("am/pm")
 
@@ -214,7 +280,14 @@ export const DateTimeFieldSegmentAmPm = React.forwardRef<
     return null
   }
 
-  return <Primitive.input ref={composedRefs} {...inputProps} {...props} />
+  return (
+    <Primitive.input
+      ref={composedRefs}
+      {...inputProps}
+      disabled={disabled || disabledProp}
+      {...props}
+    />
+  )
 })
 DateTimeFieldSegmentAmPm.displayName = "DateTimeFieldSegmentAmPm"
 
