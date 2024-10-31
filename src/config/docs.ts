@@ -60,6 +60,12 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Date Time Field",
+          href: "/docs/components/date-time-field-primitive",
+          label: "Primitive",
+          items: [],
+        },
+        {
           title: "Date Picker",
           href: "/docs/components/date-picker-primitive",
           label: "Primitive",

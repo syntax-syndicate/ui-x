@@ -154,6 +154,17 @@ export const ui: Registry = [
     files: ["ui/date-field-primitive.tsx"],
   },
   {
+    name: "date-time-field-primitive",
+    type: "registry:ui",
+    dependencies: [
+      "@radix-ui/react-compose-refs",
+      "@radix-ui/react-primitive",
+      "@radix-ui/react-use-controllable-state",
+      "timescape",
+    ],
+    files: ["ui/date-time-field-primitive.tsx"],
+  },
+  {
     name: "date-picker-primitive",
     type: "registry:ui",
     dependencies: [

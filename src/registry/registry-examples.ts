@@ -326,6 +326,12 @@ export const examples: Registry = [
   //   files: ["example/data-table-demo.tsx"],
   // },
   {
+    name: "date-time-field-primitive-demo",
+    type: "registry:example",
+    registryDependencies: ["date-time-field-primitive"],
+    files: ["example/date-time-field-primitive-demo.tsx"],
+  },
+  {
     name: "date-field-primitive-demo",
     type: "registry:example",
     registryDependencies: ["date-field-primitive"],
