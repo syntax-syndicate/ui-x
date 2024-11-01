@@ -4,7 +4,13 @@ export default function DatePickerPrimitiveInput() {
   return (
     <DatePickerPrimitive.Root mode="single">
       <DatePickerPrimitive.Anchor>
-        <DatePickerPrimitive.Input />
+        <DatePickerPrimitive.DateField>
+          <DatePickerPrimitive.DateFieldDays />
+          <DatePickerPrimitive.DateFieldSeparator />
+          <DatePickerPrimitive.DateFieldMonths />
+          <DatePickerPrimitive.DateFieldSeparator />
+          <DatePickerPrimitive.DateFieldYears />
+        </DatePickerPrimitive.DateField>
         <DatePickerPrimitive.Clear>&#215;</DatePickerPrimitive.Clear>
         <DatePickerPrimitive.Trigger>&#8595;</DatePickerPrimitive.Trigger>
       </DatePickerPrimitive.Anchor>

@@ -123,7 +123,7 @@ export const DateTimeField = React.forwardRef<
 )
 DateTimeField.displayName = "DateTimeField"
 
-export const DateTimeFieldSegmentSeparator = React.forwardRef<
+export const DateTimeFieldSeparator = React.forwardRef<
   React.ElementRef<typeof Primitive.span>,
   React.ComponentPropsWithoutRef<typeof Primitive.span>
 >((props, ref) => {
@@ -138,9 +138,9 @@ export const DateTimeFieldSegmentSeparator = React.forwardRef<
     />
   )
 })
-DateTimeFieldSegmentSeparator.displayName = "DateTimeFieldSegmentSeparator"
+DateTimeFieldSeparator.displayName = "DateTimeFieldSeparator"
 
-export const DateTimeFieldSegmentYears = React.forwardRef<
+export const DateTimeFieldYears = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
 >(({ disabled: disabledProp, ...props }, ref) => {
@@ -159,9 +159,9 @@ export const DateTimeFieldSegmentYears = React.forwardRef<
     />
   )
 })
-DateTimeFieldSegmentYears.displayName = "DateTimeFieldSegmentYears"
+DateTimeFieldYears.displayName = "DateTimeFieldYears"
 
-export const DateTimeFieldSegmentMonths = React.forwardRef<
+export const DateTimeFieldMonths = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
 >(({ disabled: disabledProp, ...props }, ref) => {
@@ -180,9 +180,9 @@ export const DateTimeFieldSegmentMonths = React.forwardRef<
     />
   )
 })
-DateTimeFieldSegmentMonths.displayName = "DateTimeFieldSegmentMonths"
+DateTimeFieldMonths.displayName = "DateTimeFieldMonths"
 
-export const DateTimeFieldSegmentDays = React.forwardRef<
+export const DateTimeFieldDays = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
 >(({ disabled: disabledProp, ...props }, ref) => {
@@ -201,9 +201,9 @@ export const DateTimeFieldSegmentDays = React.forwardRef<
     />
   )
 })
-DateTimeFieldSegmentDays.displayName = "DateTimeFieldSegmentDays"
+DateTimeFieldDays.displayName = "DateTimeFieldDays"
 
-export const DateTimeFieldSegmentHours = React.forwardRef<
+export const DateTimeFieldHours = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
 >(({ disabled: disabledProp, ...props }, ref) => {
@@ -222,9 +222,9 @@ export const DateTimeFieldSegmentHours = React.forwardRef<
     />
   )
 })
-DateTimeFieldSegmentHours.displayName = "DateTimeFieldSegmentHours"
+DateTimeFieldHours.displayName = "DateTimeFieldHours"
 
-export const DateTimeFieldSegmentMinutes = React.forwardRef<
+export const DateTimeFieldMinutes = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
 >(({ disabled: disabledProp, ...props }, ref) => {
@@ -243,9 +243,9 @@ export const DateTimeFieldSegmentMinutes = React.forwardRef<
     />
   )
 })
-DateTimeFieldSegmentMinutes.displayName = "DateTimeFieldSegmentMinutes"
+DateTimeFieldMinutes.displayName = "DateTimeFieldMinutes"
 
-export const DateTimeFieldSegmentSeconds = React.forwardRef<
+export const DateTimeFieldSeconds = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
 >(({ disabled: disabledProp, ...props }, ref) => {
@@ -264,9 +264,9 @@ export const DateTimeFieldSegmentSeconds = React.forwardRef<
     />
   )
 })
-DateTimeFieldSegmentSeconds.displayName = "DateTimeFieldSegmentSeconds"
+DateTimeFieldSeconds.displayName = "DateTimeFieldSeconds"
 
-export const DateTimeFieldSegmentAmPm = React.forwardRef<
+export const DateTimeFieldAmPm = React.forwardRef<
   React.ElementRef<typeof Primitive.input>,
   React.ComponentPropsWithoutRef<typeof Primitive.input>
 >(({ disabled: disabledProp, ...props }, ref) => {
@@ -289,26 +289,16 @@ export const DateTimeFieldSegmentAmPm = React.forwardRef<
     />
   )
 })
-DateTimeFieldSegmentAmPm.displayName = "DateTimeFieldSegmentAmPm"
+DateTimeFieldAmPm.displayName = "DateTimeFieldAmPm"
 
 const Root = DateTimeField
-const SegmentSeparator = DateTimeFieldSegmentSeparator
-const SegmentDays = DateTimeFieldSegmentDays
-const SegmentMonths = DateTimeFieldSegmentMonths
-const SegmentYears = DateTimeFieldSegmentYears
-const SegmentHours = DateTimeFieldSegmentHours
-const SegmentMinutes = DateTimeFieldSegmentMinutes
-const SegmentSeconds = DateTimeFieldSegmentSeconds
-const SegmentAmPm = DateTimeFieldSegmentAmPm
+const Separator = DateTimeFieldSeparator
+const Days = DateTimeFieldDays
+const Months = DateTimeFieldMonths
+const Years = DateTimeFieldYears
+const Hours = DateTimeFieldHours
+const Minutes = DateTimeFieldMinutes
+const Seconds = DateTimeFieldSeconds
+const AmPm = DateTimeFieldAmPm
 
-export {
-  Root,
-  SegmentSeparator,
-  SegmentDays,
-  SegmentMonths,
-  SegmentYears,
-  SegmentHours,
-  SegmentMinutes,
-  SegmentSeconds,
-  SegmentAmPm,
-}
+export { Root, Separator, Days, Months, Years, Hours, Minutes, Seconds, AmPm }

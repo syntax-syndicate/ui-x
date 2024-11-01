@@ -35,6 +35,30 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Primitives",
+      items: [
+        {
+          title: "Combobox",
+          href: "/docs/components/combobox-primitive",
+        },
+        {
+          title: "Date Time Field",
+          href: "/docs/components/date-time-field-primitive",
+          items: [],
+        },
+        {
+          title: "Date Picker",
+          href: "/docs/components/date-picker-primitive",
+          items: [],
+        },
+        {
+          title: "Dropzone",
+          href: "/docs/components/dropzone-primitive",
+          items: [],
+        },
+      ],
+    },
+    {
       title: "Components",
       items: [
         {
@@ -44,31 +68,12 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Combobox",
-          href: "/docs/components/combobox-primitive",
-          label: "Primitive",
-          items: [],
-        },
-        {
-          title: "Combobox",
           href: "/docs/components/combobox",
           items: [],
         },
         {
           title: "Date Field",
-          href: "/docs/components/date-field-primitive",
-          label: "Primitive",
-          items: [],
-        },
-        {
-          title: "Date Time Field",
-          href: "/docs/components/date-time-field-primitive",
-          label: "Primitive",
-          items: [],
-        },
-        {
-          title: "Date Picker",
-          href: "/docs/components/date-picker-primitive",
-          label: "Primitive",
+          href: "/docs/components/date-field",
           items: [],
         },
         {
@@ -79,12 +84,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Description List",
           href: "/docs/components/description-list",
-          items: [],
-        },
-        {
-          title: "Dropzone",
-          href: "/docs/components/dropzone-primitive",
-          label: "Primitive",
           items: [],
         },
         {
@@ -100,6 +99,11 @@ export const docsConfig: DocsConfig = {
         {
           title: "Input Base",
           href: "/docs/components/input-base",
+          items: [],
+        },
+        {
+          title: "Time Field",
+          href: "/docs/components/time-field",
           items: [],
         },
         {

@@ -15,11 +15,10 @@ import {
   type DayPickerProps as DayPickerPrimitiveProps,
 } from "react-day-picker"
 
-import * as DateFieldPrimitive from "@/registry/default/ui/date-field-primitive"
+import * as DateTimeFieldPrimitive from "@/registry/new-york/ui/date-time-field-primitive"
 
 export type DatePickerContextProps = {
   formatStr: string
-  inputFormatStr: string
   month?: Date
   onMonthChange: (month: Date) => void
   disabled?: boolean
@@ -65,7 +64,6 @@ export type DatePickerContextProps = {
 const DatePickerContext = React.createContext<DatePickerContextProps>({
   mode: "single",
   formatStr: "PPP",
-  inputFormatStr: "yyyy-MM-dd",
   month: undefined,
   onMonthChange: () => {},
   value: null,
@@ -81,7 +79,6 @@ export interface DatePickerBaseProps
   mode?: DatePickerMode | undefined
   required?: boolean
   formatStr?: string
-  inputFormatStr?: string
   month?: Date
   defaultMonth?: Date
   onMonthChange?: (month: Date) => void
@@ -158,7 +155,6 @@ export type DatePickerProps = DatePickerBaseProps &
 export const DatePicker = <T extends DatePickerMode = "single">({
   mode = "single" as T,
   formatStr = "PPP",
-  inputFormatStr = "yyyy-MM-dd",
   open,
   onOpenChange,
   defaultOpen,
@@ -192,7 +188,6 @@ export const DatePicker = <T extends DatePickerMode = "single">({
           mode,
           required,
           formatStr,
-          inputFormatStr,
           month,
           onMonthChange: setMonth,
           value,
@@ -215,33 +210,26 @@ export const DatePicker = <T extends DatePickerMode = "single">({
 
 export const DatePickerTrigger = PopoverPrimitive.Trigger
 
-export const DatePickerInput = React.forwardRef<
-  React.ElementRef<typeof DateFieldPrimitive.Root>,
+export const DatePickerDateField = React.forwardRef<
+  React.ElementRef<typeof DateTimeFieldPrimitive.Root>,
   Omit<
-    React.ComponentPropsWithoutRef<typeof DateFieldPrimitive.Root>,
-    "inputFormatStr" | "onValueChange"
+    React.ComponentPropsWithoutRef<typeof DateTimeFieldPrimitive.Root>,
+    "value" | "onValueChange"
   >
->((props, ref) => {
-  const {
-    mode,
-    inputFormatStr,
-    onMonthChange,
-    value,
-    onValueChange,
-    required,
-    disabled,
-  } = useDatePickerContext()
+>(({ disabled: disabledProp, ...props }, ref) => {
+  const { mode, onMonthChange, value, onValueChange, required, disabled } =
+    useDatePickerContext()
 
   if (mode !== "single") {
     throw new Error(
-      '<DatePickerInput> should only be used when mode is "single"'
+      '<DatePickerDateField> should only be used when mode is "single"'
     )
   }
 
   return (
-    <DateFieldPrimitive.Root
+    <DateTimeFieldPrimitive.Root
       ref={ref}
-      inputFormatStr={inputFormatStr}
+      disabled={disabled || disabledProp}
       value={value}
       onValueChange={(date) => {
         if (date) {
@@ -251,13 +239,19 @@ export const DatePickerInput = React.forwardRef<
           onValueChange(null)
         }
       }}
-      placeholder={inputFormatStr}
-      disabled={disabled}
       {...props}
     />
   )
 })
-DatePickerInput.displayName = "DatePickerInput"
+DatePickerDateField.displayName = "DatePickerDateField"
+
+export const DatePickerDateFieldSeparator = DateTimeFieldPrimitive.Separator
+
+export const DatePickerDateFieldYears = DateTimeFieldPrimitive.Years
+
+export const DatePickerDateFieldMonths = DateTimeFieldPrimitive.Months
+
+export const DatePickerDateFieldDays = DateTimeFieldPrimitive.Days
 
 export const DatePickerAnchor = PopoverPrimitive.Anchor
 
@@ -393,7 +387,11 @@ export const DatePickerCalendar = ({
 }
 
 const Root = DatePicker
-const Input = DatePickerInput
+const DateField = DatePickerDateField
+const DateFieldSeparator = DatePickerDateFieldSeparator
+const DateFieldYears = DatePickerDateFieldYears
+const DateFieldMonths = DatePickerDateFieldMonths
+const DateFieldDays = DatePickerDateFieldDays
 const Value = DatePickerValue
 const Clear = DatePickerClear
 const Trigger = DatePickerTrigger
@@ -402,4 +400,18 @@ const Portal = DatePickerPortal
 const Content = DatePickerContent
 const Calendar = DatePickerCalendar
 
-export { Root, Input, Value, Clear, Trigger, Anchor, Portal, Content, Calendar }
+export {
+  Root,
+  DateField,
+  DateFieldSeparator,
+  DateFieldYears,
+  DateFieldMonths,
+  DateFieldDays,
+  Value,
+  Clear,
+  Trigger,
+  Anchor,
+  Portal,
+  Content,
+  Calendar,
+}

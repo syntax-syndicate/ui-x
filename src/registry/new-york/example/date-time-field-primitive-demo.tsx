@@ -3,28 +3,18 @@ import * as DateTimeFieldPrimitive from "@/registry/new-york/ui/date-time-field-
 export default function DateTimeFieldPrimitiveDemo() {
   return (
     <DateTimeFieldPrimitive.Root>
-      <DateTimeFieldPrimitive.DateTimeFieldSegmentYears placeholder="yyyy" />
-      <DateTimeFieldPrimitive.SegmentSeparator>
-        /
-      </DateTimeFieldPrimitive.SegmentSeparator>
-      <DateTimeFieldPrimitive.DateTimeFieldSegmentMonths placeholder="mm" />
-      <DateTimeFieldPrimitive.SegmentSeparator>
-        /
-      </DateTimeFieldPrimitive.SegmentSeparator>
-      <DateTimeFieldPrimitive.DateTimeFieldSegmentDays placeholder="dd" />
-      <DateTimeFieldPrimitive.SegmentSeparator>
-        ·
-      </DateTimeFieldPrimitive.SegmentSeparator>
-      <DateTimeFieldPrimitive.DateTimeFieldSegmentHours placeholder="hh" />
-      <DateTimeFieldPrimitive.SegmentSeparator>
-        :
-      </DateTimeFieldPrimitive.SegmentSeparator>
-      <DateTimeFieldPrimitive.DateTimeFieldSegmentMinutes placeholder="mm" />
-      <DateTimeFieldPrimitive.SegmentSeparator>
-        :
-      </DateTimeFieldPrimitive.SegmentSeparator>
-      <DateTimeFieldPrimitive.DateTimeFieldSegmentSeconds placeholder="ss" />
-      <DateTimeFieldPrimitive.DateTimeFieldSegmentAmPm placeholder="am/pm" />
+      <DateTimeFieldPrimitive.Days placeholder="dd" />
+      <DateTimeFieldPrimitive.Separator>/</DateTimeFieldPrimitive.Separator>
+      <DateTimeFieldPrimitive.Months placeholder="mm" />
+      <DateTimeFieldPrimitive.Separator>/</DateTimeFieldPrimitive.Separator>
+      <DateTimeFieldPrimitive.Years placeholder="yyyy" />
+      <DateTimeFieldPrimitive.Separator>·</DateTimeFieldPrimitive.Separator>
+      <DateTimeFieldPrimitive.Hours placeholder="hh" />
+      <DateTimeFieldPrimitive.Separator>:</DateTimeFieldPrimitive.Separator>
+      <DateTimeFieldPrimitive.Minutes placeholder="mm" />
+      <DateTimeFieldPrimitive.Separator>:</DateTimeFieldPrimitive.Separator>
+      <DateTimeFieldPrimitive.Seconds placeholder="ss" />
+      <DateTimeFieldPrimitive.AmPm placeholder="am/pm" />
     </DateTimeFieldPrimitive.Root>
   )
 }

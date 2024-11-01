@@ -326,6 +326,18 @@ export const examples: Registry = [
   //   files: ["example/data-table-demo.tsx"],
   // },
   {
+    name: "date-field-demo",
+    type: "registry:example",
+    registryDependencies: ["date-field"],
+    files: ["example/date-field-demo.tsx"],
+  },
+  {
+    name: "date-field-form",
+    type: "registry:example",
+    registryDependencies: ["button", "date-field", "form"],
+    files: ["example/date-field-form.tsx"],
+  },
+  {
     name: "date-time-field-primitive-demo",
     type: "registry:example",
     registryDependencies: ["date-time-field-primitive"],
@@ -336,12 +348,6 @@ export const examples: Registry = [
     type: "registry:example",
     registryDependencies: ["date-time-field-primitive"],
     files: ["example/date-time-field-primitive-disabled.tsx"],
-  },
-  {
-    name: "date-field-primitive-demo",
-    type: "registry:example",
-    registryDependencies: ["date-field-primitive"],
-    files: ["example/date-field-primitive-demo.tsx"],
   },
   {
     name: "date-picker-primitive-demo",
@@ -510,6 +516,24 @@ export const examples: Registry = [
     type: "registry:example",
     registryDependencies: ["input-base", "button", "form"],
     files: ["example/input-base-form.tsx"],
+  },
+  {
+    name: "time-field-demo",
+    type: "registry:example",
+    registryDependencies: ["time-field"],
+    files: ["example/time-field-demo.tsx"],
+  },
+  {
+    name: "time-field-hour-12",
+    type: "registry:example",
+    registryDependencies: ["time-field"],
+    files: ["example/time-field-hour-12.tsx"],
+  },
+  {
+    name: "time-field-form",
+    type: "registry:example",
+    registryDependencies: ["button", "time-field", "form"],
+    files: ["example/time-field-form.tsx"],
   },
   {
     name: "time-demo",

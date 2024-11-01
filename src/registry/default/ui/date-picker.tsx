@@ -6,14 +6,18 @@ import { CalendarIcon, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/registry/default/ui/button"
 import { Calendar } from "@/registry/default/ui/calendar"
+import {
+  DateFieldDays,
+  DateFieldMonths,
+  DateFieldSeparator,
+  DateFieldYears,
+} from "@/registry/default/ui/date-field"
 import * as DatePickerPrimitive from "@/registry/default/ui/date-picker-primitive"
 import {
   InputBase,
   InputBaseAdornment,
   InputBaseAdornmentButton,
-  InputBaseControl,
   InputBaseFlexWrapper,
-  InputBaseInput,
 } from "@/registry/default/ui/input-base"
 
 export const DatePicker = DatePickerPrimitive.Root
@@ -26,7 +30,7 @@ const DatePickerInputBase = React.forwardRef<
 >(({ children, ...props }, ref) => (
   <DatePickerAnchor asChild>
     <InputBase ref={ref} {...props}>
-      {children}
+      <InputBaseFlexWrapper>{children}</InputBaseFlexWrapper>
       <InputBaseAdornment>
         <InputBaseAdornmentButton asChild>
           <DatePickerPrimitive.Clear>
@@ -48,18 +52,34 @@ const DatePickerInputBase = React.forwardRef<
 DatePickerInputBase.displayName = "DatePickerInputBase"
 
 export const DatePickerInput = React.forwardRef<
-  React.ElementRef<typeof InputBaseInput>,
-  React.ComponentPropsWithoutRef<typeof InputBaseInput>
->((props, ref) => {
+  React.ElementRef<typeof DatePickerPrimitive.DateField>,
+  React.ComponentPropsWithoutRef<typeof DatePickerPrimitive.DateField>
+>(({ disabled: disabledProp, ...props }, ref) => {
   const { disabled } = DatePickerPrimitive.useDatePickerContext()
 
   return (
-    <DatePickerInputBase disabled={disabled}>
-      <InputBaseControl>
-        <DatePickerPrimitive.Input asChild>
-          <InputBaseInput ref={ref} {...props} />
-        </DatePickerPrimitive.Input>
-      </InputBaseControl>
+    <DatePickerInputBase>
+      <DatePickerPrimitive.DateField
+        ref={ref}
+        disabled={disabled || disabledProp}
+        {...props}
+      >
+        <DatePickerPrimitive.DateFieldYears asChild>
+          <DateFieldYears />
+        </DatePickerPrimitive.DateFieldYears>
+        <DatePickerPrimitive.DateFieldSeparator asChild>
+          <DateFieldSeparator />
+        </DatePickerPrimitive.DateFieldSeparator>
+        <DatePickerPrimitive.DateFieldMonths asChild>
+          <DateFieldMonths />
+        </DatePickerPrimitive.DateFieldMonths>
+        <DatePickerPrimitive.DateFieldSeparator asChild>
+          <DateFieldSeparator />
+        </DatePickerPrimitive.DateFieldSeparator>
+        <DatePickerPrimitive.DateFieldDays asChild>
+          <DateFieldDays />
+        </DatePickerPrimitive.DateFieldDays>
+      </DatePickerPrimitive.DateField>
     </DatePickerInputBase>
   )
 })
