@@ -32,14 +32,14 @@ export const DateFieldSeparator = React.forwardRef<
 ))
 DateFieldSeparator.displayName = "DateFieldSeparator"
 
-export const DateFieldDays = React.forwardRef<
-  React.ElementRef<typeof DateTimeFieldPrimitive.DateTimeFieldDays>,
+export const DateFieldYears = React.forwardRef<
+  React.ElementRef<typeof DateTimeFieldPrimitive.DateTimeFieldYears>,
   React.ComponentPropsWithoutRef<
-    typeof DateTimeFieldPrimitive.DateTimeFieldDays
+    typeof DateTimeFieldPrimitive.DateTimeFieldYears
   >
->(({ placeholder = "dd", className, ...props }, ref) => (
+>(({ placeholder = "yyyy", className, ...props }, ref) => (
   <InputBaseControl>
-    <DateTimeFieldPrimitive.DateTimeFieldDays
+    <DateTimeFieldPrimitive.DateTimeFieldYears
       ref={ref}
       asChild
       placeholder={placeholder}
@@ -47,14 +47,14 @@ export const DateFieldDays = React.forwardRef<
     >
       <InputBaseInput
         className={cn(
-          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-1 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
+          "box-content h-fit max-w-[calc(4ch_+_0.5rem)] flex-initial rounded-sm px-1 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
           className
         )}
       />
-    </DateTimeFieldPrimitive.DateTimeFieldDays>
+    </DateTimeFieldPrimitive.DateTimeFieldYears>
   </InputBaseControl>
 ))
-DateFieldDays.displayName = "DateFieldDays"
+DateFieldYears.displayName = "DateFieldYears"
 
 export const DateFieldMonths = React.forwardRef<
   React.ElementRef<typeof DateTimeFieldPrimitive.DateTimeFieldMonths>,
@@ -80,14 +80,14 @@ export const DateFieldMonths = React.forwardRef<
 ))
 DateFieldMonths.displayName = "DateFieldMonths"
 
-export const DateFieldYears = React.forwardRef<
-  React.ElementRef<typeof DateTimeFieldPrimitive.DateTimeFieldYears>,
+export const DateFieldDays = React.forwardRef<
+  React.ElementRef<typeof DateTimeFieldPrimitive.DateTimeFieldDays>,
   React.ComponentPropsWithoutRef<
-    typeof DateTimeFieldPrimitive.DateTimeFieldYears
+    typeof DateTimeFieldPrimitive.DateTimeFieldDays
   >
->(({ placeholder = "yyyy", className, ...props }, ref) => (
+>(({ placeholder = "dd", className, ...props }, ref) => (
   <InputBaseControl>
-    <DateTimeFieldPrimitive.DateTimeFieldYears
+    <DateTimeFieldPrimitive.DateTimeFieldDays
       ref={ref}
       asChild
       placeholder={placeholder}
@@ -95,11 +95,11 @@ export const DateFieldYears = React.forwardRef<
     >
       <InputBaseInput
         className={cn(
-          "box-content h-fit max-w-[calc(4ch_+_0.5rem)] flex-initial rounded-sm px-1 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
+          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-1 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
           className
         )}
       />
-    </DateTimeFieldPrimitive.DateTimeFieldYears>
+    </DateTimeFieldPrimitive.DateTimeFieldDays>
   </InputBaseControl>
 ))
-DateFieldYears.displayName = "DateFieldYears"
+DateFieldDays.displayName = "DateFieldDays"
