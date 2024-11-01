@@ -350,6 +350,18 @@ export const examples: Registry = [
     files: ["example/date-time-field-primitive-disabled.tsx"],
   },
   {
+    name: "date-time-field-demo",
+    type: "registry:example",
+    registryDependencies: ["date-time-field"],
+    files: ["example/date-time-field-demo.tsx"],
+  },
+  {
+    name: "date-time-field-form",
+    type: "registry:example",
+    registryDependencies: ["button", "date-time-field", "form"],
+    files: ["example/date-time-field-form.tsx"],
+  },
+  {
     name: "date-picker-primitive-demo",
     type: "registry:example",
     registryDependencies: ["date-picker-primitive"],
@@ -727,24 +739,24 @@ export const examples: Registry = [
   //   registryDependencies: ["scroll-area"],
   //   files: ["example/scroll-area-horizontal-demo.tsx"],
   // },
-  // {
-  //   name: "select-demo",
-  //   type: "registry:example",
-  //   registryDependencies: ["select"],
-  //   files: ["example/select-demo.tsx"],
-  // },
-  // {
-  //   name: "select-scrollable",
-  //   type: "registry:example",
-  //   registryDependencies: ["select"],
-  //   files: ["example/select-scrollable.tsx"],
-  // },
-  // {
-  //   name: "select-form",
-  //   type: "registry:example",
-  //   registryDependencies: ["select"],
-  //   files: ["example/select-form.tsx"],
-  // },
+  {
+    name: "select-demo",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: ["example/select-demo.tsx"],
+  },
+  {
+    name: "select-scrollable",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: ["example/select-scrollable.tsx"],
+  },
+  {
+    name: "select-form",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: ["example/select-form.tsx"],
+  },
   // {
   //   name: "separator-demo",
   //   type: "registry:example",

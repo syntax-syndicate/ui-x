@@ -77,6 +77,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Date Time Field",
+          href: "/docs/components/date-time-field",
+          items: [],
+        },
+        {
           title: "Date Picker",
           href: "/docs/components/date-picker",
           items: [],

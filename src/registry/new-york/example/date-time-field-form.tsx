@@ -7,6 +7,17 @@ import { z } from "zod"
 import { toast } from "@/registry/new-york/hooks/use-toast"
 import { Button } from "@/registry/new-york/ui/button"
 import {
+  DateTimeField,
+  DateTimeFieldAmPm,
+  DateTimeFieldDays,
+  DateTimeFieldHours,
+  DateTimeFieldMinutes,
+  DateTimeFieldMonths,
+  DateTimeFieldSeconds,
+  DateTimeFieldSeparator,
+  DateTimeFieldYears,
+} from "@/registry/new-york/ui/date-time-field"
+import {
   Form,
   FormControl,
   FormDescription,
@@ -15,22 +26,14 @@ import {
   FormLabel,
   FormMessage,
 } from "@/registry/new-york/ui/form"
-import {
-  TimeField,
-  TimeFieldAmPm,
-  TimeFieldHours,
-  TimeFieldMinutes,
-  TimeFieldSeconds,
-  TimeFieldSeparator,
-} from "@/registry/new-york/ui/time-field"
 
 const FormSchema = z.object({
-  eventTime: z.date({
-    required_error: "Event time is required.",
+  eventDate: z.date({
+    required_error: "Event date is required.",
   }),
 })
 
-export default function TimeFieldForm() {
+export default function DateTimeFieldForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   })
@@ -51,26 +54,28 @@ export default function TimeFieldForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
-          name="eventTime"
+          name="eventDate"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Event time</FormLabel>
-              <TimeField
-                hour12
-                value={field.value}
-                onValueChange={field.onChange}
-              >
+              <FormLabel>Event date</FormLabel>
+              <DateTimeField value={field.value} onValueChange={field.onChange}>
                 <FormControl>
-                  <TimeFieldHours />
+                  <DateTimeFieldDays />
                 </FormControl>
-                <TimeFieldSeparator />
-                <TimeFieldMinutes />
-                <TimeFieldSeparator />
-                <TimeFieldSeconds />
-                <TimeFieldAmPm />
-              </TimeField>
+                <DateTimeFieldSeparator>/</DateTimeFieldSeparator>
+                <DateTimeFieldMonths />
+                <DateTimeFieldSeparator>/</DateTimeFieldSeparator>
+                <DateTimeFieldYears />
+                <DateTimeFieldSeparator>·</DateTimeFieldSeparator>
+                <DateTimeFieldHours />
+                <DateTimeFieldSeparator>:</DateTimeFieldSeparator>
+                <DateTimeFieldMinutes />
+                <DateTimeFieldSeparator>:</DateTimeFieldSeparator>
+                <DateTimeFieldSeconds />
+                <DateTimeFieldAmPm />
+              </DateTimeField>
               <FormDescription>
-                Schedule your event by selecting a time.
+                Schedule your event by selecting a date and time.
               </FormDescription>
               <FormMessage />
             </FormItem>

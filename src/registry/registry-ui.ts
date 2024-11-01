@@ -145,7 +145,7 @@ export const ui: Registry = [
   {
     name: "date-field",
     type: "registry:ui",
-    registryDependencies: ["date-time-field-primitive"],
+    registryDependencies: ["date-time-field-primitive", "input-base"],
     files: ["ui/date-field.tsx"],
   },
   {
@@ -156,6 +156,16 @@ export const ui: Registry = [
       "@radix-ui/react-primitive",
       "@radix-ui/react-use-controllable-state",
       "timescape",
+    ],
+    files: ["ui/date-time-field-primitive.tsx"],
+  },
+  {
+    name: "date-time-field",
+    type: "registry:ui",
+    registryDependencies: [
+      "date-time-field-primitive",
+      "date-field",
+      "time-field",
     ],
     files: ["ui/date-time-field-primitive.tsx"],
   },
@@ -264,7 +274,7 @@ export const ui: Registry = [
   {
     name: "time-field",
     type: "registry:ui",
-    registryDependencies: ["date-time-field-primitive"],
+    registryDependencies: ["date-time-field-primitive", "input-base"],
     files: ["ui/time-field.tsx"],
   },
   {
