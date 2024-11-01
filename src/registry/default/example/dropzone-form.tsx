@@ -53,7 +53,7 @@ const FormSchema = z.object({
           ),
       })
     )
-    .min(1, { message: "Minimum one file is required" }),
+    .min(1, { message: "Minimum one file is required." }),
 })
 
 export default function DropzoneForm() {
