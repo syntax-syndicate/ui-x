@@ -14,6 +14,11 @@ export const hooks: Registry = [
   {
     name: "use-timescape",
     type: "registry:hook",
+    dependencies: [
+      "@radix-ui/react-use-controllable-state",
+      "react-day-picker",
+      "timescape",
+    ],
     files: [
       {
         path: "hooks/use-timescape.ts",

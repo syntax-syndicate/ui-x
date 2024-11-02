@@ -169,6 +169,26 @@ export const ui: Registry = [
     ],
   },
   {
+    name: "date-time-range-field-primitive",
+    type: "registry:ui",
+    dependencies: [
+      "@radix-ui/react-compose-refs",
+      "@radix-ui/react-primitive",
+      "@radix-ui/react-use-controllable-state",
+      "timescape",
+    ],
+    files: [
+      {
+        path: "ui/date-time-range-field-primitive.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "hooks/use-timescape.ts",
+        type: "registry:hook",
+      },
+    ],
+  },
+  {
     name: "date-time-field",
     type: "registry:ui",
     registryDependencies: ["date-time-field-primitive", "input-base"],
