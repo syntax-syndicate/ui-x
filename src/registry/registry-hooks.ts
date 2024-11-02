@@ -12,6 +12,16 @@ export const hooks: Registry = [
     ],
   },
   {
+    name: "use-timescape",
+    type: "registry:hook",
+    files: [
+      {
+        path: "hooks/use-timescape.ts",
+        type: "registry:hook",
+      },
+    ],
+  },
+  {
     name: "use-toast",
     type: "registry:hook",
     files: [

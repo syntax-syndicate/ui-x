@@ -1,8 +1,11 @@
 import * as React from "react"
 import { useComposedRefs } from "@radix-ui/react-compose-refs"
 import { Primitive } from "@radix-ui/react-primitive"
-import { useControllableState } from "@radix-ui/react-use-controllable-state"
-import { Options, useTimescape } from "timescape/react"
+
+import {
+  useTimescape,
+  UseTimescapeOptions,
+} from "@/registry/new-york/hooks/use-timescape"
 
 export type DateTimeFieldContextProps = {
   disabled?: boolean
@@ -19,7 +22,7 @@ export const useDateTimeFieldContext = () =>
   React.useContext(DateTimeFieldContext)
 
 export interface DateTimeFieldProps
-  extends Omit<Options, "date" | "onChangeDate">,
+  extends UseTimescapeOptions,
     Omit<
       React.ComponentPropsWithoutRef<typeof Primitive.div>,
       "value" | "defaultValue"
@@ -36,7 +39,7 @@ export const DateTimeField = React.forwardRef<
 >(
   (
     {
-      value: valueProp,
+      value,
       defaultValue,
       onValueChange,
       disabled,
@@ -47,19 +50,14 @@ export const DateTimeField = React.forwardRef<
       snapToStep,
       wheelControl,
       wrapAround,
-      children,
+      ...props
     },
     ref
   ) => {
-    const [value, setValue] = useControllableState({
-      prop: valueProp,
-      defaultProp: defaultValue,
-      onChange: onValueChange,
-    })
-
-    const { update, ...timescape } = useTimescape({
-      date: !value ? undefined : value, // This is the initial value.
-      onChangeDate: setValue,
+    const timescape = useTimescape({
+      value,
+      defaultValue,
+      onValueChange,
       digits,
       hour12,
       maxDate,
@@ -68,41 +66,6 @@ export const DateTimeField = React.forwardRef<
       wheelControl,
       wrapAround,
     })
-
-    React.useEffect(() => {
-      update((prevOptions) => ({
-        ...prevOptions,
-        date: !value ? undefined : value,
-      }))
-    }, [value, update])
-
-    React.useEffect(() => {
-      update((prevOptions) => ({ ...prevOptions, digits }))
-    }, [digits, update])
-
-    React.useEffect(() => {
-      update((prevOptions) => ({ ...prevOptions, hour12 }))
-    }, [hour12, update])
-
-    React.useEffect(() => {
-      update((prevOptions) => ({ ...prevOptions, maxDate }))
-    }, [maxDate, update])
-
-    React.useEffect(() => {
-      update((prevOptions) => ({ ...prevOptions, minDate }))
-    }, [minDate, update])
-
-    React.useEffect(() => {
-      update((prevOptions) => ({ ...prevOptions, snapToStep }))
-    }, [snapToStep, update])
-
-    React.useEffect(() => {
-      update((prevOptions) => ({ ...prevOptions, wheelControl }))
-    }, [wheelControl, update])
-
-    React.useEffect(() => {
-      update((prevOptions) => ({ ...prevOptions, wrapAround }))
-    }, [wrapAround, update])
 
     const { ref: rootRef, ...rootProps } = timescape.getRootProps()
 
@@ -114,9 +77,8 @@ export const DateTimeField = React.forwardRef<
           ref={composedRefs}
           data-disabled={disabled}
           {...rootProps}
-        >
-          {children}
-        </Primitive.div>
+          {...props}
+        />
       </DateTimeFieldContext.Provider>
     )
   }

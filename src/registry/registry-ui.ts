@@ -157,7 +157,16 @@ export const ui: Registry = [
       "@radix-ui/react-use-controllable-state",
       "timescape",
     ],
-    files: ["ui/date-time-field-primitive.tsx"],
+    files: [
+      {
+        path: "ui/date-time-field-primitive.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "hooks/use-timescape.ts",
+        type: "registry:hook",
+      },
+    ],
   },
   {
     name: "date-time-field",
