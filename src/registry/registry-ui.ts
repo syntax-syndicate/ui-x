@@ -145,7 +145,7 @@ export const ui: Registry = [
   {
     name: "date-field",
     type: "registry:ui",
-    registryDependencies: ["date-time-field-primitive", "input-base"],
+    registryDependencies: ["date-time-field"],
     files: ["ui/date-field.tsx"],
   },
   {
@@ -162,11 +162,7 @@ export const ui: Registry = [
   {
     name: "date-time-field",
     type: "registry:ui",
-    registryDependencies: [
-      "date-time-field-primitive",
-      "date-field",
-      "time-field",
-    ],
+    registryDependencies: ["date-time-field-primitive", "input-base"],
     files: ["ui/date-time-field-primitive.tsx"],
   },
   {
@@ -181,7 +177,7 @@ export const ui: Registry = [
       "date-fns",
       "react-day-picker",
     ],
-    registryDependencies: ["date-field-primitive"],
+    registryDependencies: ["date-time-field-primitive"],
     files: ["ui/date-picker-primitive.tsx"],
   },
   {
@@ -274,7 +270,7 @@ export const ui: Registry = [
   {
     name: "time-field",
     type: "registry:ui",
-    registryDependencies: ["date-time-field-primitive", "input-base"],
+    registryDependencies: ["date-time-field"],
     files: ["ui/time-field.tsx"],
   },
   {
