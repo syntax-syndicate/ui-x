@@ -25,7 +25,7 @@ export default function DateTimeRangeFieldDisabled() {
       </DateTimeRangeFieldPrimitive.From>
 
       <DateTimeRangeFieldPrimitive.Separator>
-        ~
+        -
       </DateTimeRangeFieldPrimitive.Separator>
 
       <DateTimeRangeFieldPrimitive.To className="flex">

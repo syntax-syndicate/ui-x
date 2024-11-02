@@ -47,6 +47,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Date Time Range Field",
+          href: "/docs/components/date-time-range-field-primitive",
+          items: [],
+        },
+        {
           title: "Date Picker",
           href: "/docs/components/date-picker-primitive",
           items: [],
@@ -79,6 +84,11 @@ export const docsConfig: DocsConfig = {
         {
           title: "Date Time Field",
           href: "/docs/components/date-time-field",
+          items: [],
+        },
+        {
+          title: "Date Time Range Field",
+          href: "/docs/components/date-time-range-field",
           items: [],
         },
         {

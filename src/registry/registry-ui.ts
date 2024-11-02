@@ -195,6 +195,12 @@ export const ui: Registry = [
     files: ["ui/date-time-field-primitive.tsx"],
   },
   {
+    name: "date-time-range-field",
+    type: "registry:ui",
+    registryDependencies: ["date-time-range-field-primitive"],
+    files: ["ui/date-time-range-field.tsx"],
+  },
+  {
     name: "date-picker-primitive",
     type: "registry:ui",
     dependencies: [

@@ -374,6 +374,18 @@ export const examples: Registry = [
     files: ["example/date-time-range-field-primitive-disabled.tsx"],
   },
   {
+    name: "date-time-range-field-demo",
+    type: "registry:example",
+    registryDependencies: ["date-time-range-field"],
+    files: ["example/date-time-range-field-demo.tsx"],
+  },
+  {
+    name: "date-time-range-field-form",
+    type: "registry:example",
+    registryDependencies: ["button", "date-time-range-field", "form"],
+    files: ["example/date-time-range-field-form.tsx"],
+  },
+  {
     name: "date-picker-primitive-demo",
     type: "registry:example",
     registryDependencies: ["date-picker-primitive"],

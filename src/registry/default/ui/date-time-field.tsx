@@ -13,7 +13,7 @@ export const DateTimeField = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof DateTimeFieldPrimitive.Root>
 >(({ children, className, ...props }, ref) => (
   <DateTimeFieldPrimitive.Root ref={ref} asChild {...props}>
-    <InputBase className={cn("gap-0.5", className)}>{children}</InputBase>
+    <InputBase className={cn("gap-0", className)}>{children}</InputBase>
   </DateTimeFieldPrimitive.Root>
 ))
 DateTimeField.displayName = "DateTimeField"
@@ -45,7 +45,7 @@ export const DateTimeFieldYears = React.forwardRef<
     >
       <InputBaseInput
         className={cn(
-          "box-content h-fit max-w-[calc(4ch_+_0.5rem)] flex-initial rounded-sm px-1 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
+          "box-content h-fit max-w-[calc(4ch_+_0.5rem)] flex-initial rounded-sm px-0.5 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
           className
         )}
       />
@@ -69,7 +69,7 @@ export const DateTimeFieldMonths = React.forwardRef<
     >
       <InputBaseInput
         className={cn(
-          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-1 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
+          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-0.5 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
           className
         )}
       />
@@ -93,7 +93,7 @@ export const DateTimeFieldDays = React.forwardRef<
     >
       <InputBaseInput
         className={cn(
-          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-1 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
+          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-0.5 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
           className
         )}
       />
@@ -117,7 +117,7 @@ export const DateTimeFieldHours = React.forwardRef<
     >
       <InputBaseInput
         className={cn(
-          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-1 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
+          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-0.5 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
           className
         )}
       />
@@ -141,7 +141,7 @@ export const DateTimeFieldMinutes = React.forwardRef<
     >
       <InputBaseInput
         className={cn(
-          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-1 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
+          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-0.5 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
           className
         )}
       />
@@ -165,7 +165,7 @@ export const DateTimeFieldSeconds = React.forwardRef<
     >
       <InputBaseInput
         className={cn(
-          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-1 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
+          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-0.5 tabular-nums focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
           className
         )}
       />
@@ -189,7 +189,7 @@ export const DateTimeFieldAmPm = React.forwardRef<
     >
       <InputBaseInput
         className={cn(
-          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-1 text-center focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
+          "box-content h-fit max-w-[calc(2ch_+_0.5rem)] flex-initial rounded-sm px-0.5 text-center focus:bg-primary focus:text-primary-foreground focus:placeholder:text-primary-foreground",
           className
         )}
       />
