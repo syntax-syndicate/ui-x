@@ -9,7 +9,7 @@ import {
 
 export type DateTimeFieldContextProps = {
   disabled?: boolean
-} & Omit<ReturnType<typeof useTimescape>, "update" | "_manager">
+} & ReturnType<typeof useTimescape>
 
 const DateTimeFieldContext = React.createContext<DateTimeFieldContextProps>({
   getInputProps: () => ({ ref: () => null }),
@@ -27,9 +27,6 @@ export interface DateTimeFieldProps
       React.ComponentPropsWithoutRef<typeof Primitive.div>,
       "value" | "defaultValue"
     > {
-  value?: Date | null
-  defaultValue?: Date
-  onValueChange?: (value: Date | null) => void
   disabled?: boolean
 }
 
