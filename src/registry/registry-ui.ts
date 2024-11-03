@@ -96,7 +96,7 @@ export const ui: Registry = [
     type: "registry:ui",
     dependencies: ["@radix-ui/react-slot"],
     registryDependencies: ["badge", "combobox-primitive", "input-base"],
-    files: ["ui/combobox-primitive.tsx"],
+    files: ["ui/combobox.tsx"],
   },
   // {
   //   name: "card",
