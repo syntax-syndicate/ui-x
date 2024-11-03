@@ -15,7 +15,10 @@ import {
   type DayPickerProps as DayPickerPrimitiveProps,
 } from "react-day-picker"
 
-import * as DateTimeFieldPrimitive from "@/registry/new-york/ui/date-time-field-primitive"
+import * as DateTimeFieldPrimitive from "@/registry/default/ui/date-time-field-primitive"
+import * as DateTimeRangeFieldPrimitive from "@/registry/default/ui/date-time-range-field-primitive"
+
+// TODO: start month / end month sync with calendar and date field
 
 export type DatePickerContextProps = {
   formatStr: string
@@ -257,6 +260,58 @@ export const DatePickerAnchor = PopoverPrimitive.Anchor
 
 export const DatePickerPortal = PopoverPrimitive.Portal
 
+export const DatePickerDateRangeField = React.forwardRef<
+  React.ElementRef<typeof DateTimeRangeFieldPrimitive.Root>,
+  Omit<
+    React.ComponentPropsWithoutRef<typeof DateTimeRangeFieldPrimitive.Root>,
+    "value" | "onValueChange"
+  >
+>(({ disabled: disabledProp, ...props }, ref) => {
+  const { mode, onMonthChange, value, onValueChange, required, disabled } =
+    useDatePickerContext()
+
+  console.log(props)
+
+  if (mode !== "range") {
+    throw new Error(
+      '<DatePickerDateRangeField> should only be used when mode is "range"'
+    )
+  }
+
+  return (
+    <DateTimeRangeFieldPrimitive.Root
+      ref={ref}
+      disabled={disabled || disabledProp}
+      value={value}
+      onValueChange={(value) => {
+        if (value) {
+          onValueChange(value)
+          if (value.from) {
+            onMonthChange(value.from)
+          }
+        } else if (!required) {
+          onValueChange(null)
+        }
+      }}
+      {...props}
+    />
+  )
+})
+DatePickerDateRangeField.displayName = "DatePickerDateRangeField"
+
+export const DatePickerDateRangeFieldFrom = DateTimeRangeFieldPrimitive.From
+
+export const DatePickerDateRangeFieldTo = DateTimeRangeFieldPrimitive.To
+
+export const DatePickerDateRangeFieldSeparator =
+  DateTimeRangeFieldPrimitive.Separator
+
+export const DatePickerDateRangeFieldYears = DateTimeRangeFieldPrimitive.Years
+
+export const DatePickerDateRangeFieldMonths = DateTimeRangeFieldPrimitive.Months
+
+export const DatePickerDateRangeFieldDays = DateTimeRangeFieldPrimitive.Days
+
 export const DatePickerClear = React.forwardRef<
   React.ElementRef<typeof Primitive.button>,
   React.ComponentPropsWithoutRef<typeof Primitive.button>
@@ -392,6 +447,13 @@ const DateFieldSeparator = DatePickerDateFieldSeparator
 const DateFieldYears = DatePickerDateFieldYears
 const DateFieldMonths = DatePickerDateFieldMonths
 const DateFieldDays = DatePickerDateFieldDays
+const DateRangeField = DatePickerDateRangeField
+const DateRangeFieldFrom = DatePickerDateRangeFieldFrom
+const DateRangeFieldTo = DatePickerDateRangeFieldTo
+const DateRangeFieldSeparator = DatePickerDateRangeFieldSeparator
+const DateRangeFieldYears = DatePickerDateRangeFieldYears
+const DateRangeFieldMonths = DatePickerDateRangeFieldMonths
+const DateRangeFieldDays = DatePickerDateRangeFieldDays
 const Value = DatePickerValue
 const Clear = DatePickerClear
 const Trigger = DatePickerTrigger
@@ -407,6 +469,13 @@ export {
   DateFieldYears,
   DateFieldMonths,
   DateFieldDays,
+  DateRangeField,
+  DateRangeFieldFrom,
+  DateRangeFieldTo,
+  DateRangeFieldSeparator,
+  DateRangeFieldYears,
+  DateRangeFieldMonths,
+  DateRangeFieldDays,
   Value,
   Clear,
   Trigger,

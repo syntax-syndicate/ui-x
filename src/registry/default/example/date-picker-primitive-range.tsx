@@ -18,10 +18,37 @@ export default function DatePickerPrimitiveRange() {
       formatStr="P"
     >
       <DatePickerPrimitive.Anchor>
-        <DatePickerPrimitive.Trigger>
-          <DatePickerPrimitive.Value placeholder="Pick a date" />
-        </DatePickerPrimitive.Trigger>
+        <DatePickerPrimitive.DateRangeField className="flex">
+          <DatePickerPrimitive.DateRangeFieldFrom className="flex">
+            <DatePickerPrimitive.DateRangeFieldDays placeholder="dd" />
+            <DatePickerPrimitive.DateRangeFieldSeparator>
+              /
+            </DatePickerPrimitive.DateRangeFieldSeparator>
+            <DatePickerPrimitive.DateRangeFieldMonths placeholder="mm" />
+            <DatePickerPrimitive.DateRangeFieldSeparator>
+              /
+            </DatePickerPrimitive.DateRangeFieldSeparator>
+            <DatePickerPrimitive.DateRangeFieldYears placeholder="yyyy" />
+          </DatePickerPrimitive.DateRangeFieldFrom>
+
+          <DatePickerPrimitive.DateRangeFieldSeparator>
+            -
+          </DatePickerPrimitive.DateRangeFieldSeparator>
+
+          <DatePickerPrimitive.DateRangeFieldTo className="flex">
+            <DatePickerPrimitive.DateRangeFieldDays placeholder="dd" />
+            <DatePickerPrimitive.DateRangeFieldSeparator>
+              /
+            </DatePickerPrimitive.DateRangeFieldSeparator>
+            <DatePickerPrimitive.DateRangeFieldMonths placeholder="mm" />
+            <DatePickerPrimitive.DateRangeFieldSeparator>
+              /
+            </DatePickerPrimitive.DateRangeFieldSeparator>
+            <DatePickerPrimitive.DateRangeFieldYears placeholder="yyyy" />
+          </DatePickerPrimitive.DateRangeFieldTo>
+        </DatePickerPrimitive.DateRangeField>
         <DatePickerPrimitive.Clear>&#215;</DatePickerPrimitive.Clear>
+        <DatePickerPrimitive.Trigger>&#8595;</DatePickerPrimitive.Trigger>
       </DatePickerPrimitive.Anchor>
       <DatePickerPrimitive.Portal>
         <DatePickerPrimitive.Content>

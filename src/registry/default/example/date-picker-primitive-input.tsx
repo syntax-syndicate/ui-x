@@ -5,11 +5,15 @@ export default function DatePickerPrimitiveInput() {
     <DatePickerPrimitive.Root mode="single">
       <DatePickerPrimitive.Anchor>
         <DatePickerPrimitive.DateField>
-          <DatePickerPrimitive.DateFieldDays />
-          <DatePickerPrimitive.DateFieldSeparator />
-          <DatePickerPrimitive.DateFieldMonths />
-          <DatePickerPrimitive.DateFieldSeparator />
-          <DatePickerPrimitive.DateFieldYears />
+          <DatePickerPrimitive.DateFieldDays placeholder="dd" />
+          <DatePickerPrimitive.DateFieldSeparator>
+            /
+          </DatePickerPrimitive.DateFieldSeparator>
+          <DatePickerPrimitive.DateFieldMonths placeholder="mm" />
+          <DatePickerPrimitive.DateFieldSeparator>
+            /
+          </DatePickerPrimitive.DateFieldSeparator>
+          <DatePickerPrimitive.DateFieldYears placeholder="yyyy" />
         </DatePickerPrimitive.DateField>
         <DatePickerPrimitive.Clear>&#215;</DatePickerPrimitive.Clear>
         <DatePickerPrimitive.Trigger>&#8595;</DatePickerPrimitive.Trigger>

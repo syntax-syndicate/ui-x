@@ -1,8 +1,12 @@
 import {
   DateTimeRangeField,
+  DateTimeRangeFieldAmPm,
   DateTimeRangeFieldDays,
   DateTimeRangeFieldFrom,
+  DateTimeRangeFieldHours,
+  DateTimeRangeFieldMinutes,
   DateTimeRangeFieldMonths,
+  DateTimeRangeFieldSeconds,
   DateTimeRangeFieldSeparator,
   DateTimeRangeFieldTo,
   DateTimeRangeFieldYears,
@@ -17,6 +21,13 @@ export default function DateTimeRangeFieldDemo() {
         <DateTimeRangeFieldMonths />
         <DateTimeRangeFieldSeparator>/</DateTimeRangeFieldSeparator>
         <DateTimeRangeFieldYears />
+        <DateTimeRangeFieldSeparator>·</DateTimeRangeFieldSeparator>
+        <DateTimeRangeFieldHours />
+        <DateTimeRangeFieldSeparator>:</DateTimeRangeFieldSeparator>
+        <DateTimeRangeFieldMinutes />
+        <DateTimeRangeFieldSeparator>:</DateTimeRangeFieldSeparator>
+        <DateTimeRangeFieldSeconds />
+        <DateTimeRangeFieldAmPm />
       </DateTimeRangeFieldFrom>
 
       <DateTimeRangeFieldSeparator>-</DateTimeRangeFieldSeparator>
@@ -27,6 +38,13 @@ export default function DateTimeRangeFieldDemo() {
         <DateTimeRangeFieldMonths />
         <DateTimeRangeFieldSeparator>/</DateTimeRangeFieldSeparator>
         <DateTimeRangeFieldYears />
+        <DateTimeRangeFieldSeparator>·</DateTimeRangeFieldSeparator>
+        <DateTimeRangeFieldHours />
+        <DateTimeRangeFieldSeparator>:</DateTimeRangeFieldSeparator>
+        <DateTimeRangeFieldMinutes />
+        <DateTimeRangeFieldSeparator>:</DateTimeRangeFieldSeparator>
+        <DateTimeRangeFieldSeconds />
+        <DateTimeRangeFieldAmPm />
       </DateTimeRangeFieldTo>
     </DateTimeRangeField>
   )

@@ -1,6 +1,6 @@
 import * as DateTimeRangeFieldPrimitive from "@/registry/default/ui/date-time-range-field-primitive"
 
-export default function DateTimeRangeFieldDisabled() {
+export default function DateTimeRangeFieldPrimitiveDisabled() {
   return (
     <DateTimeRangeFieldPrimitive.Root className="flex" disabled>
       <DateTimeRangeFieldPrimitive.From className="flex">

@@ -1,6 +1,6 @@
 import * as DateTimeRangeFieldPrimitive from "@/registry/new-york/ui/date-time-range-field-primitive"
 
-export default function DateTimeRangeFieldDemo() {
+export default function DateTimeRangeFieldPrimitiveDemo() {
   return (
     <DateTimeRangeFieldPrimitive.Root className="flex">
       <DateTimeRangeFieldPrimitive.From className="flex">
@@ -25,7 +25,7 @@ export default function DateTimeRangeFieldDemo() {
       </DateTimeRangeFieldPrimitive.From>
 
       <DateTimeRangeFieldPrimitive.Separator>
-        ~
+        -
       </DateTimeRangeFieldPrimitive.Separator>
 
       <DateTimeRangeFieldPrimitive.To className="flex">

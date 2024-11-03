@@ -148,74 +148,53 @@ export const useTimescapeRange = ({
   const { update: fromUpdate, ...fromTimescape } = from
 
   React.useEffect(() => {
-    fromUpdate((prevOptions) => ({ ...prevOptions, digits }))
-  }, [digits, fromUpdate])
-  React.useEffect(() => {
     fromUpdate((prevOptions) => ({
       ...prevOptions,
-      digits: fromOptions.digits,
+      digits: fromOptions.digits ?? digits,
     }))
-  }, [fromOptions.digits, fromUpdate])
+  }, [digits, fromOptions.digits, fromUpdate])
 
   React.useEffect(() => {
-    fromUpdate((prevOptions) => ({ ...prevOptions, hour12 }))
-  }, [hour12, fromUpdate])
-  React.useEffect(() => {
     fromUpdate((prevOptions) => ({
       ...prevOptions,
-      hour12: fromOptions.hour12,
+      hour12: fromOptions.hour12 ?? hour12,
     }))
-  }, [fromOptions.hour12, fromUpdate])
+  }, [hour12, fromOptions.hour12, fromUpdate])
 
   React.useEffect(() => {
-    fromUpdate((prevOptions) => ({ ...prevOptions, maxDate }))
-  }, [maxDate, fromUpdate])
-  React.useEffect(() => {
     fromUpdate((prevOptions) => ({
       ...prevOptions,
-      maxDate: fromOptions.maxDate,
+      maxDate: fromOptions.maxDate ?? maxDate,
     }))
-  }, [fromOptions.maxDate, fromUpdate])
+  }, [maxDate, fromOptions.maxDate, fromUpdate])
 
   React.useEffect(() => {
-    fromUpdate((prevOptions) => ({ ...prevOptions, minDate }))
-  }, [minDate, fromUpdate])
-  React.useEffect(() => {
     fromUpdate((prevOptions) => ({
       ...prevOptions,
-      minDate: fromOptions.minDate,
+      minDate: fromOptions.minDate ?? minDate,
     }))
-  }, [fromOptions.minDate, fromUpdate])
+  }, [minDate, fromOptions.minDate, fromUpdate])
 
   React.useEffect(() => {
-    fromUpdate((prevOptions) => ({ ...prevOptions, snapToStep }))
-  }, [snapToStep, fromUpdate])
-  React.useEffect(() => {
     fromUpdate((prevOptions) => ({
       ...prevOptions,
-      snapToStep: fromOptions.snapToStep,
+      snapToStep: fromOptions.snapToStep ?? snapToStep,
     }))
-  }, [fromOptions.snapToStep, fromUpdate])
+  }, [snapToStep, fromOptions.snapToStep, fromUpdate])
 
   React.useEffect(() => {
-    fromUpdate((prevOptions) => ({ ...prevOptions, wheelControl }))
-  }, [wheelControl, fromUpdate])
-  React.useEffect(() => {
     fromUpdate((prevOptions) => ({
       ...prevOptions,
-      wheelControl: fromOptions.wheelControl,
+      wheelControl: fromOptions.wheelControl ?? wheelControl,
     }))
-  }, [fromOptions.wheelControl, fromUpdate])
+  }, [wheelControl, fromOptions.wheelControl, fromUpdate])
 
   React.useEffect(() => {
-    fromUpdate((prevOptions) => ({ ...prevOptions, wrapAround }))
-  }, [wrapAround, fromUpdate])
-  React.useEffect(() => {
     fromUpdate((prevOptions) => ({
       ...prevOptions,
-      wrapAround: fromOptions.wrapAround,
+      wrapAround: fromOptions.wrapAround ?? wrapAround,
     }))
-  }, [fromOptions.wrapAround, fromUpdate])
+  }, [wrapAround, fromOptions.wrapAround, fromUpdate])
 
   // ----------------------------------------------------------------------------
   // Sync `to`
@@ -224,74 +203,53 @@ export const useTimescapeRange = ({
   const { update: toUpdate, ...toTimescape } = to
 
   React.useEffect(() => {
-    toUpdate((prevOptions) => ({ ...prevOptions, digits }))
-  }, [digits, toUpdate])
-  React.useEffect(() => {
     toUpdate((prevOptions) => ({
       ...prevOptions,
-      digits: toOptions.digits,
+      digits: toOptions.digits ?? digits,
     }))
-  }, [toOptions.digits, toUpdate])
+  }, [digits, toOptions.digits, toUpdate])
 
   React.useEffect(() => {
-    toUpdate((prevOptions) => ({ ...prevOptions, hour12 }))
-  }, [hour12, toUpdate])
-  React.useEffect(() => {
     toUpdate((prevOptions) => ({
       ...prevOptions,
-      hour12: toOptions.hour12,
+      hour12: toOptions.hour12 ?? hour12,
     }))
-  }, [toOptions.hour12, toUpdate])
+  }, [hour12, toOptions.hour12, toUpdate])
 
   React.useEffect(() => {
-    toUpdate((prevOptions) => ({ ...prevOptions, maxDate }))
-  }, [maxDate, toUpdate])
-  React.useEffect(() => {
     toUpdate((prevOptions) => ({
       ...prevOptions,
-      maxDate: toOptions.maxDate,
+      maxDate: toOptions.maxDate ?? maxDate,
     }))
-  }, [toOptions.maxDate, toUpdate])
+  }, [maxDate, toOptions.maxDate, toUpdate])
 
   React.useEffect(() => {
-    toUpdate((prevOptions) => ({ ...prevOptions, minDate }))
-  }, [minDate, toUpdate])
-  React.useEffect(() => {
     toUpdate((prevOptions) => ({
       ...prevOptions,
-      minDate: toOptions.minDate,
+      minDate: toOptions.minDate ?? minDate,
     }))
-  }, [toOptions.minDate, toUpdate])
+  }, [minDate, toOptions.minDate, toUpdate])
 
   React.useEffect(() => {
-    toUpdate((prevOptions) => ({ ...prevOptions, snapToStep }))
-  }, [snapToStep, toUpdate])
-  React.useEffect(() => {
     toUpdate((prevOptions) => ({
       ...prevOptions,
-      snapToStep: toOptions.snapToStep,
+      snapToStep: toOptions.snapToStep ?? snapToStep,
     }))
-  }, [toOptions.snapToStep, toUpdate])
+  }, [snapToStep, toOptions.snapToStep, toUpdate])
 
   React.useEffect(() => {
-    toUpdate((prevOptions) => ({ ...prevOptions, wheelControl }))
-  }, [wheelControl, toUpdate])
-  React.useEffect(() => {
     toUpdate((prevOptions) => ({
       ...prevOptions,
-      wheelControl: toOptions.wheelControl,
+      wheelControl: toOptions.wheelControl ?? wheelControl,
     }))
-  }, [toOptions.wheelControl, toUpdate])
+  }, [wheelControl, toOptions.wheelControl, toUpdate])
 
   React.useEffect(() => {
-    toUpdate((prevOptions) => ({ ...prevOptions, wrapAround }))
-  }, [wrapAround, toUpdate])
-  React.useEffect(() => {
     toUpdate((prevOptions) => ({
       ...prevOptions,
-      wrapAround: toOptions.wrapAround,
+      wrapAround: toOptions.wrapAround ?? wrapAround,
     }))
-  }, [toOptions.wrapAround, toUpdate])
+  }, [wrapAround, toOptions.wrapAround, toUpdate])
 
   // ----------------------------------------------------------------------------
   // Sync `value`

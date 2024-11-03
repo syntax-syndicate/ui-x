@@ -30,6 +30,8 @@ export default function DateTimeRangeFieldDemo() {
         <DateTimeRangeFieldAmPm />
       </DateTimeRangeFieldFrom>
 
+      <DateTimeRangeFieldSeparator>-</DateTimeRangeFieldSeparator>
+
       <DateTimeRangeFieldTo>
         <DateTimeRangeFieldDays />
         <DateTimeRangeFieldSeparator>/</DateTimeRangeFieldSeparator>
