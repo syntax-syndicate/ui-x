@@ -217,6 +217,18 @@ export const examples: Registry = [
     registryDependencies: ["combobox"],
     files: ["example/combobox-form.tsx"],
   },
+  {
+    name: "confirmer-demo",
+    type: "registry:example",
+    registryDependencies: ["confirmer", "toast"],
+    files: ["example/confirmer-demo.tsx"],
+  },
+  {
+    name: "confirmer-safe",
+    type: "registry:example",
+    registryDependencies: ["confirmer", "toast"],
+    files: ["example/confirmer-safe.tsx"],
+  },
   // {
   //   name: "card-demo",
   //   type: "registry:example",

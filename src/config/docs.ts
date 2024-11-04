@@ -77,6 +77,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Confirmer",
+          href: "/docs/components/confirmer",
+          items: [],
+        },
+        {
           title: "Date Field",
           href: "/docs/components/date-field",
           items: [],

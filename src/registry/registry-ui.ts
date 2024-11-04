@@ -98,6 +98,13 @@ export const ui: Registry = [
     registryDependencies: ["badge", "combobox-primitive", "input-base"],
     files: ["ui/combobox.tsx"],
   },
+  {
+    name: "confirmer",
+    type: "registry:ui",
+    dependencies: ["use-ask"],
+    registryDependencies: ["alert-dialog", "button"],
+    files: ["ui/confirmer.tsx"],
+  },
   // {
   //   name: "card",
   //   type: "registry:ui",

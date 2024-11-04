@@ -9,7 +9,9 @@ import { Analytics } from "@/components/analytics"
 import { ThemeProvider } from "@/components/providers"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeSwitcher } from "@/components/theme-switcher"
+import { Confirmer as DefaultConfirmer } from "@/registry/default/ui/confirmer"
 import { Toaster as DefaultToaster } from "@/registry/default/ui/toaster"
+import { Confirmer as NewYorkConfirmer } from "@/registry/new-york/ui/confirmer"
 import { Toaster as NewYorkSonner } from "@/registry/new-york/ui/sonner"
 import { Toaster as NewYorkToaster } from "@/registry/new-york/ui/toaster"
 
@@ -102,6 +104,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Analytics />
             <NewYorkToaster />
             <DefaultToaster />
+            <NewYorkConfirmer />
+            <DefaultConfirmer />
             <NewYorkSonner />
           </ThemeProvider>
         </body>
