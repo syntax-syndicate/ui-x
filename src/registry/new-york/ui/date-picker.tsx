@@ -51,35 +51,123 @@ const DatePickerInputBase = React.forwardRef<
 ))
 DatePickerInputBase.displayName = "DatePickerInputBase"
 
-export const DatePickerInput = React.forwardRef<
-  React.ElementRef<typeof DatePickerPrimitive.DateField>,
-  React.ComponentPropsWithoutRef<typeof DatePickerPrimitive.DateField>
->(({ disabled: disabledProp, ...props }, ref) => {
+const DatePickerDateRangeField = React.forwardRef<
+  React.ElementRef<typeof DatePickerPrimitive.DateRangeField>,
+  React.ComponentPropsWithoutRef<typeof DatePickerPrimitive.DateRangeField>
+>(({ disabled: disabledProp, className, ...props }, ref) => {
   const { disabled } = DatePickerPrimitive.useDatePickerContext()
 
   return (
-    <DatePickerInputBase>
-      <DatePickerPrimitive.DateField
-        ref={ref}
-        disabled={disabled || disabledProp}
-        {...props}
-      >
-        <DatePickerPrimitive.DateFieldYears asChild>
+    <DatePickerPrimitive.DateRangeField
+      ref={ref}
+      disabled={disabled || disabledProp}
+      className={cn("flex gap-1.5", className)}
+      {...props}
+    >
+      <DatePickerPrimitive.DateRangeFieldFrom className="flex items-center">
+        <DatePickerPrimitive.DateRangeFieldYears asChild>
           <DateFieldYears />
-        </DatePickerPrimitive.DateFieldYears>
-        <DatePickerPrimitive.DateFieldSeparator asChild>
+        </DatePickerPrimitive.DateRangeFieldYears>
+        <DatePickerPrimitive.DateRangeFieldSeparator asChild>
           <DateFieldSeparator />
-        </DatePickerPrimitive.DateFieldSeparator>
-        <DatePickerPrimitive.DateFieldMonths asChild>
+        </DatePickerPrimitive.DateRangeFieldSeparator>
+        <DatePickerPrimitive.DateRangeFieldMonths asChild>
           <DateFieldMonths />
-        </DatePickerPrimitive.DateFieldMonths>
-        <DatePickerPrimitive.DateFieldSeparator asChild>
+        </DatePickerPrimitive.DateRangeFieldMonths>
+        <DatePickerPrimitive.DateRangeFieldSeparator asChild>
           <DateFieldSeparator />
-        </DatePickerPrimitive.DateFieldSeparator>
-        <DatePickerPrimitive.DateFieldDays asChild>
+        </DatePickerPrimitive.DateRangeFieldSeparator>
+        <DatePickerPrimitive.DateRangeFieldDays asChild>
           <DateFieldDays />
-        </DatePickerPrimitive.DateFieldDays>
-      </DatePickerPrimitive.DateField>
+        </DatePickerPrimitive.DateRangeFieldDays>
+      </DatePickerPrimitive.DateRangeFieldFrom>
+
+      <DatePickerPrimitive.DateRangeFieldSeparator>
+        -
+      </DatePickerPrimitive.DateRangeFieldSeparator>
+
+      <DatePickerPrimitive.DateRangeFieldTo className="flex items-center">
+        <DatePickerPrimitive.DateRangeFieldYears asChild>
+          <DateFieldYears />
+        </DatePickerPrimitive.DateRangeFieldYears>
+        <DatePickerPrimitive.DateRangeFieldSeparator asChild>
+          <DateFieldSeparator />
+        </DatePickerPrimitive.DateRangeFieldSeparator>
+        <DatePickerPrimitive.DateRangeFieldMonths asChild>
+          <DateFieldMonths />
+        </DatePickerPrimitive.DateRangeFieldMonths>
+        <DatePickerPrimitive.DateRangeFieldSeparator asChild>
+          <DateFieldSeparator />
+        </DatePickerPrimitive.DateRangeFieldSeparator>
+        <DatePickerPrimitive.DateRangeFieldDays asChild>
+          <DateFieldDays />
+        </DatePickerPrimitive.DateRangeFieldDays>
+      </DatePickerPrimitive.DateRangeFieldTo>
+    </DatePickerPrimitive.DateRangeField>
+  )
+})
+DatePickerDateRangeField.displayName = "DatePickerDateRangeField"
+
+const DatePickerDateField = React.forwardRef<
+  React.ElementRef<typeof DatePickerPrimitive.DateField>,
+  React.ComponentPropsWithoutRef<typeof DatePickerPrimitive.DateField>
+>(({ disabled: disabledProp, className, ...props }, ref) => {
+  const { disabled } = DatePickerPrimitive.useDatePickerContext()
+
+  return (
+    <DatePickerPrimitive.DateField
+      ref={ref}
+      disabled={disabled || disabledProp}
+      className={cn("flex", className)}
+      {...props}
+    >
+      <DatePickerPrimitive.DateFieldYears asChild>
+        <DateFieldYears />
+      </DatePickerPrimitive.DateFieldYears>
+      <DatePickerPrimitive.DateFieldSeparator asChild>
+        <DateFieldSeparator />
+      </DatePickerPrimitive.DateFieldSeparator>
+      <DatePickerPrimitive.DateFieldMonths asChild>
+        <DateFieldMonths />
+      </DatePickerPrimitive.DateFieldMonths>
+      <DatePickerPrimitive.DateFieldSeparator asChild>
+        <DateFieldSeparator />
+      </DatePickerPrimitive.DateFieldSeparator>
+      <DatePickerPrimitive.DateFieldDays asChild>
+        <DateFieldDays />
+      </DatePickerPrimitive.DateFieldDays>
+    </DatePickerPrimitive.DateField>
+  )
+})
+DatePickerDateField.displayName = "DatePickerDateField"
+
+export const DatePickerInput = React.forwardRef<
+  React.ElementRef<
+    typeof DatePickerDateField | typeof DatePickerDateRangeField
+  >,
+  React.ComponentPropsWithoutRef<
+    typeof DatePickerDateField | typeof DatePickerDateRangeField
+  >
+>((props, ref) => {
+  const { mode } = DatePickerPrimitive.useDatePickerContext()
+
+  return (
+    <DatePickerInputBase>
+      {mode === "range" ? (
+        <DatePickerDateRangeField
+          ref={ref}
+          {...(props as React.ComponentPropsWithoutRef<
+            typeof DatePickerDateRangeField
+          >)}
+        />
+      ) : (
+        <DatePickerDateField
+          ref={ref}
+          {...(props as React.ComponentPropsWithoutRef<
+            typeof DatePickerDateField
+          >)}
+        />
+      )}
     </DatePickerInputBase>
   )
 })

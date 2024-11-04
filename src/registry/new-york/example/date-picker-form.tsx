@@ -1,6 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
+import { DateRange } from "react-day-picker"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
@@ -23,9 +24,24 @@ import {
 } from "@/registry/new-york/ui/form"
 
 const FormSchema = z.object({
-  dob: z.date({
-    required_error: "A date of birth is required.",
-  }),
+  eventPeriod: z
+    .object(
+      {
+        from: z.date().optional(),
+        to: z.date().optional(),
+      },
+      {
+        required_error: "Event period is required ",
+      }
+    )
+    .superRefine((data, ctx) => {
+      if (!data.from || !data.to) {
+        ctx.addIssue({
+          message: "Event period is required.",
+          code: "custom",
+        })
+      }
+    }),
 })
 
 export default function DatePickerForm() {
@@ -49,13 +65,13 @@ export default function DatePickerForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
-          name="dob"
+          name="eventPeriod"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Date of birth</FormLabel>
+              <FormLabel>Event period</FormLabel>
               <DatePicker
-                mode="single"
-                value={field.value}
+                mode="range"
+                value={field.value as DateRange}
                 onValueChange={field.onChange}
               >
                 <FormControl>
@@ -66,7 +82,7 @@ export default function DatePickerForm() {
                 </DatePickerContent>
               </DatePicker>
               <FormDescription>
-                Your date of birth is used to calculate your age.
+                Schedule your event by selecting a start and end date.
               </FormDescription>
               <FormMessage />
             </FormItem>
