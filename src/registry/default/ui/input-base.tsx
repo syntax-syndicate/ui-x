@@ -9,7 +9,10 @@ import { Slot } from "@radix-ui/react-slot"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york/ui/button"
 
-type InputBaseContextProps = Pick<InputBaseProps, "autoFocus" | "disabled"> & {
+export type InputBaseContextProps = Pick<
+  InputBaseProps,
+  "autoFocus" | "disabled"
+> & {
   controlRef: React.RefObject<HTMLElement>
   onFocusedChange: (focused: boolean) => void
 }
@@ -23,7 +26,7 @@ const InputBaseContext = React.createContext<InputBaseContextProps>({
 
 const useInputBaseContext = () => React.useContext(InputBaseContext)
 
-interface InputBaseProps
+export interface InputBaseProps
   extends React.ComponentPropsWithoutRef<typeof Primitive.div> {
   autoFocus?: boolean
   disabled?: boolean
@@ -100,7 +103,7 @@ export const InputBaseControl = React.forwardRef<
 })
 InputBaseControl.displayName = "InputBaseControl"
 
-interface InputBaseAdornmentProps
+export interface InputBaseAdornmentProps
   extends React.ComponentPropsWithoutRef<"div"> {
   asChild?: boolean
   disablePointerEvents?: boolean
