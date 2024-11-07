@@ -61,6 +61,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/dropzone-primitive",
           items: [],
         },
+        {
+          title: "Password Input",
+          href: "/docs/components/password-input-primitive",
+          items: [],
+        },
       ],
     },
     {
@@ -119,6 +124,11 @@ export const docsConfig: DocsConfig = {
         {
           title: "Input Base",
           href: "/docs/components/input-base",
+          items: [],
+        },
+        {
+          title: "Password Input",
+          href: "/docs/components/password-input",
           items: [],
         },
         {

@@ -326,6 +326,22 @@ export const ui: Registry = [
     type: "registry:ui",
     files: ["ui/timeline.tsx"],
   },
+  {
+    name: "password-input-primitive",
+    type: "registry:ui",
+    dependencies: [
+      "@radix-ui/primitive",
+      "@radix-ui/react-primitive",
+      "@radix-ui/react-use-controllable-state",
+    ],
+    files: ["ui/password-input-primitive.tsx"],
+  },
+  {
+    name: "password-input",
+    type: "registry:ui",
+    registryDependencies: ["input-base", "password-input-primitive"],
+    files: ["ui/password-input.tsx"],
+  },
   // {
   //   name: "input-otp",
   //   type: "registry:ui",

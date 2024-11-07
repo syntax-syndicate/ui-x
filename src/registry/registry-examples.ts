@@ -619,6 +619,36 @@ export const examples: Registry = [
     registryDependencies: ["timeline"],
     files: ["example/timeline-horizontal.tsx"],
   },
+  {
+    name: "password-input-primitive-demo",
+    type: "registry:example",
+    registryDependencies: ["password-input-primitive"],
+    files: ["example/password-input-primitive-demo.tsx"],
+  },
+  {
+    name: "password-input-primitive-checkbox",
+    type: "registry:example",
+    registryDependencies: ["password-input-primitive"],
+    files: ["example/password-input-primitive-checkbox.tsx"],
+  },
+  {
+    name: "password-input-demo",
+    type: "registry:example",
+    registryDependencies: ["password-input"],
+    files: ["example/password-input-demo.tsx"],
+  },
+  {
+    name: "password-input-checkbox",
+    type: "registry:example",
+    registryDependencies: ["checkbox", "password-input"],
+    files: ["example/password-input-checkbox.tsx"],
+  },
+  {
+    name: "password-input-form",
+    type: "registry:example",
+    registryDependencies: ["button", "form", "password-input"],
+    files: ["example/password-input-form.tsx"],
+  },
   // {
   //   name: "input-demo",
   //   type: "registry:example",
