@@ -562,8 +562,20 @@ export const examples: Registry = [
   {
     name: "input-base-form",
     type: "registry:example",
-    registryDependencies: ["input-base", "button", "form"],
+    registryDependencies: ["button", "form", "input-base"],
     files: ["example/input-base-form.tsx"],
+  },
+  {
+    name: "native-select-demo",
+    type: "registry:example",
+    registryDependencies: ["native-select"],
+    files: ["example/native-select-demo.tsx"],
+  },
+  {
+    name: "native-select-form",
+    type: "registry:example",
+    registryDependencies: ["button", "form", "native-select"],
+    files: ["example/native-select-form.tsx"],
   },
   {
     name: "time-field-demo",

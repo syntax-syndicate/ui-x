@@ -127,6 +127,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Native Select",
+          href: "/docs/components/native-select",
+          items: [],
+        },
+        {
           title: "Password Input",
           href: "/docs/components/password-input",
           items: [],

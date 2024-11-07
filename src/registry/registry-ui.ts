@@ -310,6 +310,12 @@ export const ui: Registry = [
     files: ["ui/input-base.tsx"],
   },
   {
+    name: "native-select",
+    type: "registry:ui",
+    registryDependencies: ["input-base"],
+    files: ["ui/native-select.tsx"],
+  },
+  {
     name: "time-field",
     type: "registry:ui",
     registryDependencies: ["date-time-field"],
