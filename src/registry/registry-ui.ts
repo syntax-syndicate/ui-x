@@ -58,6 +58,12 @@ export const ui: Registry = [
   //   type: "registry:ui",
   //   files: ["ui/badge.tsx"],
   // },
+  {
+    name: "badge-group",
+    type: "registry:ui",
+    registryDependencies: ["badge"],
+    files: ["ui/badge-group.tsx"],
+  },
   // {
   //   name: "breadcrumb",
   //   type: "registry:ui",

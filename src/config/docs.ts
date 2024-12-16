@@ -72,6 +72,11 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       items: [
         {
+          title: "Badge Group",
+          href: "/docs/components/badge-group",
+          items: [],
+        },
+        {
           title: "Calendar",
           href: "/docs/components/calendar",
           items: [],

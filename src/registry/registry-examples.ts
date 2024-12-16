@@ -43,6 +43,18 @@ export const examples: Registry = [
   //   registryDependencies: ["badge"],
   //   files: ["example/badge-demo.tsx"],
   // },
+  {
+    name: "badge-group-demo",
+    type: "registry:example",
+    registryDependencies: ["badge-group"],
+    files: ["example/badge-group-demo.tsx"],
+  },
+  {
+    name: "badge-group-form",
+    type: "registry:example",
+    registryDependencies: ["badge-group", "button", "form"],
+    files: ["example/badge-group-form.tsx"],
+  },
   // {
   //   name: "badge-destructive",
   //   type: "registry:example",
@@ -214,7 +226,7 @@ export const examples: Registry = [
   {
     name: "combobox-form",
     type: "registry:example",
-    registryDependencies: ["combobox"],
+    registryDependencies: ["button", "combobox", "form"],
     files: ["example/combobox-form.tsx"],
   },
   {
