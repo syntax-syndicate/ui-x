@@ -415,8 +415,9 @@ export const DatePickerCalendar = ({
   return (
     <Comp
       mode={mode}
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      selected={value === null ? undefined : (value as any)}
+      selected={
+        value === null ? undefined : (value as Date | Date[] | DateRange)
+      }
       onSelect={(value: Date | Date[] | DateRange | undefined) => {
         if (!value && !required) {
           onValueChange(null)
