@@ -29,11 +29,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/examples",
-        destination: "/examples/mail",
-        permanent: false,
-      },
-      {
         source: "/docs/primitives/:path*",
         destination: "/docs/components/:path*",
         permanent: true,
