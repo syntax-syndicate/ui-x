@@ -1,4 +1,4 @@
-import { MainNavItem, SidebarNavItem } from "types/nav"
+import { MainNavItem, SidebarNavItem } from "@/types/nav"
 
 export interface DocsConfig {
   mainNav: MainNavItem[]
@@ -40,6 +40,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Combobox",
           href: "/docs/components/combobox-primitive",
+          items: [],
         },
         {
           title: "Date Time Field",

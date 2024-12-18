@@ -415,9 +415,10 @@ export const DatePickerCalendar = ({
   return (
     <Comp
       mode={mode}
-      selected={
-        value === null ? undefined : (value as Date | Date[] | DateRange)
-      }
+      {...({
+        selected: value === null ? undefined : value,
+        required,
+      } as React.ComponentProps<typeof Comp>)}
       onSelect={(value: Date | Date[] | DateRange | undefined) => {
         if (!value && !required) {
           onValueChange(null)
@@ -435,7 +436,6 @@ export const DatePickerCalendar = ({
       month={month}
       onMonthChange={onMonthChange}
       disabled={disabled}
-      required={required}
       autoFocus={autoFocus}
       {...props}
     />

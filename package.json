@@ -138,6 +138,7 @@
     "unist-util-visit": "^4.1.2"
   },
   "peerDependencies": {
-    "esbuild": "^0.17.3"
+    "esbuild": "^0.17.3",
+    "@radix-ui/react-context": "^1.1.1"
   }
 }
