@@ -7,7 +7,7 @@ export function SiteFooter() {
         <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
           Built by{" "}
           <a
-            href={siteConfig.links.twitter}
+            href={siteConfig.links.github}
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
@@ -16,7 +16,7 @@ export function SiteFooter() {
           </a>{" "}
           based on{" "}
           <a
-            href={siteConfig.links.github}
+            href={siteConfig.links.githubShadcnUi}
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
@@ -25,7 +25,7 @@ export function SiteFooter() {
           </a>
           . The source code is available on{" "}
           <a
-            href={siteConfig.links.github}
+            href={siteConfig.links.githubUiX}
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"

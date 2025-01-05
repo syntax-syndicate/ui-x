@@ -1,0 +1,15 @@
+{
+  "name": "native-select",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "input-base"
+  ],
+  "files": [
+    {
+      "path": "ui/native-select.tsx",
+      "content": "import * as React from \"react\"\nimport { ChevronDown } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport {\n  InputBase,\n  InputBaseAdornment,\n  InputBaseControl,\n} from \"@/registry/new-york/ui/input-base\"\n\nexport const NativeSelect = React.forwardRef<\n  React.ElementRef<\"select\">,\n  React.ComponentPropsWithoutRef<\"select\">\n>(({ className, ...props }, ref) => (\n  <InputBase className=\"relative min-h-fit p-0\">\n    <InputBaseControl>\n      <select\n        ref={ref}\n        className={cn(\n          \"size-full min-h-9 min-w-40 flex-1 appearance-none bg-transparent px-3 py-1 text-sm focus:outline-none\",\n          className\n        )}\n        {...props}\n      />\n    </InputBaseControl>\n    <InputBaseAdornment className=\"absolute right-0 top-1/2 -translate-y-1/2 pr-3\">\n      <ChevronDown />\n    </InputBaseAdornment>\n  </InputBase>\n))\nNativeSelect.displayName = \"NativeSelect\"\n\nexport const NativeSelectOption = React.forwardRef<\n  React.ElementRef<\"option\">,\n  React.ComponentPropsWithoutRef<\"option\">\n>((props, ref) => <option ref={ref} {...props} />)\nNativeSelectOption.displayName = \"NativeSelectOption\"\n\nexport const NativeSelectPlaceholder = React.forwardRef<\n  React.ElementRef<\"option\">,\n  React.ComponentPropsWithoutRef<\"option\">\n>(\n  (\n    { value = \"\", disabled = true, selected = true, hidden = true, ...props },\n    ref\n  ) => (\n    <option\n      ref={ref}\n      value={value}\n      disabled={disabled}\n      selected={selected}\n      hidden={hidden}\n      {...props}\n    />\n  )\n)\nNativeSelectPlaceholder.displayName = \"NativeSelectPlaceholder\"\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}
