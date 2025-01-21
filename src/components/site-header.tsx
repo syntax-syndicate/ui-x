@@ -6,7 +6,7 @@ import { CommandMenu } from "@/components/command-menu"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
-import { ModeToggle } from "@/components/mode-toggle"
+import { ModeSwitcher } from "@/components/mode-switcher"
 import { buttonVariants } from "@/registry/new-york/ui/button"
 
 export function SiteHeader() {
@@ -37,7 +37,7 @@ export function SiteHeader() {
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
-            <ModeToggle />
+            <ModeSwitcher />
           </nav>
         </div>
       </div>
