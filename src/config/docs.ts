@@ -133,6 +133,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Kbd",
+          href: "/docs/components/kbd",
+          items: [],
+        },
+        {
           title: "Native Select",
           href: "/docs/components/native-select",
           items: [],
