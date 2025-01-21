@@ -1,6 +1,9 @@
 {
   "name": "input-base",
   "type": "registry:ui",
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "ui/input-base.tsx",
