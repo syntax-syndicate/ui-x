@@ -81,7 +81,7 @@ export function CodeBlockCommand({
         </div>
         {Object.entries(tabs).map(([key, value]) => {
           return (
-            <TabsContent key={key} value={key} className="mt-0">
+            <TabsContent key={key} value={key} className="mt-0 overflow-auto">
               <pre className="px-4 py-5">
                 <code
                   className="relative font-mono text-sm leading-none"

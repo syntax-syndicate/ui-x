@@ -8,7 +8,7 @@ export const Index: Record<string, any> = {
     "badge-group": {
       name: "badge-group",
       type: "registry:ui",
-      registryDependencies: ["badge"],
+      registryDependencies: undefined,
       files: ["src/registry/new-york/ui/badge-group.tsx"],
       component: React.lazy(() => import("@/registry/new-york/ui/badge-group.tsx")),
       source: "",
@@ -2187,7 +2187,7 @@ export const Index: Record<string, any> = {
     "badge-group": {
       name: "badge-group",
       type: "registry:ui",
-      registryDependencies: ["badge"],
+      registryDependencies: undefined,
       files: ["src/registry/default/ui/badge-group.tsx"],
       component: React.lazy(() => import("@/registry/default/ui/badge-group.tsx")),
       source: "",

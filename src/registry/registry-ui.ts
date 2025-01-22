@@ -4,7 +4,12 @@ export const ui: Registry = [
   {
     name: "badge-group",
     type: "registry:ui",
-    registryDependencies: ["badge"],
+    dependencies: [
+      "@radix-ui/primitive",
+      "@radix-ui/react-slot",
+      "@radix-ui/react-toggle-group",
+      "@radix-ui/react-use-controllable-state",
+    ],
     files: ["ui/badge-group.tsx"],
   },
   {
@@ -54,7 +59,6 @@ export const ui: Registry = [
     dependencies: [
       "@radix-ui/react-compose-refs",
       "@radix-ui/react-primitive",
-      "@radix-ui/react-use-controllable-state",
       "timescape",
     ],
     files: [
@@ -74,7 +78,6 @@ export const ui: Registry = [
     dependencies: [
       "@radix-ui/react-compose-refs",
       "@radix-ui/react-primitive",
-      "@radix-ui/react-use-controllable-state",
       "timescape",
     ],
     files: [
