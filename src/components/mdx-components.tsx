@@ -1,12 +1,11 @@
-// @ts-nocheck
 "use client"
 
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useMDXComponent } from "next-contentlayer2/hooks"
-import { NpmCommands } from "types/unist"
 
+import { NpmCommands } from "@/types/unist"
 import { Event } from "@/lib/events"
 import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
@@ -18,6 +17,7 @@ import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
 import { CopyButton } from "@/components/copy-button"
 import { FrameworkDocs } from "@/components/framework-docs"
+import { InstallCodeBlockCommand } from "@/components/install-code-block-command"
 import { StyleWrapper } from "@/components/style-wrapper"
 import {
   Accordion,
@@ -174,6 +174,7 @@ const components = {
       {...props}
     />
   ),
+  InstallCodeBlockCommand,
   pre: ({
     className,
     __rawString__,
