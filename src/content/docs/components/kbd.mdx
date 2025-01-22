@@ -16,9 +16,11 @@ component: true
 </TabsList>
 <TabsContent value="cli">
 
-```bash
-npx shadcn@latest add kbd
-```
+<InstallCodeBlockCommand>
+  {(style) =>
+    `npx shadcn@latest add https://junwen-k.dev/r/styles/${style}/kbd.json`
+  }
+</InstallCodeBlockCommand>
 
 </TabsContent>
 
