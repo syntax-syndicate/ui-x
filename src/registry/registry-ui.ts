@@ -161,6 +161,12 @@ export const ui: Registry = [
   {
     name: "input-base",
     type: "registry:ui",
+    dependencies: [
+      "@radix-ui/primitive",
+      "@radix-ui/react-compose-refs",
+      "@radix-ui/react-primitive",
+      "@radix-ui/react-slot",
+    ],
     registryDependencies: ["button"],
     files: ["ui/input-base.tsx"],
   },
