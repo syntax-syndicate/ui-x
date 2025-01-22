@@ -15,11 +15,13 @@ export function InstallCodeBlockCommand({
   const commands = npmCommand(children(config.style))
 
   return (
-    <CodeBlockCommand
-      __npmCommand__={commands?.npm}
-      __yarnCommand__={commands?.yarn}
-      __pnpmCommand__={commands?.pnpm}
-      __bunCommand__={commands?.bun}
-    />
+    <div data-rehype-pretty-code-fragment="">
+      <CodeBlockCommand
+        __npmCommand__={commands?.npm}
+        __yarnCommand__={commands?.yarn}
+        __pnpmCommand__={commands?.pnpm}
+        __bunCommand__={commands?.bun}
+      />
+    </div>
   )
 }
