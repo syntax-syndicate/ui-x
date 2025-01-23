@@ -6,7 +6,7 @@ import {
   DateTimeFieldMonths,
   DateTimeFieldSeparator,
   DateTimeFieldYears,
-} from "@/registry/new-york/ui/date-time-field"
+} from "@/registry/default/ui/date-time-field"
 
 export const DateField = DateTimeField
 

@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import * as PasswordInputPrimitive from "@/registry/default/ui/password-input-primitive"
+import * as PasswordInputPrimitive from "@/registry/new-york/ui/password-input-primitive"
 
 export default function PasswordInputPrimitiveCheckbox() {
   const [visible, setVisible] = React.useState(false)

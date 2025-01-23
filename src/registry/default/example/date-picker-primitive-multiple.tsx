@@ -1,7 +1,7 @@
 import * as React from "react"
 import { format } from "date-fns"
 
-import * as DatePickerPrimitive from "@/registry/new-york/ui/date-picker-primitive"
+import * as DatePickerPrimitive from "@/registry/default/ui/date-picker-primitive"
 
 const MAX_LENGTH = 3
 

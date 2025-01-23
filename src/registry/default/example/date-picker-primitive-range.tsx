@@ -2,7 +2,7 @@ import * as React from "react"
 import { addDays } from "date-fns"
 import { DateRange } from "react-day-picker"
 
-import * as DatePickerPrimitive from "@/registry/new-york/ui/date-picker-primitive"
+import * as DatePickerPrimitive from "@/registry/default/ui/date-picker-primitive"
 
 export default function DatePickerPrimitiveRange() {
   const [value, setValue] = React.useState<DateRange | null>({

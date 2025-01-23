@@ -4,6 +4,7 @@
   "registryDependencies": [
     "button",
     "calendar",
+    "date-field",
     "date-picker-primitive",
     "input-base"
   ],

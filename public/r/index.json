@@ -147,7 +147,7 @@
     ],
     "files": [
       {
-        "path": "ui/date-time-field-primitive.tsx",
+        "path": "ui/date-time-field.tsx",
         "type": "registry:ui"
       }
     ]
@@ -178,7 +178,8 @@
       "react-day-picker"
     ],
     "registryDependencies": [
-      "date-time-field-primitive"
+      "date-time-field-primitive",
+      "date-time-range-field-primitive"
     ],
     "files": [
       {
@@ -193,6 +194,7 @@
     "registryDependencies": [
       "button",
       "calendar",
+      "date-field",
       "date-picker-primitive",
       "input-base"
     ],

@@ -95,7 +95,7 @@ export const ui: Registry = [
     name: "date-time-field",
     type: "registry:ui",
     registryDependencies: ["date-time-field-primitive", "input-base"],
-    files: ["ui/date-time-field-primitive.tsx"],
+    files: ["ui/date-time-field.tsx"],
   },
   {
     name: "date-time-range-field",
@@ -127,6 +127,7 @@ export const ui: Registry = [
     registryDependencies: [
       "button",
       "calendar",
+      "date-field",
       "date-picker-primitive",
       "input-base",
     ],

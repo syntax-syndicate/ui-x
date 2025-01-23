@@ -1,4 +1,4 @@
-import * as DateTimeFieldPrimitive from "@/registry/new-york/ui/date-time-field-primitive"
+import * as DateTimeFieldPrimitive from "@/registry/default/ui/date-time-field-primitive"
 
 export default function DateTimeFieldPrimitiveDemo() {
   return (
