@@ -270,8 +270,6 @@ export const DatePickerDateRangeField = React.forwardRef<
   const { mode, onMonthChange, value, onValueChange, required, disabled } =
     useDatePickerContext()
 
-  console.log(props)
-
   if (mode !== "range") {
     throw new Error(
       '<DatePickerDateRangeField> should only be used when mode is "range"'

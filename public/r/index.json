@@ -2,8 +2,11 @@
   {
     "name": "badge-group",
     "type": "registry:ui",
-    "registryDependencies": [
-      "badge"
+    "dependencies": [
+      "@radix-ui/primitive",
+      "@radix-ui/react-slot",
+      "@radix-ui/react-toggle-group",
+      "@radix-ui/react-use-controllable-state"
     ],
     "files": [
       {
@@ -103,7 +106,6 @@
     "dependencies": [
       "@radix-ui/react-compose-refs",
       "@radix-ui/react-primitive",
-      "@radix-ui/react-use-controllable-state",
       "timescape"
     ],
     "files": [
@@ -123,7 +125,6 @@
     "dependencies": [
       "@radix-ui/react-compose-refs",
       "@radix-ui/react-primitive",
-      "@radix-ui/react-use-controllable-state",
       "timescape"
     ],
     "files": [
@@ -146,7 +147,7 @@
     ],
     "files": [
       {
-        "path": "ui/date-time-field-primitive.tsx",
+        "path": "ui/date-time-field.tsx",
         "type": "registry:ui"
       }
     ]
@@ -177,7 +178,8 @@
       "react-day-picker"
     ],
     "registryDependencies": [
-      "date-time-field-primitive"
+      "date-time-field-primitive",
+      "date-time-range-field-primitive"
     ],
     "files": [
       {
@@ -192,6 +194,7 @@
     "registryDependencies": [
       "button",
       "calendar",
+      "date-field",
       "date-picker-primitive",
       "input-base"
     ],
@@ -263,6 +266,12 @@
   {
     "name": "input-base",
     "type": "registry:ui",
+    "dependencies": [
+      "@radix-ui/primitive",
+      "@radix-ui/react-compose-refs",
+      "@radix-ui/react-primitive",
+      "@radix-ui/react-slot"
+    ],
     "registryDependencies": [
       "button"
     ],

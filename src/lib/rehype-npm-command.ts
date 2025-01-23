@@ -2,6 +2,8 @@ import { visit } from "unist-util-visit"
 
 import { UnistNode, UnistTree } from "@/types/unist"
 
+import { npmCommand } from "./npm-command"
+
 export function rehypeNpmCommand() {
   return (tree: UnistTree) => {
     visit(tree, (node: UnistNode) => {
@@ -9,58 +11,12 @@ export function rehypeNpmCommand() {
         return
       }
 
-      // npm install.
-      if (node.properties?.["__rawString__"]?.startsWith("npm install")) {
-        const npmCommand = node.properties?.["__rawString__"]
-        node.properties["__npmCommand__"] = npmCommand
-        node.properties["__yarnCommand__"] = npmCommand.replace(
-          "npm install",
-          "yarn add"
-        )
-        node.properties["__pnpmCommand__"] = npmCommand.replace(
-          "npm install",
-          "pnpm add"
-        )
-        node.properties["__bunCommand__"] = npmCommand.replace(
-          "npm install",
-          "bun add"
-        )
-      }
-
-      // npx create.
-      if (node.properties?.["__rawString__"]?.startsWith("npx create-")) {
-        const npmCommand = node.properties?.["__rawString__"]
-        node.properties["__npmCommand__"] = npmCommand
-        node.properties["__yarnCommand__"] = npmCommand.replace(
-          "npx create-",
-          "yarn create "
-        )
-        node.properties["__pnpmCommand__"] = npmCommand.replace(
-          "npx create-",
-          "pnpm create "
-        )
-        node.properties["__bunCommand__"] = npmCommand.replace(
-          "npx",
-          "bunx --bun"
-        )
-      }
-
-      // npx.
-      if (
-        node.properties?.["__rawString__"]?.startsWith("npx") &&
-        !node.properties?.["__rawString__"]?.startsWith("npx create-")
-      ) {
-        const npmCommand = node.properties?.["__rawString__"]
-        node.properties["__npmCommand__"] = npmCommand
-        node.properties["__yarnCommand__"] = npmCommand
-        node.properties["__pnpmCommand__"] = npmCommand.replace(
-          "npx",
-          "pnpm dlx"
-        )
-        node.properties["__bunCommand__"] = npmCommand.replace(
-          "npx",
-          "bunx --bun"
-        )
+      const commands = npmCommand(node.properties?.["__rawString__"] || "")
+      if (node.properties && commands) {
+        node.properties["__npmCommand__"] = commands.npm
+        node.properties["__yarnCommand__"] = commands.yarn
+        node.properties["__pnpmCommand__"] = commands.pnpm
+        node.properties["__bunCommand__"] = commands.bun
       }
     })
   }

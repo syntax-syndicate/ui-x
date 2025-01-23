@@ -5,7 +5,7 @@ import { Primitive } from "@radix-ui/react-primitive"
 import { Ban, CheckCircle2, Upload } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import * as DropzonePrimitive from "@/registry/new-york/ui/dropzone-primitive"
+import * as DropzonePrimitive from "@/registry/default/ui/dropzone-primitive"
 
 export const Dropzone = DropzonePrimitive.Dropzone
 

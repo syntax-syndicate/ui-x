@@ -4,7 +4,12 @@ export const ui: Registry = [
   {
     name: "badge-group",
     type: "registry:ui",
-    registryDependencies: ["badge"],
+    dependencies: [
+      "@radix-ui/primitive",
+      "@radix-ui/react-slot",
+      "@radix-ui/react-toggle-group",
+      "@radix-ui/react-use-controllable-state",
+    ],
     files: ["ui/badge-group.tsx"],
   },
   {
@@ -54,7 +59,6 @@ export const ui: Registry = [
     dependencies: [
       "@radix-ui/react-compose-refs",
       "@radix-ui/react-primitive",
-      "@radix-ui/react-use-controllable-state",
       "timescape",
     ],
     files: [
@@ -74,7 +78,6 @@ export const ui: Registry = [
     dependencies: [
       "@radix-ui/react-compose-refs",
       "@radix-ui/react-primitive",
-      "@radix-ui/react-use-controllable-state",
       "timescape",
     ],
     files: [
@@ -92,7 +95,7 @@ export const ui: Registry = [
     name: "date-time-field",
     type: "registry:ui",
     registryDependencies: ["date-time-field-primitive", "input-base"],
-    files: ["ui/date-time-field-primitive.tsx"],
+    files: ["ui/date-time-field.tsx"],
   },
   {
     name: "date-time-range-field",
@@ -112,7 +115,10 @@ export const ui: Registry = [
       "date-fns",
       "react-day-picker",
     ],
-    registryDependencies: ["date-time-field-primitive"],
+    registryDependencies: [
+      "date-time-field-primitive",
+      "date-time-range-field-primitive",
+    ],
     files: ["ui/date-picker-primitive.tsx"],
   },
   {
@@ -121,6 +127,7 @@ export const ui: Registry = [
     registryDependencies: [
       "button",
       "calendar",
+      "date-field",
       "date-picker-primitive",
       "input-base",
     ],
@@ -158,6 +165,12 @@ export const ui: Registry = [
   {
     name: "input-base",
     type: "registry:ui",
+    dependencies: [
+      "@radix-ui/primitive",
+      "@radix-ui/react-compose-refs",
+      "@radix-ui/react-primitive",
+      "@radix-ui/react-slot",
+    ],
     registryDependencies: ["button"],
     files: ["ui/input-base.tsx"],
   },

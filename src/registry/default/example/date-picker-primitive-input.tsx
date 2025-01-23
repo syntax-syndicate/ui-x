@@ -1,4 +1,4 @@
-import * as DatePickerPrimitive from "@/registry/new-york/ui/date-picker-primitive"
+import * as DatePickerPrimitive from "@/registry/default/ui/date-picker-primitive"
 
 export default function DatePickerPrimitiveInput() {
   return (

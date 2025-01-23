@@ -23,11 +23,11 @@ links:
 <Step>Run the following command:</Step>
 
 ```bash
-npx shadcn@latest add https://ui-x.junwen-k.dev/r/confirmer.json
+npx cross-env REGISTRY_URL=https://ui-x.junwen-k.dev/r npx shadcn@latest add confirmer
 ```
 
 <Step>
-  Add the `<Confirmer />` component
+  Add the `<Confirmer />` component.
 </Step>
 
 ```tsx title="app/layout.tsx" {1,9}
@@ -77,7 +77,7 @@ See installation instructions for the [AlertDialog](/docs/components/alert-dialo
 <Step>Update the import paths to match your project setup.</Step>
 
 <Step>
-  Add the `<Confirmer />` component
+  Add the `<Confirmer />` component.
 </Step>
 
 ```tsx title="app/layout.tsx" {1,9}

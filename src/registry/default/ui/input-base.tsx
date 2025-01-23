@@ -7,7 +7,7 @@ import { Primitive } from "@radix-ui/react-primitive"
 import { Slot } from "@radix-ui/react-slot"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/registry/default/ui/button"
 
 export type InputBaseContextProps = Pick<
   InputBaseProps,
