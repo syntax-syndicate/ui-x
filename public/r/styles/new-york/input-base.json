@@ -1,9 +1,13 @@
 {
   "name": "input-base",
   "type": "registry:ui",
-  "registryDependencies": [
-    "button"
+  "dependencies": [
+    "@radix-ui/primitive",
+    "@radix-ui/react-compose-refs",
+    "@radix-ui/react-primitive",
+    "@radix-ui/react-slot"
   ],
+  "registryDependencies": ["button"],
   "files": [
     {
       "path": "ui/input-base.tsx",

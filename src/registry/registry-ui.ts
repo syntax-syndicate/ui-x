@@ -115,7 +115,10 @@ export const ui: Registry = [
       "date-fns",
       "react-day-picker",
     ],
-    registryDependencies: ["date-time-field-primitive"],
+    registryDependencies: [
+      "date-time-field-primitive",
+      "date-time-range-field-primitive",
+    ],
     files: ["ui/date-picker-primitive.tsx"],
   },
   {

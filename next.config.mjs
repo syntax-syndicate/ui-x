@@ -48,6 +48,11 @@ const nextConfig = {
         destination: "/docs/components/form",
         permanent: false,
       },
+      {
+        source: "/r/icons/:path*",
+        destination: "https://ui.shadcn.com/r/icons/:path*",
+        permanent: true,
+      },
     ]
   },
 }

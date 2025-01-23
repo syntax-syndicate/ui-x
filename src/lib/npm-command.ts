@@ -10,9 +10,9 @@ export function npmCommand(command: string): PackageManagerCommands | null {
   if (command.startsWith("npm install")) {
     return {
       npm: command,
-      yarn: command.replace("npm install", "yarn add"),
-      pnpm: command.replace("npm install", "pnpm add"),
-      bun: command.replace("npm install", "bun add"),
+      yarn: command.replaceAll("npm install", "yarn add"),
+      pnpm: command.replaceAll("npm install", "pnpm add"),
+      bun: command.replaceAll("npm install", "bun add"),
     }
   }
 
@@ -20,9 +20,9 @@ export function npmCommand(command: string): PackageManagerCommands | null {
   if (command.startsWith("npx create-")) {
     return {
       npm: command,
-      yarn: command.replace("npx create-", "yarn create "),
-      pnpm: command.replace("npx create-", "pnpm create "),
-      bun: command.replace("npx", "bunx --bun"),
+      yarn: command.replaceAll("npx create-", "yarn create "),
+      pnpm: command.replaceAll("npx create-", "pnpm create "),
+      bun: command.replaceAll("npx", "bunx --bun"),
     }
   }
 
@@ -31,8 +31,8 @@ export function npmCommand(command: string): PackageManagerCommands | null {
     return {
       npm: command,
       yarn: command,
-      pnpm: command.replace("npx", "pnpm dlx"),
-      bun: command.replace("npx", "bunx --bun"),
+      pnpm: command.replaceAll("npx", "pnpm dlx"),
+      bun: command.replaceAll("npx", "bunx --bun"),
     }
   }
 

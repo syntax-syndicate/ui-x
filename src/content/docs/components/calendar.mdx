@@ -27,11 +27,9 @@ The `<Calendar />` component is built on top of [React DayPicker](https://daypic
 </TabsList>
 <TabsContent value="cli">
 
-<InstallCodeBlockCommand>
-  {(style) =>
-    `npx shadcn@latest add https://ui-x.junwen-k.dev/r/styles/${style}/calendar.json`
-  }
-</InstallCodeBlockCommand>
+```bash
+npx cross-env REGISTRY_URL=https://ui-x.junwen-k.dev/r npx shadcn@latest add calendar
+```
 
 </TabsContent>
 
