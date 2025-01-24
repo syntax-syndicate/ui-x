@@ -31,11 +31,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "junwen-k",
+      url: "https://junwen-k.dev",
     },
   ],
-  creator: "shadcn",
+  creator: "junwen-k",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -51,13 +51,6 @@ export const metadata: Metadata = {
         alt: siteConfig.name,
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: "@shadcn",
   },
   icons: {
     icon: "/favicon.ico",
