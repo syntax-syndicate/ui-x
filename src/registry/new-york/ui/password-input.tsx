@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Eye, EyeClosed } from "lucide-react"
+import { Eye, EyeOff } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import {
@@ -58,7 +58,7 @@ export const PasswordInputAdornmentToggle = React.forwardRef<
         {...props}
       >
         <Eye className="hidden size-4 group-data-[state=visible]:block" />
-        <EyeClosed className="block size-4 group-data-[state=visible]:hidden" />
+        <EyeOff className="block size-4 group-data-[state=visible]:hidden" />
       </PasswordInputPrimitive.Toggle>
     </InputBaseAdornmentButton>
   </InputBaseAdornment>
