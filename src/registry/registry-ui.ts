@@ -186,6 +186,20 @@ export const ui: Registry = [
     files: ["ui/native-select.tsx"],
   },
   {
+    name: "sortable",
+    type: "registry:ui",
+    dependencies: [
+      "@dnd-kit/core",
+      "@dnd-kit/sortable",
+      "@dnd-kit/utilities",
+      "@radix-ui/primitive",
+      "@radix-ui/react-compose-refs",
+      "@radix-ui/react-portal",
+      "@radix-ui/react-primitive",
+    ],
+    files: ["ui/sortable.tsx"],
+  },
+  {
     name: "time-field",
     type: "registry:ui",
     registryDependencies: ["date-time-field"],

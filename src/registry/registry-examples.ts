@@ -282,6 +282,43 @@ export const examples: Registry = [
     files: ["example/native-select-form.tsx"],
   },
   {
+    name: "sortable-demo",
+    type: "registry:example",
+    registryDependencies: ["sortable"],
+    files: ["example/sortable-demo.tsx"],
+  },
+  {
+    name: "sortable-disabled",
+    type: "registry:example",
+    registryDependencies: ["sortable"],
+    files: ["example/sortable-disabled.tsx"],
+  },
+  {
+    name: "sortable-form",
+    type: "registry:example",
+    registryDependencies: [
+      "button",
+      "dialog",
+      "form",
+      "input",
+      "sortable",
+      "textarea",
+    ],
+    files: ["example/sortable-form.tsx"],
+  },
+  {
+    name: "sortable-swap",
+    type: "registry:example",
+    registryDependencies: ["sortable"],
+    files: ["example/sortable-swap.tsx"],
+  },
+  {
+    name: "sortable-trigger",
+    type: "registry:example",
+    registryDependencies: ["sortable"],
+    files: ["example/sortable-trigger.tsx"],
+  },
+  {
     name: "time-field-demo",
     type: "registry:example",
     registryDependencies: ["time-field"],
