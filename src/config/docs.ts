@@ -70,6 +70,17 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Utilities",
+      items: [
+        {
+          title: "Sortable",
+          href: "/docs/components/sortable",
+          items: [],
+          label: "New",
+        },
+      ],
+    },
+    {
       title: "Components",
       items: [
         {
