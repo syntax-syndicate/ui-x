@@ -13,20 +13,22 @@ export const revalidate = 60 * 60 * 24 // 24 hours - GitHub stars count doesn't 
 
 export default async function IndexPage() {
   return (
-    <div className="container flex min-h-[calc(100vh-3.5rem-6rem)] flex-col items-center justify-center overflow-hidden">
-      <div className="block py-2 md:hidden">
+    <div className="container">
+      <div className="flex items-center justify-center py-2 md:hidden">
         <Announcement />
       </div>
-      <div className="relative hidden min-w-[28rem] items-center justify-center p-8 md:flex">
-        <VerticalLineDecorator
-          lineFadeStop={50}
-          className="absolute left-0 [animation-duration:0.5s]"
-        />
-        <Announcement />
-        <VerticalLineDecorator
-          lineFadeStop={50}
-          className="absolute right-0 [animation-duration:0.5s]"
-        />
+      <div className="flex items-center justify-center">
+        <div className="relative hidden min-w-[28rem] items-center justify-center p-8 md:flex">
+          <VerticalLineDecorator
+            lineFadeStop={50}
+            className="absolute left-0 [animation-duration:0.5s]"
+          />
+          <Announcement />
+          <VerticalLineDecorator
+            lineFadeStop={50}
+            className="absolute right-0 [animation-duration:0.5s]"
+          />
+        </div>
       </div>
       <section className="relative text-center">
         <HorizontalLineDecorator
