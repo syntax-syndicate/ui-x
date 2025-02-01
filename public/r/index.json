@@ -18,14 +18,8 @@
   {
     "name": "calendar",
     "type": "registry:ui",
-    "dependencies": [
-      "react-day-picker",
-      "date-fns"
-    ],
-    "registryDependencies": [
-      "button",
-      "select"
-    ],
+    "dependencies": ["react-day-picker", "date-fns"],
+    "registryDependencies": ["button", "select"],
     "files": [
       {
         "path": "ui/calendar.tsx",
@@ -55,14 +49,8 @@
   {
     "name": "combobox",
     "type": "registry:ui",
-    "dependencies": [
-      "@radix-ui/react-slot"
-    ],
-    "registryDependencies": [
-      "badge",
-      "combobox-primitive",
-      "input-base"
-    ],
+    "dependencies": ["@radix-ui/react-slot"],
+    "registryDependencies": ["badge", "combobox-primitive", "input-base"],
     "files": [
       {
         "path": "ui/combobox.tsx",
@@ -73,13 +61,8 @@
   {
     "name": "confirmer",
     "type": "registry:ui",
-    "dependencies": [
-      "use-ask"
-    ],
-    "registryDependencies": [
-      "alert-dialog",
-      "button"
-    ],
+    "dependencies": ["use-ask"],
+    "registryDependencies": ["alert-dialog", "button"],
     "files": [
       {
         "path": "ui/confirmer.tsx",
@@ -90,9 +73,7 @@
   {
     "name": "date-field",
     "type": "registry:ui",
-    "registryDependencies": [
-      "date-time-field"
-    ],
+    "registryDependencies": ["date-time-field"],
     "files": [
       {
         "path": "ui/date-field.tsx",
@@ -141,10 +122,7 @@
   {
     "name": "date-time-field",
     "type": "registry:ui",
-    "registryDependencies": [
-      "date-time-field-primitive",
-      "input-base"
-    ],
+    "registryDependencies": ["date-time-field-primitive", "input-base"],
     "files": [
       {
         "path": "ui/date-time-field.tsx",
@@ -155,9 +133,7 @@
   {
     "name": "date-time-range-field",
     "type": "registry:ui",
-    "registryDependencies": [
-      "date-time-range-field-primitive"
-    ],
+    "registryDependencies": ["date-time-range-field-primitive"],
     "files": [
       {
         "path": "ui/date-time-range-field.tsx",
@@ -233,12 +209,8 @@
   {
     "name": "dropzone",
     "type": "registry:ui",
-    "dependencies": [
-      "@radix-ui/react-primitive"
-    ],
-    "registryDependencies": [
-      "dropzone-primitive"
-    ],
+    "dependencies": ["@radix-ui/react-primitive"],
+    "registryDependencies": ["dropzone-primitive"],
     "files": [
       {
         "path": "ui/dropzone.tsx",
@@ -249,13 +221,8 @@
   {
     "name": "file-list",
     "type": "registry:ui",
-    "dependencies": [
-      "pretty-bytes"
-    ],
-    "registryDependencies": [
-      "button",
-      "progress"
-    ],
+    "dependencies": ["pretty-bytes"],
+    "registryDependencies": ["button", "progress"],
     "files": [
       {
         "path": "ui/file-list.tsx",
@@ -272,9 +239,7 @@
       "@radix-ui/react-primitive",
       "@radix-ui/react-slot"
     ],
-    "registryDependencies": [
-      "button"
-    ],
+    "registryDependencies": ["button"],
     "files": [
       {
         "path": "ui/input-base.tsx",
@@ -295,9 +260,7 @@
   {
     "name": "native-select",
     "type": "registry:ui",
-    "registryDependencies": [
-      "input-base"
-    ],
+    "registryDependencies": ["input-base"],
     "files": [
       {
         "path": "ui/native-select.tsx",
@@ -306,11 +269,28 @@
     ]
   },
   {
+    "name": "sortable",
+    "type": "registry:ui",
+    "dependencies": [
+      "@dnd-kit/core",
+      "@dnd-kit/sortable",
+      "@dnd-kit/utilities",
+      "@radix-ui/primitive",
+      "@radix-ui/react-compose-refs",
+      "@radix-ui/react-portal",
+      "@radix-ui/react-primitive"
+    ],
+    "files": [
+      {
+        "path": "ui/sortable.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "time-field",
     "type": "registry:ui",
-    "registryDependencies": [
-      "date-time-field"
-    ],
+    "registryDependencies": ["date-time-field"],
     "files": [
       {
         "path": "ui/time-field.tsx",
@@ -321,9 +301,7 @@
   {
     "name": "time",
     "type": "registry:ui",
-    "dependencies": [
-      "date-fns"
-    ],
+    "dependencies": ["date-fns"],
     "files": [
       {
         "path": "ui/time.tsx",
@@ -359,10 +337,7 @@
   {
     "name": "password-input",
     "type": "registry:ui",
-    "registryDependencies": [
-      "input-base",
-      "password-input-primitive"
-    ],
+    "registryDependencies": ["input-base", "password-input-primitive"],
     "files": [
       {
         "path": "ui/password-input.tsx",
