@@ -1,21 +1,20 @@
 import Link from "next/link"
-import { ArrowRightIcon } from "@radix-ui/react-icons"
-import { Blocks, PieChart } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react"
 
 import { Separator } from "@/registry/new-york/ui/separator"
 
 export function Announcement() {
   return (
     <Link
-      href="/docs/changelog"
-      className="group inline-flex items-center px-0.5 text-sm font-medium"
+      href="/docs/components/sortable"
+      className="group mb-2 inline-flex items-center px-0.5 text-sm font-medium focus-visible:outline-none"
     >
-      <PieChart className="size-4" />{" "}
-      <Separator className="mx-2 h-4" orientation="vertical" />{" "}
-      <span className="underline-offset-4 group-hover:underline">
-        npx shadcn init
+      <Sparkles className="size-4 fill-transparent transition-colors group-hover:fill-foreground group-focus-visible:fill-foreground" />{" "}
+      <Separator orientation="vertical" className="mx-2 h-4" />
+      <span className="underline-offset-4 group-hover:underline group-focus-visible:underline">
+        New Sortable utility component
       </span>
-      <ArrowRightIcon className="ml-1 size-4" />
+      <ArrowRight className="ml-1 size-4 transition group-hover:translate-x-1 group-focus-visible:translate-x-1" />
     </Link>
   )
 }
