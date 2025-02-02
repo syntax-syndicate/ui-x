@@ -66,7 +66,7 @@ const Item = React.forwardRef<
     </SortableItemTrigger>
     <div className="flex flex-1 items-center justify-between gap-4 px-3 py-2 text-sm">
       <div className="flex flex-col gap-1">
-        <div className="text-sm font-medium">{title}</div>
+        <div className="line-clamp-1 text-sm font-medium">{title}</div>
         <div className="line-clamp-1 text-xs text-muted-foreground">
           {description}
         </div>
