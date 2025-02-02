@@ -141,13 +141,11 @@ const EditItemFormDialog = ({
       <DialogContent className="sm:max-w-[425px]">
         <Form {...form}>
           <form
-            onSubmit={async (event) => {
+            onSubmit={(event) => {
               event.stopPropagation()
               event.preventDefault()
 
-              await form.handleSubmit(handleSubmit)(event)
-
-              setOpen(false)
+              form.handleSubmit(handleSubmit)(event)
             }}
           >
             <DialogHeader>
