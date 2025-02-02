@@ -48,6 +48,12 @@ export const ui: Registry = [
     files: ["ui/confirmer.tsx"],
   },
   {
+    name: "control-group",
+    type: "registry:ui",
+    dependencies: ["@radix-ui/react-primitive", "@radix-ui/react-slot"],
+    files: ["ui/control-group.tsx"],
+  },
+  {
     name: "date-field",
     type: "registry:ui",
     registryDependencies: ["date-time-field"],

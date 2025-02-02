@@ -71,6 +71,17 @@
     ]
   },
   {
+    "name": "control-group",
+    "type": "registry:ui",
+    "dependencies": ["@radix-ui/react-primitive", "@radix-ui/react-slot"],
+    "files": [
+      {
+        "path": "ui/control-group.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "date-field",
     "type": "registry:ui",
     "registryDependencies": ["date-time-field"],

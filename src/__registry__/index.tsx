@@ -70,6 +70,19 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: [],
     },
+    "control-group": {
+      name: "control-group",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/new-york/ui/control-group.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/control-group.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
     "date-field": {
       name: "date-field",
       type: "registry:ui",
@@ -3047,6 +3060,19 @@ export const Index: Record<string, any> = {
       files: ["src/registry/default/ui/confirmer.tsx"],
       component: React.lazy(
         () => import("@/registry/default/ui/confirmer.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group": {
+      name: "control-group",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/default/ui/control-group.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/ui/control-group.tsx")
       ),
       source: "",
       category: "undefined",
