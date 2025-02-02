@@ -34,7 +34,7 @@ const FormSchema = z.object({
         to: z.date().optional(),
       },
       {
-        required_error: "Event period is required ",
+        required_error: "Event period is required.",
       }
     )
     .superRefine((data, ctx) => {

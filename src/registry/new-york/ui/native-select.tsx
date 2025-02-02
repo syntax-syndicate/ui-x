@@ -12,14 +12,16 @@ export const NativeSelect = React.forwardRef<
   React.ElementRef<"select">,
   React.ComponentPropsWithoutRef<"select">
 >(({ className, ...props }, ref) => (
-  <InputBase className="relative min-h-fit p-0">
+  <InputBase
+    className={cn(
+      "relative min-h-fit p-0 [&>select]:min-h-9 [&>select]:min-w-40 [&>select]:px-3 [&>select]:py-1",
+      className
+    )}
+  >
     <InputBaseControl>
       <select
         ref={ref}
-        className={cn(
-          "size-full min-h-9 min-w-40 flex-1 appearance-none bg-transparent px-3 py-1 text-sm focus:outline-none",
-          className
-        )}
+        className="size-full flex-1 appearance-none bg-transparent text-sm focus:outline-none"
         {...props}
       />
     </InputBaseControl>

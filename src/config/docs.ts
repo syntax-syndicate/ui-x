@@ -104,6 +104,12 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Control Group",
+          href: "/docs/components/control-group",
+          items: [],
+          label: "New",
+        },
+        {
           title: "Date Field",
           href: "/docs/components/date-field",
           items: [],

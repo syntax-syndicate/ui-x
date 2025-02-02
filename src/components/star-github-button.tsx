@@ -30,7 +30,7 @@ export async function StarGitHubButton({
       <Link target="_blank" rel="noreferrer" href={siteConfig.links.github}>
         Star on GitHub<span>·</span>
         {stargazers_count}
-        <Star className="fill-foreground text-foreground transition-colors group-hover:fill-yellow-500 group-hover:text-yellow-500 group-focus-visible:fill-yellow-500 group-focus-visible:text-yellow-500" />
+        <Star className="fill-yellow-500 text-yellow-500 transition-colors group-hover:fill-yellow-500/80 group-hover:text-yellow-500/80 group-focus-visible:fill-yellow-500/80 group-focus-visible:text-yellow-500/80" />
       </Link>
     </Button>
   )

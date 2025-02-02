@@ -26,6 +26,8 @@ import { composeRefs } from "@radix-ui/react-compose-refs"
 import * as PortalPrimitive from "@radix-ui/react-portal"
 import { Primitive } from "@radix-ui/react-primitive"
 
+import { cn } from "@/lib/utils"
+
 const SortableImplContext = React.createContext<
   Pick<SortableProps, "getNewIndex"> &
     Required<Pick<SortableProps, "getTransformStyle">> & {
@@ -219,7 +221,7 @@ SortableItem.displayName = "SortableItem"
 export const SortableItemTrigger = React.forwardRef<
   React.ElementRef<typeof Primitive.button>,
   React.ComponentPropsWithoutRef<typeof Primitive.button>
->(({ disabled: disabledProp, ...props }, ref) => {
+>(({ className, disabled: disabledProp, ...props }, ref) => {
   const { getNewIndex } = useSortableImplContext()
 
   const { id, disabled } = useSortableItemContext()
@@ -241,6 +243,7 @@ export const SortableItemTrigger = React.forwardRef<
       data-over={isOver ? true : undefined}
       data-sorting={isSorting ? true : undefined}
       disabled={disabledProp}
+      className={cn("touch-none", className)}
       {...listeners}
       {...props}
     />
