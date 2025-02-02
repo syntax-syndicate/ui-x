@@ -86,6 +86,47 @@ export const examples: Registry = [
     files: ["example/confirmer-safe.tsx"],
   },
   {
+    name: "control-group-action",
+    type: "registry:example",
+    registryDependencies: [
+      "button",
+      "control-group",
+      "input-base",
+      "native-select",
+    ],
+    files: ["example/control-group-action.tsx"],
+  },
+  {
+    name: "control-group-demo",
+    type: "registry:example",
+    registryDependencies: ["control-group", "input-base"],
+    files: ["example/control-group-demo.tsx"],
+  },
+  {
+    name: "control-group-form",
+    type: "registry:example",
+    registryDependencies: ["button", "control-group", "form", "input-base"],
+    files: ["example/control-group-form.tsx"],
+  },
+  {
+    name: "control-group-select",
+    type: "registry:example",
+    registryDependencies: ["control-group", "input-base", "select"],
+    files: ["example/control-group-select.tsx"],
+  },
+  {
+    name: "control-group-split-button",
+    type: "registry:example",
+    registryDependencies: ["button", "control-group", "dropdown-menu"],
+    files: ["example/control-group-split-button.tsx"],
+  },
+  {
+    name: "control-group-vertical",
+    type: "registry:example",
+    registryDependencies: ["control-group", "input-base"],
+    files: ["example/control-group-vertical.tsx"],
+  },
+  {
     name: "date-field-demo",
     type: "registry:example",
     registryDependencies: ["date-field"],
