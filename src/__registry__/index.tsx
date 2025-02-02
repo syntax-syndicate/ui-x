@@ -530,6 +530,90 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: [],
     },
+    "control-group-action": {
+      name: "control-group-action",
+      type: "registry:example",
+      registryDependencies: [
+        "button",
+        "control-group",
+        "input-base",
+        "native-select",
+      ],
+      files: ["src/registry/new-york/example/control-group-action.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/control-group-action.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-demo": {
+      name: "control-group-demo",
+      type: "registry:example",
+      registryDependencies: ["control-group", "input-base"],
+      files: ["src/registry/new-york/example/control-group-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/control-group-demo.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-form": {
+      name: "control-group-form",
+      type: "registry:example",
+      registryDependencies: ["button", "control-group", "form", "input-base"],
+      files: ["src/registry/new-york/example/control-group-form.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/control-group-form.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-select": {
+      name: "control-group-select",
+      type: "registry:example",
+      registryDependencies: ["control-group", "input-base", "select"],
+      files: ["src/registry/new-york/example/control-group-select.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/control-group-select.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-split-button": {
+      name: "control-group-split-button",
+      type: "registry:example",
+      registryDependencies: ["button", "control-group", "dropdown-menu"],
+      files: ["src/registry/new-york/example/control-group-split-button.tsx"],
+      component: React.lazy(
+        () =>
+          import("@/registry/new-york/example/control-group-split-button.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-vertical": {
+      name: "control-group-vertical",
+      type: "registry:example",
+      registryDependencies: ["control-group", "input-base"],
+      files: ["src/registry/new-york/example/control-group-vertical.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/control-group-vertical.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
     "date-field-demo": {
       name: "date-field-demo",
       type: "registry:example",
@@ -3417,6 +3501,90 @@ export const Index: Record<string, any> = {
       files: ["src/registry/default/example/confirmer-safe.tsx"],
       component: React.lazy(
         () => import("@/registry/default/example/confirmer-safe.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-action": {
+      name: "control-group-action",
+      type: "registry:example",
+      registryDependencies: [
+        "button",
+        "control-group",
+        "input-base",
+        "native-select",
+      ],
+      files: ["src/registry/default/example/control-group-action.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/control-group-action.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-demo": {
+      name: "control-group-demo",
+      type: "registry:example",
+      registryDependencies: ["control-group", "input-base"],
+      files: ["src/registry/default/example/control-group-demo.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/control-group-demo.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-form": {
+      name: "control-group-form",
+      type: "registry:example",
+      registryDependencies: ["button", "control-group", "form", "input-base"],
+      files: ["src/registry/default/example/control-group-form.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/control-group-form.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-select": {
+      name: "control-group-select",
+      type: "registry:example",
+      registryDependencies: ["control-group", "input-base", "select"],
+      files: ["src/registry/default/example/control-group-select.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/control-group-select.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-split-button": {
+      name: "control-group-split-button",
+      type: "registry:example",
+      registryDependencies: ["button", "control-group", "dropdown-menu"],
+      files: ["src/registry/default/example/control-group-split-button.tsx"],
+      component: React.lazy(
+        () =>
+          import("@/registry/default/example/control-group-split-button.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "control-group-vertical": {
+      name: "control-group-vertical",
+      type: "registry:example",
+      registryDependencies: ["control-group", "input-base"],
+      files: ["src/registry/default/example/control-group-vertical.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/control-group-vertical.tsx")
       ),
       source: "",
       category: "undefined",
