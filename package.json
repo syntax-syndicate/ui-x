@@ -100,7 +100,7 @@
     "sonner": "^1.2.3",
     "swr": "2.2.6-beta.3",
     "tailwind-merge": "^2.5.4",
-    "timescape": "^0.6.2",
+    "timescape": "^0.7.1",
     "ts-morph": "^22.0.0",
     "use-ask": "^1.0.0",
     "vaul": "0.9.0",

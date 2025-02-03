@@ -44,6 +44,9 @@ export const useTimescape = ({
     snapToStep,
     wheelControl,
     wrapAround,
+    // Partial input does not work with reactive value at the moment.
+    // For more information, see https://github.com/dan-lee/timescape/issues/51.
+    disallowPartial: true,
   })
 
   React.useEffect(() => {
@@ -124,6 +127,9 @@ export const useTimescapeRange = ({
       snapToStep,
       wheelControl,
       wrapAround,
+      // Partial input does not work with reactive value at the moment.
+      // For more information, see https://github.com/dan-lee/timescape/issues/51.
+      disallowPartial: true,
       ...fromOptions,
     },
     to: {
@@ -137,6 +143,9 @@ export const useTimescapeRange = ({
       snapToStep,
       wheelControl,
       wrapAround,
+      // Partial input does not work with reactive value at the moment.
+      // For more information, see https://github.com/dan-lee/timescape/issues/51.
+      disallowPartial: true,
       ...toOptions,
     },
   })

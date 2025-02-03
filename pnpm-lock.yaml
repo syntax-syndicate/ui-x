@@ -240,8 +240,8 @@ importers:
         specifier: ^2.5.4
         version: 2.5.4
       timescape:
-        specifier: ^0.6.2
-        version: 0.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.7.1
+        version: 0.7.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       ts-morph:
         specifier: ^22.0.0
         version: 22.0.0
@@ -5330,8 +5330,8 @@ packages:
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
 
-  timescape@0.6.2:
-    resolution: {integrity: sha512-5vTI11+TM7DI04sq4AoRjKs9eWsAL/eA+9iHwFMthYFDqLjrZHxX/q6KHcKf/J64o3qQf1H+t/YndlA6qRZe9w==}
+  timescape@0.7.1:
+    resolution: {integrity: sha512-v80kXaQ7a1QpgZoR1Sh81qmkGweR4gS80VZiOpRc0sYROOUbT2DDdd5PxynJs2v8NXtgyPCXQNjigf6je5hqgQ==}
     peerDependencies:
       '@preact/signals': 1.x
       preact: 10.x
@@ -11507,7 +11507,7 @@ snapshots:
 
   through@2.3.8: {}
 
-  timescape@0.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  timescape@0.7.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     optionalDependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
