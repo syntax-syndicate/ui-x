@@ -9,8 +9,6 @@ import {
 import { StarGitHubButton } from "@/components/star-github-button"
 import { Button } from "@/registry/new-york/ui/button"
 
-export const revalidate = 60 * 60 * 24 // 24 hours - GitHub stars count doesn't need frequent updates
-
 export default async function IndexPage() {
   return (
     <div className="container">

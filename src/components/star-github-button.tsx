@@ -6,7 +6,17 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york/ui/button"
 
-const octokit = new Octokit()
+const fetchWithRevalidate = (input: RequestInfo, init?: RequestInit) =>
+  fetch(input, {
+    ...init,
+    next: { revalidate: 60 * 60 * 24 }, // 24 hours - GitHub stars count doesn't need frequent updates
+  })
+
+const octokit = new Octokit({
+  request: {
+    fetch: fetchWithRevalidate,
+  },
+})
 
 export async function StarGitHubButton({
   className,
