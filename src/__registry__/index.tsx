@@ -1066,6 +1066,19 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: [],
     },
+    "native-select-responsive": {
+      name: "native-select-responsive",
+      type: "registry:example",
+      registryDependencies: ["button", "native-select", "select"],
+      files: ["src/registry/new-york/example/native-select-responsive.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/native-select-responsive.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
     "sortable-demo": {
       name: "sortable-demo",
       type: "registry:example",
@@ -4050,6 +4063,19 @@ export const Index: Record<string, any> = {
       files: ["src/registry/default/example/native-select-form.tsx"],
       component: React.lazy(
         () => import("@/registry/default/example/native-select-form.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "native-select-responsive": {
+      name: "native-select-responsive",
+      type: "registry:example",
+      registryDependencies: ["button", "native-select", "select"],
+      files: ["src/registry/default/example/native-select-responsive.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/native-select-responsive.tsx")
       ),
       source: "",
       category: "undefined",
