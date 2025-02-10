@@ -32,10 +32,22 @@ export const NativeSelect = React.forwardRef<
 ))
 NativeSelect.displayName = "NativeSelect"
 
+export const NativeSelectGroup = React.forwardRef<
+  React.ElementRef<"optgroup">,
+  React.ComponentPropsWithoutRef<"optgroup">
+>((props, ref) => <optgroup ref={ref} {...props} />)
+NativeSelectGroup.displayName = "NativeSelectGroup"
+
 export const NativeSelectOption = React.forwardRef<
   React.ElementRef<"option">,
   React.ComponentPropsWithoutRef<"option">
->((props, ref) => <option ref={ref} {...props} />)
+>(({ className, ...props }, ref) => (
+  <option
+    ref={ref}
+    className={cn("bg-popover text-popover-foreground", className)}
+    {...props}
+  />
+))
 NativeSelectOption.displayName = "NativeSelectOption"
 
 export const NativeSelectPlaceholder = React.forwardRef<
@@ -46,7 +58,7 @@ export const NativeSelectPlaceholder = React.forwardRef<
     { value = "", disabled = true, selected = true, hidden = true, ...props },
     ref
   ) => (
-    <option
+    <NativeSelectOption
       ref={ref}
       value={value}
       disabled={disabled}
