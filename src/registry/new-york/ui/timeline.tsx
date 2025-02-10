@@ -155,23 +155,23 @@ export const TimelineContent = React.forwardRef<
 TimelineContent.displayName = "TimelineContent"
 
 export const TimelineTitle = React.forwardRef<
-  React.ElementRef<"h3">,
-  React.ComponentPropsWithoutRef<"h3">
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
 >((props, ref) => {
   const { orientation } = useTimeline()
 
-  return <h3 ref={ref} data-orientation={orientation} {...props} />
+  return <div ref={ref} data-orientation={orientation} {...props} />
 })
 TimelineTitle.displayName = "TimelineTitle"
 
 export const TimelineDescription = React.forwardRef<
-  React.ElementRef<"p">,
-  React.ComponentPropsWithoutRef<"p">
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
 >(({ className, ...props }, ref) => {
   const { orientation } = useTimeline()
 
   return (
-    <p
+    <div
       ref={ref}
       data-orientation={orientation}
       className={cn("text-[0.8em] text-muted-foreground", className)}
