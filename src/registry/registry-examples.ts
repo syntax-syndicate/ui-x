@@ -323,6 +323,12 @@ export const examples: Registry = [
     files: ["example/native-select-form.tsx"],
   },
   {
+    name: "native-select-responsive",
+    type: "registry:example",
+    registryDependencies: ["button", "native-select", "select"],
+    files: ["example/native-select-responsive.tsx"],
+  },
+  {
     name: "sortable-demo",
     type: "registry:example",
     registryDependencies: ["sortable"],
