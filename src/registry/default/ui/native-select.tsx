@@ -35,7 +35,13 @@ NativeSelect.displayName = "NativeSelect"
 export const NativeSelectGroup = React.forwardRef<
   React.ElementRef<"optgroup">,
   React.ComponentPropsWithoutRef<"optgroup">
->((props, ref) => <optgroup ref={ref} {...props} />)
+>(({ className, ...props }, ref) => (
+  <optgroup
+    ref={ref}
+    className={cn("bg-popover text-popover-foreground", className)}
+    {...props}
+  />
+))
 NativeSelectGroup.displayName = "NativeSelectGroup"
 
 export const NativeSelectOption = React.forwardRef<
