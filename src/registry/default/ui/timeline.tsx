@@ -11,7 +11,7 @@ const TimelineContext = React.createContext<TimelineContext | null>(null)
 function useTimeline() {
   const context = React.useContext(TimelineContext)
   if (!context) {
-    throw new Error("useTimeline must be used within a TimelineProvider.")
+    throw new Error("useTimeline must be used within a <Timeline />.")
   }
 
   return context
