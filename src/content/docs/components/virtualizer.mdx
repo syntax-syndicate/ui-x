@@ -1,0 +1,99 @@
+---
+title: Virtualizer
+description: A virtualizer component that allows you to efficiently render large lists and tabular data.
+component: true
+links:
+  doc: https://tanstack.com/virtual
+---
+
+<ComponentPreview name="virtualizer-demo" />
+
+## About
+
+The `<Virtualizer />` component is built on top of [virtua](https://github.com/inokawa/virtua).
+
+## Installation
+
+<Tabs defaultValue="cli">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+<TabsContent value="cli">
+
+```bash
+npx cross-env REGISTRY_URL=https://ui-x.junwen-k.dev/r npx shadcn@latest add virtualizer
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install virtua
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="virtualizer" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { Virtualizer } from "@/components/ui/virtualizer"
+```
+
+```tsx
+<Virtualizer />
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="virtualizer-demo" />
+
+### Horizontal
+
+<ComponentPreview name="virtualizer-horizontal" />
+
+### Grid
+
+<ComponentPreview name="virtualizer-grid" />
+
+### Table
+
+<ComponentPreview name="virtualizer-table" />
+
+<Callout className="mt-6">
+**Note:** Until Virtua improves its support for [table virtualization](https://github.com/inokawa/virtua/issues/312), you will need to manually set the cell width because of the current use of absolute positioning.
+
+</Callout>
+
+### Combobox
+
+<ComponentPreview name="virtualizer-combobox" />
+
+### Select
+
+<ComponentPreview name="virtualizer-select" />
+
+### Scroll Area
+
+<ComponentPreview name="virtualizer-scroll-area" />
+
+### Sortable
+
+<ComponentPreview name="virtualizer-sortable" />

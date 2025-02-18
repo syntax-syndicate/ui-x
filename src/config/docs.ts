@@ -76,6 +76,11 @@ export const docsConfig: DocsConfig = {
           title: "Sortable",
           href: "/docs/components/sortable",
           items: [],
+        },
+        {
+          title: "Virtualizer",
+          href: "/docs/components/virtualizer",
+          items: [],
           label: "New",
         },
       ],
