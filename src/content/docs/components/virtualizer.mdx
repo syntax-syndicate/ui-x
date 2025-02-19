@@ -3,60 +3,53 @@ title: Virtualizer
 description: A virtualizer component that allows you to efficiently render large lists and tabular data.
 component: true
 links:
-  doc: https://tanstack.com/virtual
+  doc: https://github.com/inokawa/virtua
+  api: https://github.com/inokawa/virtua/blob/main/docs/react/API.md
 ---
 
 <ComponentPreview name="virtualizer-demo" />
 
-## About
+## Introduction
 
-The `<Virtualizer />` component is built on top of [virtua](https://github.com/inokawa/virtua).
+Efficiently rendering large lists and tabular data is a common challenge in UI development. By leveraging [virtualization](https://www.patterns.dev/vanilla/virtual-lists/), we can significantly enhance performance.
+
+<figure className="flex flex-col gap-4">
+  <Image
+    src="/images/list-virtualization-light.png"
+    width="1135"
+    height="1135"
+    alt="List Virtualization"
+    className="border dark:hidden shadow-sm rounded-lg overflow-hidden mt-6 w-full"
+  />
+  <Image
+    src="/images/list-virtualization-dark.png"
+    width="1135"
+    height="1135"
+    alt="List Virtualization"
+    className="border hidden dark:block shadow-sm rounded-lg overflow-hidden mt-6 w-full"
+  />
+  <figcaption className="text-center text-sm text-gray-500">
+    Rendering only visible rows of content in a dynamic list instead of the
+    entire list using virtualization.
+  </figcaption>
+</figure>
+
+After exploring various libraries, I found [virtua](https://github.com/inokawa/virtua) to be one of the most intuitive and effective choices. Its straightforward API eliminates the need for additional wrapping, allowing you to integrate it seamlessly with other tools like [@dnd-kit](https://dndkit.com) and [Radix UI](https://www.radix-ui.com/primitives).
+
+Instead of creating a custom `<Virtualizer>` component, this guide provides practical examples to help you virtualize different components effectively.
+
+<Callout className="mt-4 bg-amber-50 border-amber-200 dark:bg-amber-950/50 dark:border-amber-950">
+
+**Important**: Use virtualization judiciously. It's best suited for scenarios involving large lists or tables, rather than squeezing out every bit of "performance optimizations".
+
+</Callout>
 
 ## Installation
 
-<Tabs defaultValue="cli">
-  <TabsList>
-    <TabsTrigger value="cli">CLI</TabsTrigger>
-    <TabsTrigger value="manual">Manual</TabsTrigger>
-  </TabsList>
-<TabsContent value="cli">
-
-```bash
-npx cross-env REGISTRY_URL=https://ui-x.junwen-k.dev/r npx shadcn@latest add virtualizer
-```
-
-</TabsContent>
-
-<TabsContent value="manual">
-
-<Steps>
-
-<Step>Install the following dependencies:</Step>
+1. Add `virtua` dependency:
 
 ```bash
 npm install virtua
-```
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="virtualizer" />
-
-<Step>Update the import paths to match your project setup.</Step>
-
-</Steps>
-
-</TabsContent>
-
-</Tabs>
-
-## Usage
-
-```tsx
-import { Virtualizer } from "@/components/ui/virtualizer"
-```
-
-```tsx
-<Virtualizer />
 ```
 
 ## Examples
@@ -78,7 +71,7 @@ import { Virtualizer } from "@/components/ui/virtualizer"
 <ComponentPreview name="virtualizer-table" />
 
 <Callout className="mt-6">
-**Note:** Until Virtua improves its support for [table virtualization](https://github.com/inokawa/virtua/issues/312), you will need to manually set the cell width because of the current use of absolute positioning.
+**Note:** Until virtua improves its support for [table virtualization](https://github.com/inokawa/virtua/issues/312), you will need to manually set the cell width because of the current use of absolute positioning.
 
 </Callout>
 
