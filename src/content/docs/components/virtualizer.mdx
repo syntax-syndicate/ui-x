@@ -77,6 +77,16 @@ npm install virtua
 
 ### Combobox
 
+To virtualize a `<Combobox>`, you'll need to attach the `scrollRef` to the `<ComboboxContent>`, as it serves as the scrollable container.
+
+Additionally, you'll need to manage the `inputValue` and perform filtering externally, as the default filtering does not support virtualization.
+
+<Callout className="mt-4">
+
+**Tip**: If you use `<ComboboxGroup>` with `heading`, you'll need to set the `startMargin` to match the heading's height. This ensures that the virtualized items are positioned correctly within the dropdown.
+
+</Callout>
+
 <ComponentPreview name="virtualizer-combobox" />
 
 ### Select
