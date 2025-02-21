@@ -1,7 +1,6 @@
 import React from "react"
 import { arrayMove } from "@dnd-kit/sortable"
 import { GripVertical } from "lucide-react"
-import { VList } from "virtua"
 
 import { cn } from "@/lib/utils"
 import {
@@ -11,6 +10,7 @@ import {
   SortableList,
   SortableOverlay,
 } from "@/registry/default/ui/sortable"
+import { VirtualizedList } from "@/registry/default/ui/virtualized"
 
 const Item = React.forwardRef<
   React.ElementRef<"div">,
@@ -62,7 +62,7 @@ export default function VirtualizerSortable() {
       }}
     >
       <SortableList items={items} className="flex size-80 flex-col gap-3">
-        <VList>
+        <VirtualizedList>
           {items.map((item, index) => (
             <SortableItem asChild key={item.id} id={item.id}>
               <SortableItemTrigger asChild>
@@ -77,7 +77,7 @@ export default function VirtualizerSortable() {
               </SortableItemTrigger>
             </SortableItem>
           ))}
-        </VList>
+        </VirtualizedList>
       </SortableList>
       <SortableOverlay>
         {(activeId) => {

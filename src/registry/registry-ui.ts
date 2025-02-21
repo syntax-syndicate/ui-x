@@ -238,4 +238,14 @@ export const ui: Registry = [
     registryDependencies: ["input-base", "password-input-primitive"],
     files: ["ui/password-input.tsx"],
   },
+  {
+    name: "virtualized",
+    type: "registry:ui",
+    dependencies: [
+      "@radix-ui/react-compose-refs",
+      "@radix-ui/react-primitive",
+      "virtua",
+    ],
+    files: ["ui/virtualized.tsx"],
+  },
 ]

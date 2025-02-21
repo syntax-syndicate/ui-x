@@ -1,12 +1,11 @@
-import { experimental_VGrid as VGrid } from "virtua"
-
 import { cn } from "@/lib/utils"
 import { Card, CardContent } from "@/registry/default/ui/card"
+import { VirtualizedGrid } from "@/registry/default/ui/virtualized"
 
 export default function VirtualizerGrid() {
   return (
     <div className="size-80">
-      <VGrid row={500} col={500}>
+      <VirtualizedGrid row={500} col={500}>
         {({ rowIndex, colIndex }) => (
           <Card
             key={`${rowIndex}-${colIndex}`}
@@ -23,7 +22,7 @@ export default function VirtualizerGrid() {
             </CardContent>
           </Card>
         )}
-      </VGrid>
+      </VirtualizedGrid>
     </div>
   )
 }

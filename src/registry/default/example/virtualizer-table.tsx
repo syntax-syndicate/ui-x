@@ -1,13 +1,8 @@
 import * as React from "react"
 import { faker } from "@faker-js/faker"
-import {
-  CustomContainerComponentProps,
-  CustomItemComponentProps,
-  Virtualizer,
-} from "virtua"
+import { CustomContainerComponentProps, CustomItemComponentProps } from "virtua"
 
 import {
-  Table,
   TableBody,
   TableCaption,
   TableCell,
@@ -16,6 +11,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/registry/default/ui/table"
+import {
+  Virtualized,
+  VirtualizedVirtualizer,
+} from "@/registry/default/ui/virtualized"
 
 const invoices = Array.from({ length: 1000 }, (_, index) => ({
   invoice: `INV${index.toString().padStart(3, "0")}`,
@@ -35,31 +34,21 @@ const invoices = Array.from({ length: 1000 }, (_, index) => ({
 const VirtualizedTableRow = React.forwardRef<
   React.ElementRef<typeof TableRow>,
   CustomItemComponentProps
->(({ children, ...props }, ref) => (
-  <TableRow ref={ref} {...props}>
-    {children}
-  </TableRow>
-))
+>((props, ref) => <TableRow ref={ref} {...props} />)
 VirtualizedTableRow.displayName = "VirtualizedTableRow"
 
 const VirtualizedTableBody = React.forwardRef<
   React.ElementRef<typeof TableBody>,
   CustomContainerComponentProps
->(({ children, ...props }, ref) => (
-  <TableBody ref={ref} className="max-h-96" {...props}>
-    {children}
-  </TableBody>
-))
+>((props, ref) => <TableBody ref={ref} className="max-h-96" {...props} />)
 VirtualizedTableBody.displayName = "VirtualizedTableBody"
 
 export default function VirtualizerTable() {
-  const scrollRef = React.useRef<HTMLDivElement>(null)
-
   return (
-    <div className="h-96 overflow-y-auto" ref={scrollRef}>
-      <Table>
+    <Virtualized className="h-96 overflow-y-auto">
+      <table className="w-full caption-bottom border-separate border-spacing-0 text-sm">
         <TableCaption>A list of your recent invoices.</TableCaption>
-        <TableHeader>
+        <TableHeader className="sticky top-0 z-10 bg-background [&_tr>*]:border-b">
           <TableRow>
             <TableHead className="w-[120px]">Invoice</TableHead>
             <TableHead className="w-[120px]">Status</TableHead>
@@ -67,10 +56,10 @@ export default function VirtualizerTable() {
             <TableHead className="w-[120px] text-right">Amount</TableHead>
           </TableRow>
         </TableHeader>
-        <Virtualizer
+        <VirtualizedVirtualizer
           as={VirtualizedTableBody}
           item={VirtualizedTableRow}
-          scrollRef={scrollRef}
+          startMargin={48}
         >
           {invoices.map((invoice) => (
             <React.Fragment key={invoice.invoice}>
@@ -88,7 +77,7 @@ export default function VirtualizerTable() {
               </TableCell>
             </React.Fragment>
           ))}
-        </Virtualizer>
+        </VirtualizedVirtualizer>
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3}>Total</TableCell>
@@ -109,7 +98,7 @@ export default function VirtualizerTable() {
             </TableCell>
           </TableRow>
         </TableFooter>
-      </Table>
-    </div>
+      </table>
+    </Virtualized>
   )
 }

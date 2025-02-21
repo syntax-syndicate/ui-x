@@ -1,14 +1,13 @@
-import { VList } from "virtua"
-
 import { cn } from "@/lib/utils"
 import { Card, CardContent } from "@/registry/default/ui/card"
+import { VirtualizedList } from "@/registry/default/ui/virtualized"
 
 const items = Array.from({ length: 10000 }, (_, index) => index)
 
 export default function VirtualizerDemo() {
   return (
     <div className="size-80">
-      <VList>
+      <VirtualizedList>
         {items.map((item, index) => (
           <Card
             key={item}
@@ -19,7 +18,7 @@ export default function VirtualizerDemo() {
             </CardContent>
           </Card>
         ))}
-      </VList>
+      </VirtualizedList>
     </div>
   )
 }

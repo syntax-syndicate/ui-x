@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Virtualizer } from "virtua"
 
 import {
   Combobox,
@@ -9,6 +8,10 @@ import {
   ComboboxInput,
   ComboboxItem,
 } from "@/registry/default/ui/combobox"
+import {
+  Virtualized,
+  VirtualizedVirtualizer,
+} from "@/registry/default/ui/virtualized"
 
 const items = Array.from({ length: 10000 }, (_, index) => ({
   label: `Item ${index + 1}`,
@@ -18,8 +21,6 @@ const items = Array.from({ length: 10000 }, (_, index) => ({
 export default function VirtualizerCombobox() {
   const [inputValue, setInputValue] = React.useState("")
   const [open, setOpen] = React.useState(false)
-
-  const scrollRef = React.useRef<HTMLDivElement>(null)
 
   const filtered = React.useMemo(() => {
     if (!inputValue) {
@@ -41,20 +42,24 @@ export default function VirtualizerCombobox() {
       shouldFilter={false}
     >
       <ComboboxInput placeholder="Search item..." />
-      <ComboboxContent ref={scrollRef}>
-        {filtered.length === 0 && <ComboboxEmpty>No item found.</ComboboxEmpty>}
-        {filtered.length > 0 && (
-          <ComboboxGroup heading="Items">
-            <Virtualizer startMargin={32} scrollRef={scrollRef}>
-              {filtered.map((item) => (
-                <ComboboxItem key={item.value} value={item.value}>
-                  {item.label}
-                </ComboboxItem>
-              ))}
-            </Virtualizer>
-          </ComboboxGroup>
-        )}
-      </ComboboxContent>
+      <Virtualized asChild>
+        <ComboboxContent>
+          {filtered.length === 0 && (
+            <ComboboxEmpty>No item found.</ComboboxEmpty>
+          )}
+          {filtered.length > 0 && (
+            <ComboboxGroup heading="Items">
+              <VirtualizedVirtualizer startMargin={32}>
+                {filtered.map((item) => (
+                  <ComboboxItem key={item.value} value={item.value}>
+                    {item.label}
+                  </ComboboxItem>
+                ))}
+              </VirtualizedVirtualizer>
+            </ComboboxGroup>
+          )}
+        </ComboboxContent>
+      </Virtualized>
     </Combobox>
   )
 }

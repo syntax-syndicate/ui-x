@@ -1,6 +1,6 @@
 import * as React from "react"
 import * as SelectPrimitive from "@radix-ui/react-select"
-import { Virtualizer, VirtualizerHandle } from "virtua"
+import { VirtualizerHandle } from "virtua"
 
 import { cn } from "@/lib/utils"
 import {
@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select"
+import { VirtualizedVirtualizer } from "@/registry/default/ui/virtualized"
 
 const items = Array.from({ length: 10000 }, (_, index) => ({
   label: `Item ${index + 1}`,
@@ -69,7 +70,7 @@ export default function VirtualizerSelect() {
               "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
             )}
           >
-            <Virtualizer
+            <VirtualizedVirtualizer
               ref={ref}
               keepMounted={activeIndex !== -1 ? [activeIndex] : undefined}
               overscan={2}
@@ -79,7 +80,7 @@ export default function VirtualizerSelect() {
                   {item.label}
                 </SelectItem>
               ))}
-            </Virtualizer>
+            </VirtualizedVirtualizer>
           </SelectPrimitive.Viewport>
           <SelectScrollDownButton />
         </SelectPrimitive.Content>
