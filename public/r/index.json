@@ -355,5 +355,20 @@
         "type": "registry:ui"
       }
     ]
+  },
+  {
+    "name": "virtualized",
+    "type": "registry:ui",
+    "dependencies": [
+      "@radix-ui/react-compose-refs",
+      "@radix-ui/react-primitive",
+      "virtua"
+    ],
+    "files": [
+      {
+        "path": "ui/virtualized.tsx",
+        "type": "registry:ui"
+      }
+    ]
   }
 ]

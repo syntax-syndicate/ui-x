@@ -355,6 +355,19 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: [],
     },
+    virtualized: {
+      name: "virtualized",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/new-york/ui/virtualized.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/ui/virtualized.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
     "badge-group-demo": {
       name: "badge-group-demo",
       type: "registry:example",
@@ -1343,39 +1356,104 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: [],
     },
-    "select-demo": {
-      name: "select-demo",
+    "virtualizer-combobox": {
+      name: "virtualizer-combobox",
       type: "registry:example",
-      registryDependencies: ["select"],
-      files: ["src/registry/new-york/example/select-demo.tsx"],
+      registryDependencies: ["combobox", "virtualized"],
+      files: ["src/registry/new-york/example/virtualizer-combobox.tsx"],
       component: React.lazy(
-        () => import("@/registry/new-york/example/select-demo.tsx")
+        () => import("@/registry/new-york/example/virtualizer-combobox.tsx")
       ),
       source: "",
       category: "undefined",
       subcategory: "undefined",
       chunks: [],
     },
-    "select-scrollable": {
-      name: "select-scrollable",
+    "virtualizer-demo": {
+      name: "virtualizer-demo",
       type: "registry:example",
-      registryDependencies: ["select"],
-      files: ["src/registry/new-york/example/select-scrollable.tsx"],
+      registryDependencies: ["card", "virtualized"],
+      files: ["src/registry/new-york/example/virtualizer-demo.tsx"],
       component: React.lazy(
-        () => import("@/registry/new-york/example/select-scrollable.tsx")
+        () => import("@/registry/new-york/example/virtualizer-demo.tsx")
       ),
       source: "",
       category: "undefined",
       subcategory: "undefined",
       chunks: [],
     },
-    "select-form": {
-      name: "select-form",
+    "virtualizer-grid": {
+      name: "virtualizer-grid",
       type: "registry:example",
-      registryDependencies: ["select"],
-      files: ["src/registry/new-york/example/select-form.tsx"],
+      registryDependencies: ["card", "virtualized"],
+      files: ["src/registry/new-york/example/virtualizer-grid.tsx"],
       component: React.lazy(
-        () => import("@/registry/new-york/example/select-form.tsx")
+        () => import("@/registry/new-york/example/virtualizer-grid.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "virtualizer-horizontal": {
+      name: "virtualizer-horizontal",
+      type: "registry:example",
+      registryDependencies: ["card", "virtualized"],
+      files: ["src/registry/new-york/example/virtualizer-horizontal.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/virtualizer-horizontal.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "virtualizer-scroll-area": {
+      name: "virtualizer-scroll-area",
+      type: "registry:example",
+      registryDependencies: ["card", "scroll-area", "virtualized"],
+      files: ["src/registry/new-york/example/virtualizer-scroll-area.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/virtualizer-scroll-area.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "virtualizer-select": {
+      name: "virtualizer-select",
+      type: "registry:example",
+      registryDependencies: ["select", "virtualized"],
+      files: ["src/registry/new-york/example/virtualizer-select.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/virtualizer-select.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "virtualizer-sortable": {
+      name: "virtualizer-sortable",
+      type: "registry:example",
+      registryDependencies: ["sortable", "virtualized"],
+      files: ["src/registry/new-york/example/virtualizer-sortable.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/virtualizer-sortable.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "virtualizer-table": {
+      name: "virtualizer-table",
+      type: "registry:example",
+      registryDependencies: ["table", "virtualized"],
+      files: ["src/registry/new-york/example/virtualizer-table.tsx"],
+      component: React.lazy(
+        () => import("@/registry/new-york/example/virtualizer-table.tsx")
       ),
       source: "",
       category: "undefined",
@@ -3358,6 +3436,19 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: [],
     },
+    virtualized: {
+      name: "virtualized",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/default/ui/virtualized.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/ui/virtualized.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
     "badge-group-demo": {
       name: "badge-group-demo",
       type: "registry:example",
@@ -4342,39 +4433,104 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: [],
     },
-    "select-demo": {
-      name: "select-demo",
+    "virtualizer-combobox": {
+      name: "virtualizer-combobox",
       type: "registry:example",
-      registryDependencies: ["select"],
-      files: ["src/registry/default/example/select-demo.tsx"],
+      registryDependencies: ["combobox", "virtualized"],
+      files: ["src/registry/default/example/virtualizer-combobox.tsx"],
       component: React.lazy(
-        () => import("@/registry/default/example/select-demo.tsx")
+        () => import("@/registry/default/example/virtualizer-combobox.tsx")
       ),
       source: "",
       category: "undefined",
       subcategory: "undefined",
       chunks: [],
     },
-    "select-scrollable": {
-      name: "select-scrollable",
+    "virtualizer-demo": {
+      name: "virtualizer-demo",
       type: "registry:example",
-      registryDependencies: ["select"],
-      files: ["src/registry/default/example/select-scrollable.tsx"],
+      registryDependencies: ["card", "virtualized"],
+      files: ["src/registry/default/example/virtualizer-demo.tsx"],
       component: React.lazy(
-        () => import("@/registry/default/example/select-scrollable.tsx")
+        () => import("@/registry/default/example/virtualizer-demo.tsx")
       ),
       source: "",
       category: "undefined",
       subcategory: "undefined",
       chunks: [],
     },
-    "select-form": {
-      name: "select-form",
+    "virtualizer-grid": {
+      name: "virtualizer-grid",
       type: "registry:example",
-      registryDependencies: ["select"],
-      files: ["src/registry/default/example/select-form.tsx"],
+      registryDependencies: ["card", "virtualized"],
+      files: ["src/registry/default/example/virtualizer-grid.tsx"],
       component: React.lazy(
-        () => import("@/registry/default/example/select-form.tsx")
+        () => import("@/registry/default/example/virtualizer-grid.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "virtualizer-horizontal": {
+      name: "virtualizer-horizontal",
+      type: "registry:example",
+      registryDependencies: ["card", "virtualized"],
+      files: ["src/registry/default/example/virtualizer-horizontal.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/virtualizer-horizontal.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "virtualizer-scroll-area": {
+      name: "virtualizer-scroll-area",
+      type: "registry:example",
+      registryDependencies: ["card", "scroll-area", "virtualized"],
+      files: ["src/registry/default/example/virtualizer-scroll-area.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/virtualizer-scroll-area.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "virtualizer-select": {
+      name: "virtualizer-select",
+      type: "registry:example",
+      registryDependencies: ["select", "virtualized"],
+      files: ["src/registry/default/example/virtualizer-select.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/virtualizer-select.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "virtualizer-sortable": {
+      name: "virtualizer-sortable",
+      type: "registry:example",
+      registryDependencies: ["sortable", "virtualized"],
+      files: ["src/registry/default/example/virtualizer-sortable.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/virtualizer-sortable.tsx")
+      ),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: [],
+    },
+    "virtualizer-table": {
+      name: "virtualizer-table",
+      type: "registry:example",
+      registryDependencies: ["table", "virtualized"],
+      files: ["src/registry/default/example/virtualizer-table.tsx"],
+      component: React.lazy(
+        () => import("@/registry/default/example/virtualizer-table.tsx")
       ),
       source: "",
       category: "undefined",
