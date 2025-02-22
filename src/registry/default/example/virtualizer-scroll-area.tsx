@@ -1,6 +1,5 @@
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 
-import { cn } from "@/lib/utils"
 import { ScrollBar } from "@/registry/default/ui/scroll-area"
 import { Separator } from "@/registry/default/ui/separator"
 import {
@@ -14,9 +13,7 @@ const tags = Array.from({ length: 10000 }).map(
 
 export default function VirtualizerScrollArea() {
   return (
-    <ScrollAreaPrimitive.Root
-      className={cn("relative overflow-hidden", "h-72 w-48 rounded-md border")}
-    >
+    <ScrollAreaPrimitive.Root className="relative h-72 w-48 overflow-hidden rounded-md border">
       <Virtualized asChild>
         <ScrollAreaPrimitive.Viewport className="size-full rounded-[inherit]">
           <div className="p-4">

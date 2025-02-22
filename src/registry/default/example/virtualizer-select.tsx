@@ -22,7 +22,8 @@ export default function VirtualizerSelect() {
   const [value, setValue] = React.useState("")
   const [open, setOpen] = React.useState(false)
 
-  const ref = React.useRef<VirtualizerHandle>(null)
+  const virtualizerRef = React.useRef<VirtualizerHandle>(null)
+  const viewportRef = React.useRef<HTMLDivElement>(null)
 
   const activeIndex = React.useMemo(
     () => items.findIndex((item) => item.value === value),
@@ -34,10 +35,10 @@ export default function VirtualizerSelect() {
 
     setTimeout(() => {
       // Recover scroll position.
-      ref.current?.scrollToIndex(activeIndex, { align: "end" })
+      virtualizerRef.current?.scrollToIndex(activeIndex, { align: "end" })
 
-      const checkedElement = document.querySelector(
-        "[data-radix-select-viewport] [data-state=checked]"
+      const checkedElement = viewportRef.current?.querySelector(
+        "[data-state=checked]"
       ) as HTMLElement
 
       // Recover focus.
@@ -65,13 +66,14 @@ export default function VirtualizerSelect() {
         >
           <SelectScrollUpButton />
           <SelectPrimitive.Viewport
+            ref={viewportRef}
             className={cn(
               "p-1",
               "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
             )}
           >
             <VirtualizedVirtualizer
-              ref={ref}
+              ref={virtualizerRef}
               keepMounted={activeIndex !== -1 ? [activeIndex] : undefined}
               overscan={2}
             >
