@@ -46,7 +46,7 @@ VirtualizedTableBody.displayName = "VirtualizedTableBody"
 export default function VirtualizerTable() {
   return (
     <Virtualized className="h-96 overflow-y-auto">
-      <table className="w-full caption-bottom border-separate border-spacing-0 text-sm">
+      <table className="w-full table-fixed caption-bottom border-separate border-spacing-0 text-sm">
         <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader className="sticky top-0 z-10 bg-background [&_tr>*]:border-b">
           <TableRow>
