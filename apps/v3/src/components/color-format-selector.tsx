@@ -10,7 +10,6 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
 } from "@/registry/new-york/ui/select"
 import { Skeleton } from "@/registry/new-york/ui/skeleton"
 

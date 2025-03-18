@@ -7,7 +7,6 @@ import { type Color } from "@/lib/colors"
 import { trackEvent } from "@/lib/events"
 import { useColors } from "@/hooks/use-colors"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
-import { copyToClipboardWithMeta } from "@/components/copy-button"
 
 export function Color({ color }: { color: Color }) {
   const { format } = useColors()
@@ -16,7 +15,7 @@ export function Color({ color }: { color: Color }) {
   return (
     <button
       key={color.hex}
-      className="group relative flex aspect-[3/1] w-full flex-1 flex-col gap-2 text-[--text] sm:aspect-[2/3] sm:h-auto sm:w-auto [&>svg]:absolute [&>svg]:right-4 [&>svg]:top-4 [&>svg]:h-3.5 [&>svg]:w-3.5 [&>svg]:opacity-0 [&>svg]:transition-opacity"
+      className="group relative flex aspect-[3/1] w-full flex-1 flex-col gap-2 text-[--text] sm:aspect-[2/3] sm:size-auto [&>svg]:absolute [&>svg]:right-4 [&>svg]:top-4 [&>svg]:size-3.5 [&>svg]:opacity-0 [&>svg]:transition-opacity"
       style={
         {
           "--bg": `hsl(${color.hsl})`,

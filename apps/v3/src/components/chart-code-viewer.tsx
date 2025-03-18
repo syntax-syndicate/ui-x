@@ -59,6 +59,7 @@ ${Object.entries(themesConfig?.activeTheme.cssVars.dark || {})
 
   const content = (
     <>
+      {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
       <div className="chart-wrapper hidden sm:block [&>div]:rounded-none [&>div]:border-0 [&>div]:border-b [&>div]:shadow-none [&_[data-chart]]:mx-auto [&_[data-chart]]:max-h-[35vh]">
         {children}
       </div>

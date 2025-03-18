@@ -42,6 +42,7 @@ export const containerClassName = "min-h-screen py-12"
 
 export default function Charts() {
   return (
+    // eslint-disable-next-line tailwindcss/no-custom-classname
     <div className="chart-wrapper mx-auto flex max-w-6xl flex-col flex-wrap items-start justify-center gap-6 p-6 sm:flex-row sm:p-8">
       <div className="grid w-full gap-6 sm:grid-cols-2 lg:max-w-[22rem] lg:grid-cols-1 xl:max-w-[25rem]">
         <Card
@@ -296,7 +297,7 @@ export default function Charts() {
           </CardContent>
         </Card>
       </div>
-      <div className="grid w-full flex-1 gap-6 lg:max-w-[20rem]">
+      <div className="grid w-full flex-1 gap-6 lg:max-w-80">
         <Card
           x-chunk="Two horizontal bar charts showing total steps taken during the current year and last year."
           className="max-w-xs"

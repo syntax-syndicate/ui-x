@@ -41,7 +41,7 @@ export function CardsTeamMembers() {
       <CardContent className="grid gap-6">
         <div className="flex items-center justify-between space-x-4">
           <div className="flex items-center space-x-4">
-            <Avatar className="h-8 w-8">
+            <Avatar className="size-8">
               <AvatarImage src="/avatars/01.png" alt="Image" />
               <AvatarFallback>OM</AvatarFallback>
             </Avatar>
@@ -54,7 +54,7 @@ export function CardsTeamMembers() {
             <PopoverTrigger asChild>
               <Button variant="outline" size="sm" className="ml-auto">
                 Owner{" "}
-                <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
+                <ChevronDownIcon className="ml-2 size-4 text-muted-foreground" />
               </Button>
             </PopoverTrigger>
             <PopoverContent className="p-0" align="end">
@@ -63,25 +63,25 @@ export function CardsTeamMembers() {
                 <CommandList>
                   <CommandEmpty>No roles found.</CommandEmpty>
                   <CommandGroup>
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Viewer</p>
                       <p className="text-sm text-muted-foreground">
                         Can view and comment.
                       </p>
                     </CommandItem>
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Developer</p>
                       <p className="text-sm text-muted-foreground">
                         Can view, comment and edit.
                       </p>
                     </CommandItem>
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Billing</p>
                       <p className="text-sm text-muted-foreground">
                         Can view, comment and manage billing.
                       </p>
                     </CommandItem>
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Owner</p>
                       <p className="text-sm text-muted-foreground">
                         Admin-level access to all resources.
@@ -95,7 +95,7 @@ export function CardsTeamMembers() {
         </div>
         <div className="flex items-center justify-between space-x-4">
           <div className="flex items-center space-x-4">
-            <Avatar className="h-8 w-8">
+            <Avatar className="size-8">
               <AvatarImage src="/avatars/02.png" alt="Image" />
               <AvatarFallback>JL</AvatarFallback>
             </Avatar>
@@ -108,7 +108,7 @@ export function CardsTeamMembers() {
             <PopoverTrigger asChild>
               <Button variant="outline" size="sm" className="ml-auto">
                 Member{" "}
-                <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
+                <ChevronDownIcon className="ml-2 size-4 text-muted-foreground" />
               </Button>
             </PopoverTrigger>
             <PopoverContent className="p-0" align="end">
@@ -117,25 +117,25 @@ export function CardsTeamMembers() {
                 <CommandList>
                   <CommandEmpty>No roles found.</CommandEmpty>
                   <CommandGroup className="p-1.5">
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Viewer</p>
                       <p className="text-sm text-muted-foreground">
                         Can view and comment.
                       </p>
                     </CommandItem>
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Developer</p>
                       <p className="text-sm text-muted-foreground">
                         Can view, comment and edit.
                       </p>
                     </CommandItem>
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Billing</p>
                       <p className="text-sm text-muted-foreground">
                         Can view, comment and manage billing.
                       </p>
                     </CommandItem>
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Owner</p>
                       <p className="text-sm text-muted-foreground">
                         Admin-level access to all resources.
@@ -149,7 +149,7 @@ export function CardsTeamMembers() {
         </div>
         <div className="flex items-center justify-between space-x-4">
           <div className="flex items-center space-x-4">
-            <Avatar className="h-8 w-8">
+            <Avatar className="size-8">
               <AvatarImage src="/avatars/03.png" alt="Image" />
               <AvatarFallback>IN</AvatarFallback>
             </Avatar>
@@ -164,7 +164,7 @@ export function CardsTeamMembers() {
             <PopoverTrigger asChild>
               <Button variant="outline" size="sm" className="ml-auto">
                 Member{" "}
-                <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
+                <ChevronDownIcon className="ml-2 size-4 text-muted-foreground" />
               </Button>
             </PopoverTrigger>
             <PopoverContent className="p-0" align="end">
@@ -173,25 +173,25 @@ export function CardsTeamMembers() {
                 <CommandList>
                   <CommandEmpty>No roles found.</CommandEmpty>
                   <CommandGroup className="p-1.5">
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Viewer</p>
                       <p className="text-sm text-muted-foreground">
                         Can view and comment.
                       </p>
                     </CommandItem>
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Developer</p>
                       <p className="text-sm text-muted-foreground">
                         Can view, comment and edit.
                       </p>
                     </CommandItem>
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Billing</p>
                       <p className="text-sm text-muted-foreground">
                         Can view, comment and manage billing.
                       </p>
                     </CommandItem>
-                    <CommandItem className="teamaspace-y-1 flex flex-col items-start px-4 py-2">
+                    <CommandItem className="flex flex-col items-start space-y-1 px-4 py-2">
                       <p>Owner</p>
                       <p className="text-sm text-muted-foreground">
                         Admin-level access to all resources.
