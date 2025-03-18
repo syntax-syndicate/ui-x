@@ -4,5 +4,11 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "eslint.useFlatConfig": true
+  "editor.quickSuggestions": { "strings": "on" },
+  "eslint.useFlatConfig": true,
+  "eslint.workingDirectories": [
+    { "pattern": "apps/*" },
+    { "pattern": "packages/*" }
+  ],
+  "files.associations": { "*.css": "tailwindcss" }
 }
