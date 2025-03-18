@@ -3,6 +3,7 @@
     "dbaeumer.vscode-eslint",
     "dotenv.dotenv-vscode",
     "esbenp.prettier-vscode",
-    "unifiedjs.vscode-mdx"
+    "unifiedjs.vscode-mdx",
+    "Vercel.turbo-vsc"
   ]
 }
