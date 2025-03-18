@@ -49,6 +49,7 @@ const components = {
   AlertDescription,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
+      // eslint-disable-next-line tailwindcss/no-custom-classname
       className={cn(
         "font-heading mt-2 scroll-m-20 text-4xl font-bold",
         className
@@ -58,6 +59,7 @@ const components = {
   ),
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
+      // eslint-disable-next-line tailwindcss/no-custom-classname
       className={cn(
         "font-heading mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0",
         className
@@ -67,6 +69,7 @@ const components = {
   ),
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
+      // eslint-disable-next-line tailwindcss/no-custom-classname
       className={cn(
         "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
         className
@@ -76,6 +79,7 @@ const components = {
   ),
   h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
+      // eslint-disable-next-line tailwindcss/no-custom-classname
       className={cn(
         "font-heading mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
         className
@@ -151,10 +155,7 @@ const components = {
     </div>
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
-    <tr
-      className={cn("last:border-b-none m-0 border-b", className)}
-      {...props}
-    />
+    <tr className={cn("m-0 border-b last:border-b-0", className)} {...props} />
   ),
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th
@@ -248,6 +249,7 @@ const components = {
   ),
   Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
     <h3
+      // eslint-disable-next-line tailwindcss/no-custom-classname
       className={cn(
         "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
         className

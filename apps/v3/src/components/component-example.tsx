@@ -21,9 +21,9 @@ interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
 export function ComponentExample({
   children,
   className,
-  extractClassname,
   extractedClassNames,
   align = "center",
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   src: _,
   ...props
 }: ComponentExampleProps) {

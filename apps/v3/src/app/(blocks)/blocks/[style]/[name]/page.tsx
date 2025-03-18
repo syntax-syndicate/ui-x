@@ -6,7 +6,7 @@ import { getAllBlockIds, getBlock } from "@/lib/blocks"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { BlockChunk } from "@/components/block-chunk"
 import { BlockWrapper } from "@/components/block-wrapper"
-import { ThemesStyle } from "@/components/themes-styles"
+// import { ThemesStyle } from "@/components/themes-styles"
 import { Style, styles } from "@/registry/registry-styles"
 
 import "@/styles/mdx.css"
@@ -90,6 +90,7 @@ export default async function BlockPage({
     <>
       {/* <ThemesStyle /> */}
       <div
+        // eslint-disable-next-line tailwindcss/no-custom-classname
         className={cn(
           "themes-wrapper bg-background",
           block.container?.className

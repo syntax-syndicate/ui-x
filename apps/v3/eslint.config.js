@@ -10,10 +10,19 @@ const compat = new FlatCompat({
 
 export default ts.config(
   {
-    ignores: ["node_modules/", ".next/*", ".contentlayer", "src/__registry__"],
+    ignores: [
+      "node_modules/",
+      ".next/*",
+      ".contentlayer",
+      "src/__registry__",
+      "src/scripts/*",
+    ],
   },
   ...compat.config({
     extends: ["next/core-web-vitals", "next/typescript"],
+    rules: {
+      "react/no-unescaped-entities": "off",
+    },
   }),
   {
     files: ["src/**/*.{js?(x),ts?(x)}"],

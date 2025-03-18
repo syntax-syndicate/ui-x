@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 "use client"
 
@@ -5,7 +6,8 @@ import * as React from "react"
 
 import { TableOfContents } from "@/lib/toc"
 import { cn } from "@/lib/utils"
-import { useMounted } from "@/hooks/use-mounted"
+
+// import { useMounted } from "@/hooks/use-mounted"
 
 interface TocProps {
   toc: TableOfContents
@@ -24,7 +26,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
     [toc]
   )
   const activeHeading = useActiveItem(itemIds)
-  const mounted = useMounted()
+  // const mounted = useMounted()
 
   if (!toc?.items?.length) {
     return null

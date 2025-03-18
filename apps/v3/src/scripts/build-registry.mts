@@ -1,5 +1,5 @@
-// @sts-nocheck
-import { existsSync, promises as fs, readFileSync } from "fs"
+// @ts-nocheck
+import { existsSync, promises as fs } from "fs"
 import { tmpdir } from "os"
 import path from "path"
 import { cwd } from "process"

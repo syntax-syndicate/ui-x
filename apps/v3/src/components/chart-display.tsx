@@ -19,6 +19,7 @@ export async function ChartDisplay({
 
   return (
     <div
+      // eslint-disable-next-line tailwindcss/no-custom-classname
       className={cn(
         "themes-wrapper group relative flex flex-col overflow-hidden rounded-xl border shadow transition-all duration-200 ease-in-out hover:z-30",
         className
