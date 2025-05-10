@@ -456,6 +456,12 @@ export const examples: Registry = [
     files: ["example/virtualizer-combobox.tsx"],
   },
   {
+    name: "virtualizer-command",
+    type: "registry:example",
+    registryDependencies: ["button", "command", "popover", "virtualized"],
+    files: ["example/virtualizer-command.tsx"],
+  },
+  {
     name: "virtualizer-demo",
     type: "registry:example",
     registryDependencies: ["card", "virtualized"],
