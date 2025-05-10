@@ -458,7 +458,7 @@ export const examples: Registry = [
   {
     name: "virtualizer-command",
     type: "registry:example",
-    registryDependencies: ["command", "virtualized"],
+    registryDependencies: ["button", "command", "popover", "virtualized"],
     files: ["example/virtualizer-command.tsx"],
   },
   {
