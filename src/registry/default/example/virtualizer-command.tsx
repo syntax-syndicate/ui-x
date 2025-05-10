@@ -42,7 +42,17 @@ export default function VirtualizerCommand() {
   }, [inputValue])
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover
+      open={open}
+      onOpenChange={(open) => {
+        setOpen(open)
+        if (!open) {
+          setInputValue(
+            filtered.find((item) => item.value === value)?.label ?? ""
+          )
+        }
+      }}
+    >
       <PopoverTrigger asChild>
         <Button
           variant="outline"
@@ -77,7 +87,7 @@ export default function VirtualizerCommand() {
                         setValue(currentValue === value ? "" : currentValue)
                         setInputValue(
                           filtered.find((item) => item.value === currentValue)
-                            ?.label || ""
+                            ?.label ?? ""
                         )
                         setOpen(false)
                       }}
