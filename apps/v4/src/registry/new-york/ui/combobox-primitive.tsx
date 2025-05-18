@@ -65,6 +65,7 @@ export interface ComboboxBaseProps
       React.ComponentProps<typeof CommandPrimitive>,
       "value" | "defaultValue" | "onValueChange"
     > {
+  children?: React.ComponentProps<typeof CommandPrimitive>["children"];
   type?: ComboboxType | undefined;
   inputValue?: string;
   defaultInputValue?: string;
@@ -115,21 +116,22 @@ function Combobox<T extends ComboboxType = "single">({
   required,
   ...props
 }: ComboboxProps) {
-  const [value = type === "multiple" ? [] : "", setValue] =
-    useControllableState<ComboboxValue<T>>({
-      prop: valueProp as ComboboxValue<T>,
-      defaultProp: defaultValue as ComboboxValue<T>,
-      onChange: onValueChange as (value: ComboboxValue<T>) => void,
-    });
-
-  const [inputValue = "", setInputValue] = useControllableState({
-    prop: inputValueProp,
-    defaultProp: defaultInputValue,
+  const [value, setValue] = useControllableState<ComboboxValue<T>>({
+    prop: valueProp as ComboboxValue<T>,
+    defaultProp: ((defaultValue ?? type === "multiple")
+      ? []
+      : "") as ComboboxValue<T>,
+    onChange: onValueChange as (value: ComboboxValue<T>) => void,
   });
 
-  const [open = false, setOpen] = useControllableState({
+  const [inputValue, setInputValue] = useControllableState({
+    prop: inputValueProp,
+    defaultProp: defaultInputValue ?? "",
+  });
+
+  const [open, setOpen] = useControllableState({
     prop: openProp,
-    defaultProp: defaultOpen,
+    defaultProp: defaultOpen ?? false,
     onChange: onOpenChange,
   });
 
@@ -346,12 +348,15 @@ function ComboboxInput({
     tagGroupRef,
   } = useCombobox();
 
-  const composedRefs = useComposedRefs(ref, inputRef);
+  const composedRefs = useComposedRefs(
+    ref as React.Ref<HTMLInputElement>,
+    inputRef,
+  );
 
   return (
     <CommandPrimitive.Input
       data-slot="combobox-input"
-      ref={composedRefs}
+      ref={composedRefs as React.ComponentRef<typeof CommandPrimitive.Input>}
       disabled={disabled}
       required={required}
       value={inputValue}
@@ -427,7 +432,9 @@ function ComboboxContent({
   onOpenAutoFocus,
   onInteractOutside,
   ...props
-}: React.ComponentProps<typeof PopoverPrimitive.Content>) {
+}: React.ComponentProps<typeof PopoverPrimitive.Content> & {
+  children: React.ComponentProps<typeof CommandPrimitive.List>["children"];
+}) {
   return (
     <PopoverPrimitive.Content
       asChild

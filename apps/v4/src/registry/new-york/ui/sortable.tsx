@@ -1,6 +1,12 @@
 "use client";
 
-import type { DndContextProps, UniqueIdentifier } from "@dnd-kit/core";
+import type {
+  DndContextProps,
+  DragCancelEvent,
+  DragEndEvent,
+  DragStartEvent,
+  UniqueIdentifier,
+} from "@dnd-kit/core";
 import {
   DndContext,
   DragOverlay,
@@ -82,13 +88,15 @@ function Sortable({
     >
       <DndContext
         data-slot="sortable"
-        onDragStart={composeEventHandlers(onDragStart, ({ active }) =>
-          setActiveId(active.id),
-        )}
-        onDragEnd={composeEventHandlers(onDragEnd, () => setActiveId(null))}
-        onDragCancel={composeEventHandlers(onDragCancel, () =>
-          setActiveId(null),
-        )}
+        onDragStart={composeEventHandlers<
+          DragStartEvent & { defaultPrevented: boolean }
+        >(onDragStart, ({ active }) => setActiveId(active.id))}
+        onDragEnd={composeEventHandlers<
+          DragEndEvent & { defaultPrevented: boolean }
+        >(onDragEnd, () => setActiveId(null))}
+        onDragCancel={composeEventHandlers<
+          DragCancelEvent & { defaultPrevented: boolean }
+        >(onDragCancel, () => setActiveId(null))}
         collisionDetection={collisionDetection}
         sensors={sensors}
         {...props}
@@ -261,7 +269,11 @@ function SortableItemTrigger({
 
 export interface SortableOverlayProps
   extends Omit<React.ComponentProps<typeof DragOverlay>, "children"> {
-  children?: React.ReactNode | ((id: UniqueIdentifier) => React.ReactNode);
+  children?:
+    | React.ComponentProps<typeof DragOverlay>["children"]
+    | ((
+        id: UniqueIdentifier,
+      ) => React.ComponentProps<typeof DragOverlay>["children"]);
 }
 
 function SortableOverlay({ children, ...props }: SortableOverlayProps) {

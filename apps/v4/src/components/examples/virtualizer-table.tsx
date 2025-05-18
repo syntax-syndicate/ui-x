@@ -36,12 +36,26 @@ const invoices = Array.from({ length: 1000 }, (_, index) => ({
   ]),
 }));
 
-function VirtualizedTableRow(props: CustomItemComponentProps) {
-  return <TableRow {...props} />;
+function VirtualizedTableRow({ ref, ...props }: CustomItemComponentProps) {
+  return (
+    <TableRow
+      ref={ref as React.Ref<React.ComponentRef<typeof TableRow>>}
+      {...props}
+    />
+  );
 }
 
-function VirtualizedTableBody(props: CustomContainerComponentProps) {
-  return <TableBody className="max-h-96" {...props} />;
+function VirtualizedTableBody({
+  ref,
+  ...props
+}: CustomContainerComponentProps) {
+  return (
+    <TableBody
+      ref={ref as React.Ref<React.ComponentRef<typeof TableBody>>}
+      className="max-h-96"
+      {...props}
+    />
+  );
 }
 
 export default function VirtualizerTable() {
