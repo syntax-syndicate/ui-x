@@ -1,7 +1,10 @@
 {
   "name": "chart-bar-mixed",
   "type": "registry:block",
-  "registryDependencies": ["card", "chart"],
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
   "files": [
     {
       "path": "block/chart-bar-mixed.tsx",

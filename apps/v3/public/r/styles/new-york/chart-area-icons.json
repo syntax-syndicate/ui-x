@@ -1,7 +1,10 @@
 {
   "name": "chart-area-icons",
   "type": "registry:block",
-  "registryDependencies": ["card", "chart"],
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
   "files": [
     {
       "path": "block/chart-area-icons.tsx",

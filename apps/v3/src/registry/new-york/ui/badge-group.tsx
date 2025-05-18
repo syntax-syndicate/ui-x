@@ -63,7 +63,7 @@ export const BadgeGroup = React.forwardRef(
   ) => {
     const [value, setValue] = useControllableState<BadgeGroupValue<T>>({
       prop: valueProp as BadgeGroupValue<T>,
-      defaultProp: ((defaultValue ?? type === "multiple")
+      defaultProp: (defaultValue ?? type === "multiple"
         ? []
         : "") as BadgeGroupValue<T>,
       onChange: onValueChange as (value: BadgeGroupValue<T>) => void,

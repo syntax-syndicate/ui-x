@@ -1,7 +1,12 @@
 {
   "name": "dashboard-01",
   "type": "registry:block",
-  "registryDependencies": ["button", "dropdown-menu", "input", "sheet"],
+  "registryDependencies": [
+    "button",
+    "dropdown-menu",
+    "input",
+    "sheet"
+  ],
   "files": [
     {
       "path": "block/dashboard-01.tsx",

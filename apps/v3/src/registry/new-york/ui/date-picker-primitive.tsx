@@ -92,10 +92,10 @@ export type DatePickerValue<T extends DatePickerMode = "single"> =
   T extends "single"
     ? Date
     : T extends "multiple"
-      ? Date[]
-      : T extends "range"
-        ? DateRange
-        : never
+    ? Date[]
+    : T extends "range"
+    ? DateRange
+    : never
 
 export interface DatePickerSingleProps {
   mode: "single"
@@ -361,7 +361,9 @@ export const DatePickerValue = React.forwardRef<
     if (mode === "multiple") {
       return value.map((v) => format(v, formatStr)).join(", ")
     }
-    return `${value.from ? format(value.from, formatStr) : "Select a date"} - ${value.to ? format(value.to, formatStr) : "Select a date"}`
+    return `${value.from ? format(value.from, formatStr) : "Select a date"} - ${
+      value.to ? format(value.to, formatStr) : "Select a date"
+    }`
   }, [mode, value, formatStr])
 
   return (
@@ -370,7 +372,7 @@ export const DatePickerValue = React.forwardRef<
       data-placeholder={isValueEmpty ? true : undefined}
       {...props}
     >
-      {isValueEmpty ? placeholder : (children ?? formattedValue)}
+      {isValueEmpty ? placeholder : children ?? formattedValue}
     </Primitive.span>
   )
 })

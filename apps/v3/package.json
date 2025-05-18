@@ -128,6 +128,7 @@
     "globals": "^15.6.0",
     "mdast-util-toc": "^6.1.1",
     "postcss": "^8.4.24",
+    "prettier": "^2.8.8",
     "rehype": "^12.0.1",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.6.0",

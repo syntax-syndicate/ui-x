@@ -1,7 +1,10 @@
 {
   "name": "chart-line-linear",
   "type": "registry:block",
-  "registryDependencies": ["card", "chart"],
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
   "files": [
     {
       "path": "block/chart-line-linear.tsx",

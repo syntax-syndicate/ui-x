@@ -1,7 +1,12 @@
 {
   "name": "authentication-04",
   "type": "registry:block",
-  "registryDependencies": ["button", "card", "input", "label"],
+  "registryDependencies": [
+    "button",
+    "card",
+    "input",
+    "label"
+  ],
   "files": [
     {
       "path": "block/authentication-04.tsx",

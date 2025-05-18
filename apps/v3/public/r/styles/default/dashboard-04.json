@@ -1,7 +1,12 @@
 {
   "name": "dashboard-04",
   "type": "registry:block",
-  "registryDependencies": ["button", "card", "dropdown-menu", "input"],
+  "registryDependencies": [
+    "button",
+    "card",
+    "dropdown-menu",
+    "input"
+  ],
   "files": [
     {
       "path": "block/dashboard-04.tsx",

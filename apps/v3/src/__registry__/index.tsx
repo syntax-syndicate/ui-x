@@ -1097,15 +1097,13 @@ export const Index: Record<string, any> = {
     "virtualizer-command": {
       name: "virtualizer-command",
       type: "registry:example",
-      registryDependencies: ["command", "virtualized"],
+      registryDependencies: ["button","command","popover","virtualized"],
       files: ["src/registry/new-york/example/virtualizer-command.tsx"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/virtualizer-command.tsx")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/virtualizer-command.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
-      chunks: [],
+      chunks: []
     },
     "virtualizer-demo": {
       name: "virtualizer-demo",
@@ -3509,15 +3507,13 @@ export const Index: Record<string, any> = {
     "virtualizer-command": {
       name: "virtualizer-command",
       type: "registry:example",
-      registryDependencies: ["command", "virtualized"],
+      registryDependencies: ["button","command","popover","virtualized"],
       files: ["src/registry/default/example/virtualizer-command.tsx"],
-      component: React.lazy(
-        () => import("@/registry/default/example/virtualizer-command.tsx")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/virtualizer-command.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
-      chunks: [],
+      chunks: []
     },
     "virtualizer-demo": {
       name: "virtualizer-demo",

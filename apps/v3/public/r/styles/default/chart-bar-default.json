@@ -1,7 +1,10 @@
 {
   "name": "chart-bar-default",
   "type": "registry:block",
-  "registryDependencies": ["card", "chart"],
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
   "files": [
     {
       "path": "block/chart-bar-default.tsx",

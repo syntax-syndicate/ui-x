@@ -1,7 +1,9 @@
 {
   "name": "charts-01",
   "type": "registry:block",
-  "registryDependencies": ["chart"],
+  "registryDependencies": [
+    "chart"
+  ],
   "files": [
     {
       "path": "block/charts-01.tsx",

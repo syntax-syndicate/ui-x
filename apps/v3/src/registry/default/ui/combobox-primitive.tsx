@@ -114,7 +114,7 @@ export const Combobox = React.forwardRef(
   ) => {
     const [value, setValue] = useControllableState<ComboboxValue<T>>({
       prop: valueProp as ComboboxValue<T>,
-      defaultProp: ((defaultValue ?? type === "multiple")
+      defaultProp: (defaultValue ?? type === "multiple"
         ? []
         : "") as ComboboxValue<T>,
       onChange: onValueChange as (value: ComboboxValue<T>) => void,

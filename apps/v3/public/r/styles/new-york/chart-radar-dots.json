@@ -1,7 +1,10 @@
 {
   "name": "chart-radar-dots",
   "type": "registry:block",
-  "registryDependencies": ["card", "chart"],
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
   "files": [
     {
       "path": "block/chart-radar-dots.tsx",

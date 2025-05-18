@@ -1,7 +1,13 @@
 {
   "name": "dashboard-02",
   "type": "registry:block",
-  "registryDependencies": ["badge", "button", "card", "dropdown-menu", "input"],
+  "registryDependencies": [
+    "badge",
+    "button",
+    "card",
+    "dropdown-menu",
+    "input"
+  ],
   "files": [
     {
       "path": "block/dashboard-02.tsx",
