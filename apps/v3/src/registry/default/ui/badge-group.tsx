@@ -61,12 +61,13 @@ export const BadgeGroup = React.forwardRef(
     }: BadgeGroupProps,
     ref: React.ForwardedRef<React.ElementRef<typeof ToggleGroupPrimitive.Root>>
   ) => {
-    const [value = type === "multiple" ? [] : "", setValue] =
-      useControllableState<BadgeGroupValue<T>>({
-        prop: valueProp as BadgeGroupValue<T>,
-        defaultProp: defaultValue as BadgeGroupValue<T>,
-        onChange: onValueChange as (value: BadgeGroupValue<T>) => void,
-      })
+    const [value, setValue] = useControllableState<BadgeGroupValue<T>>({
+      prop: valueProp as BadgeGroupValue<T>,
+      defaultProp: ((defaultValue ?? type === "multiple")
+        ? []
+        : "") as BadgeGroupValue<T>,
+      onChange: onValueChange as (value: BadgeGroupValue<T>) => void,
+    })
 
     return (
       <ToggleGroupPrimitive.Root

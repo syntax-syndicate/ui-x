@@ -49,9 +49,7 @@ function DropzoneInput(props: React.ComponentProps<typeof Primitive.input>) {
   return (
     <Primitive.input
       data-slot="dropzone-input"
-      {...getInputProps({ disabled, ...props } as Parameters<
-        typeof getInputProps
-      >[0])}
+      {...getInputProps({ disabled, ...props })}
     />
   );
 }
@@ -86,7 +84,7 @@ function DropzoneZone(props: React.ComponentProps<typeof Primitive.div>) {
       data-drag-accept={isDragAccept || undefined}
       data-drag-reject={isDragReject || undefined}
       data-file-dialog-active={isFileDialogActive || undefined}
-      {...getRootProps(props as Parameters<typeof getRootProps>[0])}
+      {...getRootProps(props)}
     />
   );
 }

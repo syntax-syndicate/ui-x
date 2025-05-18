@@ -1,7 +1,13 @@
 "use client"
 
 import * as React from "react"
-import type { DndContextProps, UniqueIdentifier } from "@dnd-kit/core"
+import type {
+  DndContextProps,
+  DragCancelEvent,
+  DragEndEvent,
+  DragStartEvent,
+  UniqueIdentifier,
+} from "@dnd-kit/core"
 import {
   closestCenter,
   DndContext,
@@ -83,13 +89,15 @@ export const Sortable = ({
       }}
     >
       <DndContext
-        onDragStart={composeEventHandlers(onDragStart, ({ active }) =>
-          setActiveId(active.id)
-        )}
-        onDragEnd={composeEventHandlers(onDragEnd, () => setActiveId(null))}
-        onDragCancel={composeEventHandlers(onDragCancel, () =>
-          setActiveId(null)
-        )}
+        onDragStart={composeEventHandlers<
+          DragStartEvent & { defaultPrevented: boolean }
+        >(onDragStart, ({ active }) => setActiveId(active.id))}
+        onDragEnd={composeEventHandlers<
+          DragEndEvent & { defaultPrevented: boolean }
+        >(onDragEnd, () => setActiveId(null))}
+        onDragCancel={composeEventHandlers<
+          DragCancelEvent & { defaultPrevented: boolean }
+        >(onDragCancel, () => setActiveId(null))}
         collisionDetection={collisionDetection}
         sensors={sensors}
         {...props}

@@ -28,9 +28,9 @@ const PasswordInput = ({
   onVisibleChange,
   children,
 }: PasswordInputProps) => {
-  const [visible = false, setVisible] = useControllableState({
+  const [visible, setVisible] = useControllableState({
     prop: visibleProp,
-    defaultProp: defaultVisible,
+    defaultProp: defaultVisible ?? false,
     onChange: onVisibleChange,
   })
 

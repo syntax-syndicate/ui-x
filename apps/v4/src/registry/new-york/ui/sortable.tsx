@@ -269,11 +269,7 @@ function SortableItemTrigger({
 
 export interface SortableOverlayProps
   extends Omit<React.ComponentProps<typeof DragOverlay>, "children"> {
-  children?:
-    | React.ComponentProps<typeof DragOverlay>["children"]
-    | ((
-        id: UniqueIdentifier,
-      ) => React.ComponentProps<typeof DragOverlay>["children"]);
+  children?: React.ReactNode | ((id: UniqueIdentifier) => React.ReactNode);
 }
 
 function SortableOverlay({ children, ...props }: SortableOverlayProps) {

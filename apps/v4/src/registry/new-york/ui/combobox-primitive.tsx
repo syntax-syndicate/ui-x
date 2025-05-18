@@ -65,7 +65,6 @@ export interface ComboboxBaseProps
       React.ComponentProps<typeof CommandPrimitive>,
       "value" | "defaultValue" | "onValueChange"
     > {
-  children?: React.ComponentProps<typeof CommandPrimitive>["children"];
   type?: ComboboxType | undefined;
   inputValue?: string;
   defaultInputValue?: string;
@@ -214,7 +213,11 @@ function ComboboxTagGroup({
 }
 
 export interface ComboboxTagGroupItemProps
-  extends React.ComponentProps<typeof RovingFocusGroupPrimitive.Item> {
+  extends Omit<
+    React.ComponentProps<typeof RovingFocusGroupPrimitive.Item>,
+    "children"
+  > {
+  children?: React.ReactNode;
   value: string;
   disabled?: boolean;
 }
@@ -348,15 +351,12 @@ function ComboboxInput({
     tagGroupRef,
   } = useCombobox();
 
-  const composedRefs = useComposedRefs(
-    ref as React.Ref<HTMLInputElement>,
-    inputRef,
-  );
+  const composedRefs = useComposedRefs(ref, inputRef);
 
   return (
     <CommandPrimitive.Input
       data-slot="combobox-input"
-      ref={composedRefs as React.ComponentRef<typeof CommandPrimitive.Input>}
+      ref={composedRefs}
       disabled={disabled}
       required={required}
       value={inputValue}
@@ -432,9 +432,7 @@ function ComboboxContent({
   onOpenAutoFocus,
   onInteractOutside,
   ...props
-}: React.ComponentProps<typeof PopoverPrimitive.Content> & {
-  children: React.ComponentProps<typeof CommandPrimitive.List>["children"];
-}) {
+}: React.ComponentProps<typeof PopoverPrimitive.Content>) {
   return (
     <PopoverPrimitive.Content
       asChild

@@ -29,14 +29,14 @@ export const useTimescape = ({
 }: UseTimescapeOptions) => {
   const [value, setValue] = useControllableState({
     prop: valueProp,
-    defaultProp: defaultValue,
+    defaultProp: defaultValue ?? null,
     onChange: onValueChange,
   })
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { update, _manager, ...timescape } = useReactTimescape({
     date: !value ? undefined : value, // This is the initial value.
-    onChangeDate: setValue,
+    onChangeDate: (date) => setValue(date ?? null),
     digits,
     hour12,
     maxDate,
@@ -111,7 +111,7 @@ export const useTimescapeRange = ({
 }: UseTimescapeRangeOptions) => {
   const [value, setValue] = useControllableState({
     prop: valueProp,
-    defaultProp: defaultValue,
+    defaultProp: defaultValue ?? null,
     onChange: onValueChange,
   })
 

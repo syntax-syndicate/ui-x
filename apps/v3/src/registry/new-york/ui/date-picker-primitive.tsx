@@ -180,7 +180,7 @@ export const DatePicker = <T extends DatePickerMode = "single">({
   })
   const [month, setMonth] = useControllableState({
     prop: monthProp,
-    defaultProp: defaultMonth,
+    defaultProp: defaultMonth ?? new Date(),
     onChange: onMonthChange,
   })
 

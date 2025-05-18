@@ -112,19 +112,20 @@ export const Combobox = React.forwardRef(
     }: ComboboxProps,
     ref: React.ForwardedRef<React.ElementRef<typeof CommandPrimitive>>
   ) => {
-    const [value = type === "multiple" ? [] : "", setValue] =
-      useControllableState<ComboboxValue<T>>({
-        prop: valueProp as ComboboxValue<T>,
-        defaultProp: defaultValue as ComboboxValue<T>,
-        onChange: onValueChange as (value: ComboboxValue<T>) => void,
-      })
-    const [inputValue = "", setInputValue] = useControllableState({
-      prop: inputValueProp,
-      defaultProp: defaultInputValue,
+    const [value, setValue] = useControllableState<ComboboxValue<T>>({
+      prop: valueProp as ComboboxValue<T>,
+      defaultProp: ((defaultValue ?? type === "multiple")
+        ? []
+        : "") as ComboboxValue<T>,
+      onChange: onValueChange as (value: ComboboxValue<T>) => void,
     })
-    const [open = false, setOpen] = useControllableState({
+    const [inputValue, setInputValue] = useControllableState({
+      prop: inputValueProp,
+      defaultProp: defaultInputValue ?? "",
+    })
+    const [open, setOpen] = useControllableState({
       prop: openProp,
-      defaultProp: defaultOpen,
+      defaultProp: defaultOpen ?? false,
       onChange: onOpenChange,
     })
     const [currentTabStopId, setCurrentTabStopId] = React.useState<
@@ -207,9 +208,11 @@ export const ComboboxTagGroup = React.forwardRef<
 ComboboxTagGroup.displayName = "ComboboxTagGroup"
 
 export interface ComboboxTagGroupItemProps
-  extends React.ComponentPropsWithoutRef<
-    typeof RovingFocusGroupPrimitive.Item
+  extends Omit<
+    React.ComponentPropsWithoutRef<typeof RovingFocusGroupPrimitive.Item>,
+    "children"
   > {
+  children?: React.ReactNode
   value: string
   disabled?: boolean
 }

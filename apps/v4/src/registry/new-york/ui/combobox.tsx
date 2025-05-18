@@ -41,7 +41,9 @@ function ComboboxInputBase({
   );
 }
 
-function ComboboxInput(props: React.ComponentProps<typeof InputBaseInput>) {
+function ComboboxInput(
+  props: React.ComponentProps<typeof ComboboxPrimitive.Input>,
+) {
   return (
     <ComboboxInputBase>
       <InputBaseControl>
@@ -56,7 +58,7 @@ function ComboboxInput(props: React.ComponentProps<typeof InputBaseInput>) {
 function ComboboxTagsInput({
   children,
   ...props
-}: React.ComponentProps<typeof InputBaseInput>) {
+}: React.ComponentProps<typeof ComboboxPrimitive.Input>) {
   return (
     <ComboboxInputBase>
       <ComboboxPrimitive.TagGroup asChild>
@@ -80,9 +82,7 @@ function ComboboxTag({
   children,
   className,
   ...props
-}: React.ComponentProps<typeof ComboboxPrimitive.TagGroupItem> & {
-  children: React.ReactNode;
-}) {
+}: React.ComponentProps<typeof ComboboxPrimitive.TagGroupItem>) {
   return (
     <ComboboxPrimitive.TagGroupItem
       data-slot="combobox-tag"
