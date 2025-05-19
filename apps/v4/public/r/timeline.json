@@ -4,6 +4,9 @@
   "type": "registry:ui",
   "title": "Timeline",
   "description": "Timeline displays a list of events in chronological order.",
+  "dependencies": [
+    "@radix-ui/react-slot"
+  ],
   "files": [
     {
       "path": "src/registry/new-york/ui/timeline.tsx",

@@ -34,11 +34,27 @@
         "@radix-ui/react-primitive",
         "timescape"
       ],
+      "registryDependencies": [
+        "https://ui-x.junwen-k.dev/r/use-timescape.json"
+      ],
       "files": [
         {
           "path": "src/registry/new-york/ui/date-time-field-primitive.tsx",
           "type": "registry:ui"
-        },
+        }
+      ]
+    },
+    {
+      "name": "use-timescape",
+      "type": "registry:hook",
+      "title": "Use Timescape",
+      "description": "A reactive wrapper around Timescape that provides controlled and uncontrolled state management for date/time input.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "react-day-picker",
+        "timescape"
+      ],
+      "files": [
         {
           "path": "src/registry/new-york/hooks/use-timescape.ts",
           "type": "registry:hook"
@@ -55,14 +71,13 @@
         "@radix-ui/react-primitive",
         "timescape"
       ],
+      "registryDependencies": [
+        "https://ui-x.junwen-k.dev/r/use-timescape.json"
+      ],
       "files": [
         {
           "path": "src/registry/new-york/ui/date-time-range-field-primitive.tsx",
           "type": "registry:ui"
-        },
-        {
-          "path": "src/registry/new-york/hooks/use-timescape.ts",
-          "type": "registry:hook"
         }
       ]
     },
@@ -79,6 +94,10 @@
         "@radix-ui/react-use-controllable-state",
         "date-fns",
         "react-day-picker"
+      ],
+      "registryDependencies": [
+        "https://ui-x.junwen-k.dev/r/date-time-field-primitive.json",
+        "https://ui-x.junwen-k.dev/r/date-time-range-field-primitive.json"
       ],
       "files": [
         {
@@ -170,6 +189,7 @@
         "@radix-ui/react-toggle-group",
         "@radix-ui/react-use-controllable-state"
       ],
+      "registryDependencies": ["badge"],
       "files": [
         {
           "path": "src/registry/new-york/ui/badge-group.tsx",
@@ -183,6 +203,7 @@
       "title": "Calendar",
       "description": "A calendar component lets users select a date without any input or popper / modal.",
       "dependencies": ["react-day-picker", "date-fns"],
+      "registryDependencies": ["button", "select"],
       "files": [
         {
           "path": "src/registry/new-york/ui/calendar.tsx",
@@ -355,6 +376,7 @@
         "@radix-ui/react-primitive",
         "@radix-ui/react-slot"
       ],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "src/registry/new-york/ui/input-base.tsx",
@@ -437,6 +459,7 @@
       "type": "registry:ui",
       "title": "Timeline",
       "description": "Timeline displays a list of events in chronological order.",
+      "dependencies": ["@radix-ui/react-slot"],
       "files": [
         {
           "path": "src/registry/new-york/ui/timeline.tsx",

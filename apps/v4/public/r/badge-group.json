@@ -10,6 +10,9 @@
     "@radix-ui/react-toggle-group",
     "@radix-ui/react-use-controllable-state"
   ],
+  "registryDependencies": [
+    "badge"
+  ],
   "files": [
     {
       "path": "src/registry/new-york/ui/badge-group.tsx",

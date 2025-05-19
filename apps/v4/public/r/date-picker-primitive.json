@@ -13,6 +13,10 @@
     "date-fns",
     "react-day-picker"
   ],
+  "registryDependencies": [
+    "https://ui-x.junwen-k.dev/r/date-time-field-primitive.json",
+    "https://ui-x.junwen-k.dev/r/date-time-range-field-primitive.json"
+  ],
   "files": [
     {
       "path": "src/registry/new-york/ui/date-picker-primitive.tsx",
