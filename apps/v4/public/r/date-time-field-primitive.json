@@ -5,8 +5,8 @@
   "title": "Date Time Field Primitive",
   "description": "Date Time Field Primitive allows user to enter date and time value.",
   "dependencies": [
-    "@radix-ui/react-compose-refs",
-    "@radix-ui/react-primitive",
+    "@radix-ui/react-compose-refs@1.1.2",
+    "@radix-ui/react-primitive@2.1.2",
     "timescape"
   ],
   "registryDependencies": [

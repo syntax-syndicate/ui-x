@@ -5,10 +5,10 @@
   "title": "Badge Group",
   "description": "A badge group is a focusable list of labels, categories, keywords, filters, or other items, with support for keyboard navigation, selection, and removal.",
   "dependencies": [
-    "@radix-ui/primitive",
+    "@radix-ui/primitive@1.1.2",
     "@radix-ui/react-slot",
     "@radix-ui/react-toggle-group",
-    "@radix-ui/react-use-controllable-state"
+    "@radix-ui/react-use-controllable-state@1.2.2"
   ],
   "registryDependencies": [
     "badge"

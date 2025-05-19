@@ -5,7 +5,7 @@
   "title": "Use Timescape",
   "description": "A reactive wrapper around Timescape that provides controlled and uncontrolled state management for date/time input.",
   "dependencies": [
-    "@radix-ui/react-use-controllable-state",
+    "@radix-ui/react-use-controllable-state@1.2.2",
     "react-day-picker",
     "timescape"
   ],

@@ -5,11 +5,11 @@
   "title": "Date Picker",
   "description": "An unstyled date picker component.",
   "dependencies": [
-    "@radix-ui/primitive",
+    "@radix-ui/primitive@1.1.2",
     "@radix-ui/react-popover",
-    "@radix-ui/react-primitive",
+    "@radix-ui/react-primitive@2.1.2",
     "@radix-ui/react-slot",
-    "@radix-ui/react-use-controllable-state",
+    "@radix-ui/react-use-controllable-state@1.2.2",
     "date-fns",
     "react-day-picker"
   ],

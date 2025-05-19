@@ -5,7 +5,7 @@
   "title": "Control Group",
   "description": "A component for grouping form controls like text inputs, buttons, selects and other elements into a single cohesive unit.",
   "dependencies": [
-    "@radix-ui/react-primitive",
+    "@radix-ui/react-primitive@2.1.2",
     "@radix-ui/react-slot"
   ],
   "files": [
