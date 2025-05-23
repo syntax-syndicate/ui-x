@@ -41,6 +41,7 @@ export function ModeSwitcher({
     <RadioGroupPrimitive.Root
       value={theme}
       onValueChange={setTheme}
+      orientation="horizontal"
       className={cn(
         "bg-muted inline-flex items-center rounded-full border",
         className,
