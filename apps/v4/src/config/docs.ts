@@ -192,6 +192,12 @@ export const docsConfig = {
           href: "/docs/components/timeline",
           items: [],
         },
+        {
+          title: "Wheel Picker",
+          href: "/docs/components/wheel-picker",
+          label: "New",
+          items: [],
+        },
       ],
     },
   ],
