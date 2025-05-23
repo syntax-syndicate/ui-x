@@ -469,6 +469,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "wheel-picker",
+      "type": "registry:ui",
+      "title": "Wheel Picker",
+      "description": "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
+      "dependencies": ["@ncdai/react-wheel-picker"],
+      "files": [
+        {
+          "path": "src/registry/new-york/ui/wheel-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
