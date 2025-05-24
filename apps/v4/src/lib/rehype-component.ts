@@ -53,13 +53,17 @@ export function rehypeComponent() {
           return "skip";
         }
 
-        try {
-          const extension = "tsx";
+        const type =
+          (getNodeAttributeByName(node, "type")?.value as string) ?? "ui";
 
+        const extension =
+          (getNodeAttributeByName(node, "extension")?.value as string) ?? "tsx";
+
+        try {
           // Read the source file.
           const filePath = path.join(
             process.cwd(),
-            `src/registry/new-york/ui/${name}.${extension}`,
+            `src/registry/new-york/${type}/${name}.${extension}`,
           );
           let source = fs.readFileSync(filePath, "utf8");
 
