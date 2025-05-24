@@ -25,15 +25,13 @@ import { BProgressProvider } from "@/components/bprogress-provider";
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body>
-          {/* [!code highlight] */}
-          <BProgressProvider>{children}</BProgressProvider>
-        </body>
-      </html>
-    </>
+    <html lang="en">
+      <head />
+      <body>
+        {/* [!code highlight] */}
+        <BProgressProvider>{children}</BProgressProvider>
+      </body>
+    </html>
   );
 }
 ```
