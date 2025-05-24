@@ -1,6 +1,5 @@
 "use client";
 
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { ChevronDownIcon } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
@@ -24,16 +23,19 @@ const VERSION_OPTIONS = [
   },
 ] as const;
 
-export function VersionDropdownMenu(
-  props: React.ComponentProps<typeof DropdownMenuPrimitive.Root>,
-) {
+export function VersionDropdownMenu({
+  className,
+  ...props
+}: React.ComponentProps<typeof DropdownMenuTrigger>) {
   return (
-    <DropdownMenu {...props}>
+    <DropdownMenu>
       <DropdownMenuTrigger
         className={cn(
           "bg-muted focus-visible:ring-ring flex cursor-pointer items-center justify-between gap-2 rounded-full border py-0.5 pr-0.5 pl-2 focus-visible:ring-1",
           "text-muted-foreground text-sm font-medium",
+          className,
         )}
+        {...props}
       >
         v4
         <div className="flex size-5 items-center justify-center rounded-full border">

@@ -21,8 +21,8 @@ export function SiteHeader() {
 
   return (
     <header className="bg-background/80 sticky top-0 isolate z-10 border-b border-dashed backdrop-blur md:px-8">
-      <div className="mx-auto flex max-w-screen-2xl items-center justify-between gap-2 border-x border-dashed px-4 py-3">
-        <div className="flex items-center gap-8">
+      <div className="mx-auto flex max-w-screen-2xl items-center justify-between gap-4 border-x border-dashed px-4 py-3">
+        <div className="flex items-center gap-6">
           <Link href="/" className="hidden items-center gap-2 md:flex">
             <UiXLogo className="size-5" />
             <span className="hidden font-bold lg:inline-block">
@@ -30,7 +30,7 @@ export function SiteHeader() {
             </span>
           </Link>
           <SidebarTrigger className="md:hidden" />
-          <VersionDropdownMenu />
+          <VersionDropdownMenu className="hidden sm:inline-flex" />
           <nav className="hidden items-center gap-6 text-sm md:flex">
             {docsConfig.mainNav.map((item) => (
               <Link
@@ -48,7 +48,7 @@ export function SiteHeader() {
             ))}
           </nav>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-1 items-center gap-4 sm:flex-none">
           <ModeSwitcher className="hidden lg:inline-flex" />
           <CommandMenu />
           <div className="flex items-center gap-0.5">

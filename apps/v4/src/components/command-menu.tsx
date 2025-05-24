@@ -60,7 +60,7 @@ export function CommandMenu(props: DialogProps) {
     <>
       <Button
         variant="outline"
-        className="text-muted-foreground group basis-60 justify-between gap-4 font-normal"
+        className="text-muted-foreground group flex-1 justify-between gap-4 font-normal sm:basis-60"
         onClick={() => setOpen(true)}
         {...props}
       >
