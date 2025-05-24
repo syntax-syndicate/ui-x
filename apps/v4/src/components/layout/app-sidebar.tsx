@@ -26,6 +26,11 @@ export function AppSidebar({
 }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
 
+  const activeItem = docsConfig.sidebarNav
+    .map((item) => item.items)
+    .flat()
+    .findLast((item) => pathname.startsWith(item.href));
+
   return (
     <Sidebar
       className={cn("sticky top-14 z-0 border-x border-dashed", className)}
@@ -43,7 +48,7 @@ export function AppSidebar({
                       {item.items.map((item) => (
                         <SidebarMenuSubItem key={item.title}>
                           <SidebarMenuSubButton
-                            isActive={pathname === item.href}
+                            isActive={activeItem?.href === item.href}
                             asChild
                           >
                             <Link href={item.href}>
