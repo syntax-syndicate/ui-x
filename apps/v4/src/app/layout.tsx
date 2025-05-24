@@ -9,6 +9,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { BProgressProvider } from "@/registry/new-york/components/bprogress-provider-next-app";
 import { Confirmer } from "@/registry/new-york/ui/confirmer";
 
 const geistSans = Geist({
@@ -92,11 +93,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SidebarProvider className="flex flex-col">
-            <SiteHeader />
-            {children}
-            <SiteFooter />
-          </SidebarProvider>
+          <BProgressProvider>
+            <SidebarProvider className="flex flex-col">
+              <SiteHeader />
+              {children}
+              <SiteFooter />
+            </SidebarProvider>
+          </BProgressProvider>
           <Confirmer />
           <Toaster />
         </ThemeProvider>
