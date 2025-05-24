@@ -6,6 +6,7 @@ import { CodeBlock } from "@/components/code-block";
 import { CodeBlockCommand } from "@/components/code-block-command";
 import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
+import * as LinkedCards from "@/components/linked-card";
 import {
   Accordion,
   AccordionContent,
@@ -188,6 +189,7 @@ const components = {
       {...props}
     />
   ),
+  ...LinkedCards,
 };
 
 // parse the Velite generated MDX code into a React component function
