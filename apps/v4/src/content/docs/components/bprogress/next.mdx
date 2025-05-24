@@ -1,0 +1,74 @@
+---
+title: Next.js
+description: Integrating BProgress in your Next.js app.
+---
+
+## App Router
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @bprogress/next
+```
+
+<Step>Create a BProgress provider:</Step>
+
+<ComponentSource type="components" name="bprogress-provider-next-app" />
+
+<Step>Wrap your root layout:</Step>
+
+```tsx title="app/layout.tsx"
+/* [!code highlight] */
+import { BProgressProvider } from "@/components/bprogress-provider";
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body>
+          {/* [!code highlight] */}
+          <BProgressProvider>{children}</BProgressProvider>
+        </body>
+      </html>
+    </>
+  );
+}
+```
+
+</Steps>
+
+## Pages Router
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @bprogress/next
+```
+
+<Step>Create a BProgress provider:</Step>
+
+<ComponentSource type="components" name="bprogress-provider-next-pages" />
+
+<Step>Wrap your root layout:</Step>
+
+```tsx title="pages/_app.tsx"
+/* [!code highlight] */
+import { BProgressProvider } from "@/components/bprogress-provider";
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    /* [!code highlight] */
+    <BProgressProvider>
+      <Component {...pageProps} />
+      {/* [!code highlight] */}
+    </BProgressProvider>
+  );
+}
+```
+
+</Steps>

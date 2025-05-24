@@ -103,6 +103,12 @@ export const docsConfig = {
           items: [],
         },
         {
+          title: "BProgress",
+          href: "/docs/components/bprogress",
+          label: "New",
+          items: [],
+        },
+        {
           title: "Calendar",
           href: "/docs/components/calendar",
           items: [],
