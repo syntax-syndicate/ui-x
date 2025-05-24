@@ -4,6 +4,34 @@
   "homepage": "https://ui-x.junwen-k.dev/",
   "items": [
     {
+      "name": "bprogress-provider-next-app",
+      "type": "registry:component",
+      "title": "BProgress Provider Next App",
+      "description": "A smooth progress bar for page transitions in Next.js apps, using the App Router.",
+      "dependencies": ["@bprogress/next"],
+      "files": [
+        {
+          "path": "src/registry/new-york/components/bprogress-provider-next-app.tsx",
+          "target": "~/src/components/bprogress-provider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "bprogress-provider-next-pages",
+      "type": "registry:component",
+      "title": "BProgress Provider Next Pages",
+      "description": "A smooth progress bar for page transitions in Next.js pages, using the Pages Router.",
+      "dependencies": ["@bprogress/next"],
+      "files": [
+        {
+          "path": "src/registry/new-york/components/bprogress-provider-next-pages.tsx",
+          "target": "~/src/components/bprogress-provider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "combobox-primitive",
       "type": "registry:ui",
       "title": "Combobox Primitive",
