@@ -19,6 +19,7 @@ export interface PhoneInputBaseProps {
   defaultCountry?: Country;
   onCountryChange?: (country: Country | null) => void;
   children?: React.ReactNode;
+  disabled?: boolean;
 }
 
 export interface PhoneInputWithoutInternationalProps
@@ -98,6 +99,7 @@ interface PhoneInputContextProps {
   defaultInternationalForPreferredCountry: boolean;
   international: boolean;
   withCountryCallingCode: boolean;
+  disabled?: boolean;
 }
 
 export const PhoneInputContext = React.createContext<PhoneInputContextProps>({
@@ -109,6 +111,7 @@ export const PhoneInputContext = React.createContext<PhoneInputContextProps>({
   defaultInternationalForPreferredCountry: false,
   international: false,
   withCountryCallingCode: false,
+  disabled: false,
 });
 
 function usePhoneInput() {
@@ -131,6 +134,7 @@ function PhoneInput({
   defaultInternationalForPreferredCountry = false,
   international = false,
   withCountryCallingCode = false,
+  disabled = false,
   children,
 }: PhoneInputProps) {
   const [value, setValue] = useControllableState({
@@ -156,6 +160,7 @@ function PhoneInput({
         defaultInternationalForPreferredCountry,
         international,
         withCountryCallingCode,
+        disabled,
       }}
     >
       {children}
@@ -198,6 +203,7 @@ function getInputComponent(children: React.ReactNode) {
 function PhoneInputInput({
   asChild,
   children,
+  disabled: disabledProp,
   ...props
 }: PhoneInputInputProps) {
   const {
@@ -208,6 +214,7 @@ function PhoneInputInput({
     defaultInternationalForPreferredCountry,
     international,
     withCountryCallingCode,
+    disabled,
   } = usePhoneInput();
 
   const inputComponent = React.useMemo(
@@ -237,18 +244,23 @@ function PhoneInputInput({
       {...(international && { withCountryCallingCode })}
       value={value}
       onChange={handleChange}
+      disabled={disabled || disabledProp}
       {...props}
     />
   );
 }
 
-function PhoneInputCountrySelect(props: React.ComponentProps<"select">) {
-  const { country, onCountryChange } = usePhoneInput();
+function PhoneInputCountrySelect({
+  disabled: disabledProp,
+  ...props
+}: React.ComponentProps<"select">) {
+  const { country, onCountryChange, disabled } = usePhoneInput();
 
   return (
     <select
       data-slot="phone-input-country-select"
       value={country ?? ""}
+      disabled={disabled || disabledProp}
       onChange={(event) =>
         onCountryChange(
           event.target.value === "international"
