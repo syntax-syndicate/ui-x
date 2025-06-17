@@ -34,7 +34,6 @@ export const docsConfig = {
         {
           title: "Tailwind v4",
           href: "/docs/tailwind-v4",
-          label: "New",
           items: [],
         },
         {
