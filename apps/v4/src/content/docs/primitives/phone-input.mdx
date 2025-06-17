@@ -19,16 +19,16 @@ The `<PhoneInput />` component is built on top of [react-phone-number-input](htt
 
 ## Understanding Phone Formats
 
-Phone number formatting is a complex topic with various standards and representations. Before diving into the component usage, it's important to understand the core concepts of phone number formats.
+Phone numbers can be represented in different formats depending on the context. Understanding these formats is crucial for using the component effectively.
 
 ### National Format
 
 National format represents phone numbers in their local, country-specific format. This format is most familiar to users within a specific country. For example:
 
-- Japan: `0123-45-6789`
-- Malaysia: `012-345 6789`
-- United Kingdom: `01234 567890`
-- United States: `(234) 567-8900`
+- US: `(234) 567-8900`
+- UK: `01234 567890`
+- MY: `012-345 6789`
+- JP: `0123-45-6789`
 
 ### International Format
 
@@ -38,30 +38,28 @@ International format follows the [E.164 standard](https://en.wikipedia.org/wiki/
 
    Shows only the subscriber number without the country calling code prefix, useful when the country is already known through the country select or other context. For example:
 
-   - Japan: `123 45 6789`
-   - Malaysia: `12 345 6789`
-   - United Kingdom: `1234 567890`
-   - United States: `234 567 8900`
+   - US: `234 567 8900`
+   - UK: `1234 567890`
+   - MY: `12 345 6789`
+   - JP: `123 45 6789`
 
 2. **With Country Code**
 
    Includes the country calling code prefix, a universal representation that works across all countries. For example:
 
-   - Japan: `+81 123 45 6789`
-   - Malaysia: `+60 12 345 6789`
-   - United Kingdom: `+44 1234 567890`
-   - United States: `+1 234 567 8900`
+   - US: `+1 234 567 8900`
+   - UK: `+44 1234 567890`
+   - MY: `+60 12 345 6789`
+   - JP: `+81 123 45 6789`
 
-### Format Behavior Matrix
+## Formatting Behavior
 
-The following table summarizes how phone numbers are formatted based on the availability of country information:
+The component automatically handles phone number formatting based on whether a country is selected.
 
-| Country Information    | Format Type                          | Example (US Number) | Notes                                                                        |
-| ---------------------- | ------------------------------------ | ------------------- | ---------------------------------------------------------------------------- |
-| No country info        | International (with country code)    | `+1 234 567 8900`   | Always includes country code as it's required for unambiguous interpretation |
-| Country info available | National                             | `(234) 567-8900`    | Default format when country is known                                         |
-| Country info available | International (without country code) | `234 567 8900`      | Country code omitted as it's known from context                              |
-| Country info available | International (with country code)    | `+1 234 567 8900`   | Explicitly includes country code despite country being known                 |
+- When no country is selected, it uses international format with country code by default.
+- When a country is selected, it defaults to national format for better user experience.
+
+The formatting behavior can be configured to suit different use cases.
 
 ## Installation
 
