@@ -57,7 +57,7 @@ International format follows the [E.164 standard](https://en.wikipedia.org/wiki/
 The component automatically handles phone number formatting based on whether a country is selected.
 
 - When no country is selected, it uses international format with country code by default.
-- When a country is selected, it defaults to national format for better user experience.
+- When a country is selected, it uses national format by default.
 
 The formatting behavior can be configured to suit different use cases.
 
@@ -136,14 +136,8 @@ In this example, the default country is set to Malaysia, with the initial value 
 
 <Callout className="[&_[data-slot=alert-description]]:text-foreground mt-4 border-amber-200 bg-amber-50 dark:border-amber-950 dark:bg-amber-950/50">
 
-**Important**: Since `react-phone-number-input` uses a function-based approach
-for its `inputComponent` prop, this differs from Radix UI's `asChild` composition which expects a
-JSX element directly.
+**Important**: Since `react-phone-number-input` uses a function-based approach for its `inputComponent` prop, this differs from Radix UI's `asChild` composition which expects a JSX element directly.
 
-To ensure stable behavior and prevent focus issues, it's
-recommended to either use a custom component that returns a native input
-element, or wrap the native input element with `useMemo` to maintain a stable
-reference. Avoid using raw input elements directly as children, as this will
-cause focus issues on each change.
+To ensure stable behavior and prevent focus issues, it's recommended to always wrap your input element or custom component with `useMemo` to maintain a stable reference. Avoid using components directly as children without `useMemo`, as this will cause focus issues on each change.
 
 </Callout>
