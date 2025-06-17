@@ -2,7 +2,6 @@
 
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import * as React from "react";
-import flags from "react-phone-number-input/flags";
 import {
   Country,
   default as ReactPhoneInput,
@@ -189,15 +188,11 @@ function getInputComponent(children: React.ReactNode) {
     return undefined;
   }
 
-  // Return the component type if it's a function component.
-  if (typeof child.type === "function") {
-    return child.type as React.ComponentProps<
-      typeof ReactPhoneInput
-    >["inputComponent"];
-  }
-
   return (props: React.ComponentProps<"input">) =>
-    React.cloneElement(child, props);
+    React.cloneElement(child, {
+      ...props,
+      ...(child.props as React.ComponentProps<"input">),
+    });
 }
 
 function PhoneInputInput({
@@ -236,7 +231,7 @@ function PhoneInputInput({
       data-slot="phone-input-input"
       inputComponent={inputComponent}
       country={country ?? undefined}
-      defaultCountry={preferredCountry}
+      {...(!country && { defaultCountry: preferredCountry })}
       useNationalFormatForDefaultCountryValue={
         !defaultInternationalForPreferredCountry
       }
@@ -249,6 +244,8 @@ function PhoneInputInput({
     />
   );
 }
+
+const INTERNATIONAL_COUNTRY_CODE = "international";
 
 function PhoneInputCountrySelect({
   disabled: disabledProp,
@@ -263,7 +260,7 @@ function PhoneInputCountrySelect({
       disabled={disabled || disabledProp}
       onChange={(event) =>
         onCountryChange(
-          event.target.value === "international"
+          event.target.value === INTERNATIONAL_COUNTRY_CODE
             ? null
             : (event.target.value as Country),
         )
@@ -280,12 +277,16 @@ function PhoneInputCountrySelectOption(props: React.ComponentProps<"option">) {
 function PhoneInputCountryInternationalSelectOption({
   ...props
 }: Omit<React.ComponentProps<"option">, "value">) {
-  return <PhoneInputCountrySelectOption value="international" {...props} />;
+  return (
+    <PhoneInputCountrySelectOption
+      value={INTERNATIONAL_COUNTRY_CODE}
+      {...props}
+    />
+  );
 }
 
 function getCountryOptions() {
   return getCountries().map((countryCode) => ({
-    Flag: flags[countryCode],
     countryCode,
     countryCallingCode: getCountryCallingCode(countryCode),
   }));
@@ -300,4 +301,6 @@ export {
   getCountryOptions,
   type Country,
   type Value,
+  usePhoneInput,
+  INTERNATIONAL_COUNTRY_CODE,
 };

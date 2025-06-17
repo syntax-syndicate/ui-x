@@ -169,6 +169,16 @@
       ]
     },
     {
+      "name": "phone-input-primitive",
+      "type": "registry:ui",
+      "title": "Phone Input Primitive",
+      "description": "Phone Input allows user to enter phone number in E.164 format.",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state@1.2.2",
+        "react-phone-number-input"
+      ]
+    },
+    {
       "name": "sortable",
       "type": "registry:ui",
       "title": "Sortable",
@@ -453,6 +463,23 @@
       "files": [
         {
           "path": "src/registry/new-york/ui/password-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone-input",
+      "type": "registry:ui",
+      "title": "Phone Input",
+      "description": "Phone Input allows user to enter phone number.",
+      "registryDependencies": [
+        "https://ui-x.junwen-k.dev/r/input.json",
+        "https://ui-x.junwen-k.dev/r/phone-input-primitive.json",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york/ui/phone-input.tsx",
           "type": "registry:ui"
         }
       ]
