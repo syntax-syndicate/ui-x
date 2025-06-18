@@ -3,10 +3,10 @@
   "name": "phone-input",
   "type": "registry:ui",
   "title": "Phone Input",
-  "description": "Phone Input allows user to enter phone number.",
+  "description": "Phone Input allows user to enter phone number in E.164 format.",
   "registryDependencies": [
-    "https://ui-x.junwen-k.dev/r/input.json",
-    "https://ui-x.junwen-k.dev/r/phone-input-primitive.json",
+    "http://localhost:3000/r/phone-input-primitive.json",
+    "input",
     "select"
   ],
   "files": [

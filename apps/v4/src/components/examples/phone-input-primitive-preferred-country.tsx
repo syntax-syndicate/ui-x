@@ -23,7 +23,12 @@ export default function PhoneInputPrimitivePreferredCountry() {
         defaultInternationalForPreferredCountry
       >
         <PhoneInputPrimitive.Input asChild>
-          <Input />
+          {React.useMemo(
+            () => (
+              <Input />
+            ),
+            [],
+          )}
         </PhoneInputPrimitive.Input>
       </PhoneInputPrimitive.Root>
       <p className="text-muted-foreground text-sm">
