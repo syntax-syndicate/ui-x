@@ -34,7 +34,6 @@ export const docsConfig = {
         {
           title: "Tailwind v4",
           href: "/docs/tailwind-v4",
-          label: "New",
           items: [],
         },
         {
@@ -75,6 +74,12 @@ export const docsConfig = {
         {
           title: "Password Input",
           href: "/docs/primitives/password-input",
+          items: [],
+        },
+        {
+          title: "Phone Input",
+          href: "/docs/primitives/phone-input",
+          label: "New",
           items: [],
         },
       ],
@@ -181,6 +186,12 @@ export const docsConfig = {
         {
           title: "Password Input",
           href: "/docs/components/password-input",
+          items: [],
+        },
+        {
+          title: "Phone Input",
+          href: "/docs/components/phone-input",
+          label: "New",
           items: [],
         },
         {
