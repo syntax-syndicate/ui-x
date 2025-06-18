@@ -89,11 +89,21 @@ function PhoneInputCountrySelect(props: PhoneInputCountrySelectProps) {
   );
 }
 
-function PhoneInputCountrySelectValue(
-  props: React.ComponentProps<typeof SelectValue>,
-) {
+function PhoneInputCountrySelectValue({
+  placeholder = <PhoneInputFlag country={null} title="International" />,
+  children,
+  ...props
+}: React.ComponentProps<typeof SelectValue>) {
+  const { country } = PhoneInputPrimitive.usePhoneInput();
+
   return (
-    <SelectValue data-slot="phone-input-country-select-value" {...props} />
+    <SelectValue
+      data-slot="phone-input-country-select-value"
+      placeholder={placeholder}
+      {...props}
+    >
+      {children ?? <PhoneInputFlag country={country} title={country ?? ""} />}
+    </SelectValue>
   );
 }
 

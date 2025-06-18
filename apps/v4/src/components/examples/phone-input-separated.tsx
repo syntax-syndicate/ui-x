@@ -18,7 +18,6 @@ import {
   PhoneInputCountrySelectOptions,
   PhoneInputCountrySelectTrigger,
   PhoneInputCountrySelectValue,
-  PhoneInputFlag,
 } from "@/registry/new-york/ui/phone-input";
 import * as PhoneInputPrimitive from "@/registry/new-york/ui/phone-input-primitive";
 
@@ -35,13 +34,7 @@ export default function PhoneInputSeparated() {
         <div className="flex items-center gap-2">
           <PhoneInputCountrySelect>
             <PhoneInputCountrySelectTrigger>
-              <PhoneInputCountrySelectValue
-                placeholder={
-                  <PhoneInputFlag country={null} title="International" />
-                }
-              >
-                <PhoneInputFlag country={country} title={country!} />
-              </PhoneInputCountrySelectValue>
+              <PhoneInputCountrySelectValue />
             </PhoneInputCountrySelectTrigger>
             <PhoneInputCountrySelectContent>
               <PhoneInputCountrySelectOptions />

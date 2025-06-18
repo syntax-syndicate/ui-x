@@ -12,33 +12,23 @@ import {
   InputBaseInput,
 } from "@/registry/new-york/ui/input-base";
 import {
-  Country,
   PhoneInput,
   PhoneInputCountrySelect,
   PhoneInputCountrySelectContent,
   PhoneInputCountrySelectOptions,
   PhoneInputCountrySelectTrigger,
   PhoneInputCountrySelectValue,
-  PhoneInputFlag,
 } from "@/registry/new-york/ui/phone-input";
 import * as PhoneInputPrimitive from "@/registry/new-york/ui/phone-input-primitive";
 
 export default function PhoneInputDemo() {
-  const [country, setCountry] = React.useState<Country | null>(null);
-
   return (
-    <PhoneInput country={country} onCountryChange={setCountry}>
+    <PhoneInput>
       <ControlGroup>
         <PhoneInputCountrySelect>
           <ControlGroupItem>
             <PhoneInputCountrySelectTrigger>
-              <PhoneInputCountrySelectValue
-                placeholder={
-                  <PhoneInputFlag country={null} title="International" />
-                }
-              >
-                <PhoneInputFlag country={country} title={country!} />
-              </PhoneInputCountrySelectValue>
+              <PhoneInputCountrySelectValue />
             </PhoneInputCountrySelectTrigger>
           </ControlGroupItem>
           <PhoneInputCountrySelectContent>
