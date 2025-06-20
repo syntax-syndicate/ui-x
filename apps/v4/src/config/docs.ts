@@ -110,7 +110,6 @@ export const docsConfig = {
         {
           title: "BProgress",
           href: "/docs/components/bprogress",
-          label: "New",
           items: [],
         },
         {
@@ -151,6 +150,12 @@ export const docsConfig = {
         {
           title: "Date Picker",
           href: "/docs/components/date-picker",
+          items: [],
+        },
+        {
+          title: "Emoji Picker",
+          href: "/docs/components/emoji-picker",
+          label: "New",
           items: [],
         },
         {
