@@ -73,6 +73,20 @@
       ]
     },
     {
+      "name": "emoji-picker",
+      "type": "registry:ui",
+      "title": "Emoji Picker",
+      "description": "A emoji picker is a component that allows users to select an emoji from a list of emojis.",
+      "dependencies": ["@radix-ui/react-toggle-group", "frimousse"],
+      "registryDependencies": ["button", "popover"],
+      "files": [
+        {
+          "path": "src/registry/new-york/ui/emoji-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "use-timescape",
       "type": "registry:hook",
       "title": "Use Timescape",

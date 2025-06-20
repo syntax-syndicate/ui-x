@@ -185,6 +185,22 @@ function InputBaseInput({
   );
 }
 
+function InputBaseTextarea({
+  className,
+  ...props
+}: React.ComponentProps<"textarea">) {
+  return (
+    <textarea
+      data-slot="input-base-textarea"
+      className={cn(
+        "placeholder:text-muted-foreground min-h-16 flex-1 bg-transparent focus:outline-none disabled:pointer-events-none",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
 export {
   InputBase,
   InputBaseFlexWrapper,
@@ -192,5 +208,6 @@ export {
   InputBaseAdornment,
   InputBaseAdornmentButton,
   InputBaseInput,
+  InputBaseTextarea,
   useInputBase,
 };
